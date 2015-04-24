@@ -20,3 +20,11 @@ listOfTags = []
 print(len(listOfTags)) # 169 tags
 
 # Exercise 2D
+listWords = [word[0] for word in words]
+listOfWords = nltk.FreqDist(listWords)
+print(listOfWords.most_common(10))
+
+# Exercise 2E
+listWords = [word[1] for word in words]
+listOfWords = nltk.FreqDist(listWords)
+print(listOfWords.most_common(10))
