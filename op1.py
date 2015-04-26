@@ -2,7 +2,6 @@
 import nltk
 from nltk.collocations import *
 from nltk.util import ngrams
-from collections import Counter
 
 text = open('holmes.txt').read()
 tokens = nltk.wordpunct_tokenize(text)
@@ -24,33 +23,33 @@ print("There are" + " " + str(len(wordtypes.keys())) + " " + "word types")
 #exercise 1C:
 unigramschr = list(ngrams(text,1))
 most_common_unigramchr = nltk.FreqDist(unigramschr)
-answer1 = Counter(most_common_unigramchr).most_common(20)
+answer1 = most_common_unigramchr.most_common(20)
 print("Top 20 character-level unigrams, ordered by descending frequency: ", answer1)
 
 bigramschr = list(ngrams(text,2))
 most_common_bigramschr = nltk.FreqDist(bigramschr)
-answer2 = Counter(most_common_bigramschr).most_common(20)
+answer2 = most_common_bigramschr.most_common(20)
 print("Top 20 character-level bigrams, ordered by descending frequency: ", answer2)
 
 trigramchr = list(ngrams(text,3))
 most_common_trigramchr = nltk.FreqDist(trigramchr)
-answer3 = Counter(most_common_trigramchr).most_common(20)
+answer3 = most_common_trigramchr.most_common(20)
 print("Top 20 character-level trigrams, ordered by descending frequency: ", answer3)
 
 # exercise 1D:
 unigrams = list(ngrams(tokens,1))
 most_common_unigrams = nltk.FreqDist(unigrams)
-answera = Counter(most_common_unigrams).most_common(20)
+answera = most_common_unigrams.most_common(20)
 print("Top 20 word-level unigrams, ordered by descending frequency:", answera)
 
 bigrams = list(ngrams(tokens,2))
 most_common_bigrams = nltk.FreqDist(bigrams)
-answerb = Counter(most_common_bigrams).most_common(20)
+answerb = most_common_bigrams.most_common(20)
 print("Top 20 word-level bigrams, ordered by descending frequency:", answerb)
 
 trigrams = list(ngrams(tokens,3))
 most_common_trigrams= nltk.FreqDist(trigrams)
-answerc= Counter(most_common_trigrams).most_common(20)
+answerc = most_common_trigrams.most_common(20)
 print("Top 20 word-level trigrams, ordered by descending frequency:", answerc)
 
 # Exercise 2A:
