@@ -1,12 +1,12 @@
 #!/usr/bin/python
 import nltk
 from nltk.corpus import brown
+from nltk.collocations import *
 from nltk import FreqDist
 from nltk.tag import UnigramTagger
 from nltk.util import ngrams
 
 words = brown.tagged_words(categories='mystery')
-mystery_words = brown.words(categories = "mystery")
 
 # Exercise 2A
 print("There are" + " " + str(len(words)) + " " + "words")
@@ -55,3 +55,8 @@ fd = nltk.FreqDist(tags)
 print("The most common POS-tags together with the word (so) are", fd.most_common(10))
 
 #Exercise 3:
+text = open('holmes.txt').read()
+source = text.decode("utf-8")
+tokens = nltk.wordpunct_tokenize(source)
+result4 = nltk.pos_tag(tokens)
+print("Sorry for waiting! Here are the first 10 results: ", result4[:10])
