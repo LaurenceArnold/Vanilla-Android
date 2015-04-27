@@ -50,6 +50,7 @@ print("The word (so) is being used as: ", result3)
 
 #Exercise 2K:
 bigrams = nltk.bigrams(words)
+#This is not the correct answer of the exercise!
 tags = [b[1] for a, b in bigrams if a[0] == 'so']
 fd = nltk.FreqDist(tags)
 print("The most common POS-tags together with the word (so) are", fd.most_common(10))
