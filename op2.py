@@ -30,7 +30,6 @@ listOfWords = nltk.FreqDist(listWords)
 print("The top 10 POS tags and their counts are: ", listOfWords.most_common(10))
 
 # Exercise 2F
-# dus [0] is het woord, [1] is de POS-tag die wordt meegegeven
 adverbs = [word[0] for word in words if word[1] == 'RB']
 result = nltk.FreqDist(adverbs)
 print("There are ", str(len(result)), "words with the RB-tag")
@@ -41,3 +40,11 @@ adjectiv = [word[0] for word in words if word[1] == 'JJ']
 result2 = nltk.FreqDist(adjectiv)
 print("There are: ", str(len(result2)), "words with the JJ-tag")
 print("The most common are ", result2.most_common(1))
+
+#Exercise 2I:
+sortofWords = nltk.ConditionalFreqDist(words)
+result3 = sortofWords['so'].most_common()
+print("The word (so) is being used as: ", result3)
+
+#Exercise 2K:
+
