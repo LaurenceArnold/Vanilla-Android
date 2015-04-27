@@ -3,8 +3,10 @@ import nltk
 from nltk.corpus import brown
 from nltk import FreqDist
 from nltk.tag import UnigramTagger
+from nltk.util import ngrams
 
 words = brown.tagged_words(categories='mystery')
+mystery_words = brown.words(categories = "mystery")
 
 # Exercise 2A
 print("There are" + " " + str(len(words)) + " " + "words")
@@ -41,10 +43,15 @@ result2 = nltk.FreqDist(adjectiv)
 print("There are: ", str(len(result2)), "words with the JJ-tag")
 print("The most common are ", result2.most_common(1))
 
-#Exercise 2I:
+#Exercise 2H and 2I:
 sortofWords = nltk.ConditionalFreqDist(words)
 result3 = sortofWords['so'].most_common()
 print("The word (so) is being used as: ", result3)
 
 #Exercise 2K:
+bigrams = nltk.bigrams(words)
+tags = [b[1] for a, b in bigrams if a[0] == 'so']
+fd = nltk.FreqDist(tags)
+print("The most common POS-tags together with the word (so) are", fd.most_common(10))
 
+#Exercise 3:
