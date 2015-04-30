@@ -16,7 +16,7 @@ def main():
     ########################
     ### BEGIN EXERCISE 1 ###
     ########################
-    """
+
     # Open NERTagger
     st = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
                    '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
@@ -33,7 +33,7 @@ def main():
     #########################
     ########## END ##########
     #########################
-    """
+    
     ########################
     ### BEGIN EXERCISE 2 ###
     ########################
@@ -52,7 +52,7 @@ def main():
     #########################
     ########## END ##########
     #########################
-    
+
     ########################
     ### BEGIN EXERCISE 3 ###
     ########################
