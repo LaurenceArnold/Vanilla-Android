@@ -34,6 +34,7 @@ def main():
     text = open('ada_lovelace.txt').read()
     #source = text.decode("utf-8")
     source = text
+
     sents = nltk.sent_tokenize(source)
     lemmatizer = WordNetLemmatizer()
 
@@ -77,6 +78,13 @@ def main():
     illness = wordnet.synsets("illness", pos='n')[0]
     science = wordnet.synsets("science", pos='n')[0]
     
+    """
+    Om uit te vinden of we de goede hebben:
+    print(relative.definition())
+    print(illness.definition())
+    print(science.definition())
+    """
+    
     # Count the hyponyms for 1A
     relativeHypo = []
     illnessHypo = []
@@ -95,5 +103,6 @@ def main():
     print("Illness (" + str(len(illnessHypo)) + "):\n", illnessHypo, "\n")
     print("Science (" + str(len(scienceHypo)) + "):\n", scienceHypo, "\n")
 
-main()
+if __name__ == "__main__":
+    main()
 
