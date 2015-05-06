@@ -18,17 +18,25 @@ def hypernymOf(synset1, synset2):
     
     return False
     
-def findHypernym(synsetList, current):
-    """ Returnt van een lijst synsets de 'hoogste' hypernym """
-    if (len(synsetList) == 0):
-        return current
+def findHypernym(currentSynset, highLevelNoun):
+    """ 
+    For lack of a better solution.. :')
+    Als iemand hier een slimmere suggestie heeft hoor ik 't graag haha
+    """
+    if not (isinstance(currentSynset, list)):
+        tempList = []
+        tempList.append(currentSynset)
+        currentSynset = tempList
     
-    listItem = synsetList.pop()
+    for syn in currentSynset:
+        if ((syn.hypernyms() == syn.root_hypernyms()) or (highLevelNoun)):
+            # We zitten op 't 1-na-hoogste niveau
+            highLevelNoun = currentSynset
+            return highLevelNoun
+        
+        return findHypernym(syn.hypernyms(), highLevelNoun)
     
-    if (hypernymOf(current, listItem)):
-        return findHypernym(synsetList, listItem)
-    else:
-        return findHypernym(synsetList, current)
+   
 
 def main():
     text = open('ada_lovelace.txt').read()
@@ -53,21 +61,10 @@ def main():
         
         # Retrieve the synsets for each lemma and add to list
         lemmaSynsets = wordnet.synsets(word, pos='n')
-        
         if (isinstance(lemmaSynsets, list)):
             synsetList.extend(lemmaSynsets)
         else:
             synsetList.append(lemmaSynsets)
-
-        """
-        if (len(lemmaSynsets) > 1):
-            synset = findHypernym(lemmaSynsets, lemmaSynsets[0])
-        else:
-            synset = lemmaSynsets
-        
-        if not (isinstance(synset, list)):
-            synsetList.append(synset)
-        """
 
     # Print results
     print("Lemma\'s:\n", lemmaList)
@@ -85,7 +82,7 @@ def main():
     print(science.definition())
     """
     
-    # Count the hyponyms for 1A
+    # Assignment 1.1:
     relativeHypo = []
     illnessHypo = []
     scienceHypo = []
@@ -98,10 +95,20 @@ def main():
         if (hypernymOf(synset, science)):
             scienceHypo.append(synset)
     
-    print("1A:\n")
+    print("1.1:\n")
     print("Relatives (" + str(len(relativeHypo)) + "):\n", relativeHypo, "\n")
     print("Illness (" + str(len(illnessHypo)) + "):\n", illnessHypo, "\n")
     print("Science (" + str(len(scienceHypo)) + "):\n", scienceHypo, "\n")
+    
+    # Assignment 1.2:
+    print("\n\n\n")
+    for synset in synsetList:
+        print(findHypernym(synset, ""))
+        
+    # Dit resultaat is niet bepaald waar we naar op zoek zijn haha, ze
+    # vallen allemaal niet onder de categorieen uit de slides. Zal wel
+    # een klein foutje in de code zitten of 't is de compleet verkeerde
+    # aanpak. Morgen weer een dag.
 
 if __name__ == "__main__":
     main()
