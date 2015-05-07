@@ -17,12 +17,28 @@ def hypernymOf(synset1, synset2):
             return True
     
     return False
+
+def twiceUp(syn):
+    hyperSyn = syn.hypernyms()
+    
+    if (isinstance(hyperSyn, list)):
+        if (hyperSyn):
+            return hyperSyn[0].hypernyms()
+    else:
+        return hyperSyn.hypernyms()
     
 def findHypernym(currentSynset, highLevelNoun):
     """ 
     For lack of a better solution.. :')
     Als iemand hier een slimmere suggestie heeft hoor ik 't graag haha
     """
+    print("Current synset: ", currentSynset)
+    if (isinstance(currentSynset, list)):
+        print("Hypernym of ^: ", currentSynset[0].hypernyms())
+    else:
+        print("Hypernym of ^: ", currentSynset.hypernyms())
+    print("High level noun: ", highLevelNoun)
+    
     if not (isinstance(currentSynset, list)):
         tempList = []
         tempList.append(currentSynset)
@@ -32,6 +48,7 @@ def findHypernym(currentSynset, highLevelNoun):
         if ((syn.hypernyms() == syn.root_hypernyms()) or (highLevelNoun)):
             # We zitten op 't 1-na-hoogste niveau
             highLevelNoun = currentSynset
+            print(highLevelNoun[0].definition())
             return highLevelNoun
         
         return findHypernym(syn.hypernyms(), highLevelNoun)
@@ -101,14 +118,17 @@ def main():
     print("Science (" + str(len(scienceHypo)) + "):\n", scienceHypo, "\n")
     
     # Assignment 1.2:
+    
     print("\n\n\n")
     for synset in synsetList:
-        print(findHypernym(synset, ""))
-        
-    # Dit resultaat is niet bepaald waar we naar op zoek zijn haha, ze
-    # vallen allemaal niet onder de categorieen uit de slides. Zal wel
-    # een klein foutje in de code zitten of 't is de compleet verkeerde
-    # aanpak. Morgen weer een dag.
+        #print(findHypernym(synset, ""))
+        print(twiceUp(synset))
+    
+    # De functie findHypernym() vindt steeds het 1-na-hoogste resultaat,
+    # maar in tegenstelling tot wat de slides zeggen zijn dat niet die
+    # top level nouns. Die zitten vele malen lager. Functie twiceUp() gaat
+    # 2 levels omhoog. Soms is dat goed, soms niet hoog genoeg. Iemand een
+    # tactische manier om altijd t goede niveau te bereiken?
 
 if __name__ == "__main__":
     main()
