@@ -148,8 +148,6 @@ def main():
     # 2 levels omhoog. Soms is dat goed, soms niet hoog genoeg. Iemand een
     # tactische manier om altijd t goede niveau te bereiken?
 
-
-
     # Hij loopt de hele tijd door ofzo? Recursieve functie, met elke keer als start None zo lijkt het
 
     # Assignment 1.3:
