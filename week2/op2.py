@@ -2,7 +2,6 @@
 
 import nltk
 from nltk.tag.stanford import NERTagger
-from nltk.corpus import wordnet
 from nltk.collocations import *
 
 def getLengthTags(listName, name):
