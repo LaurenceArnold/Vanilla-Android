@@ -2,6 +2,7 @@
 
 import nltk
 from nltk.tag.stanford import NERTagger
+from nltk.collocations import *
 
 def getLengthTags(listName, name):
     tags = [el for el in listName if el[1] == name]
@@ -26,14 +27,14 @@ def main():
 
     # Count the tags
     for list in taggedFile:
-        print("There are " + getLengthTags(list, 'LOCATION') + " locations.")
-        print("There are " + getLengthTags(list, 'PERSON') + " persons.")
-        print("There are " + getLengthTags(list, 'ORGANIZATION') + " organizations.")
+        print("There are {} locations.".format(getLengthTags(list, 'LOCATION')))
+        print("There are {} persons.".format(getLengthTags(list, 'PERSON')))
+        print("There are {} organizations.".format(getLengthTags(list, 'ORGANIZATION')))
 
     #########################
     ########## END ##########
     #########################
-    
+
     ########################
     ### BEGIN EXERCISE 2 ###
     ########################
@@ -46,8 +47,8 @@ def main():
     conllTaggedFile = conll.tag(file.split())
     mucTaggedFile = muc.tag(file.split())
 
-    print(conllTaggedFile)
-    print(mucTaggedFile)
+    print("{}".format(conllTaggedFile))
+    print("{}".format(mucTaggedFile))
 
     #########################
     ########## END ##########
@@ -56,6 +57,29 @@ def main():
     ########################
     ### BEGIN EXERCISE 3 ###
     ########################
+
+    # Tokenize the text in the file
+    tokenizedText = nltk.sent_tokenize(file)
+
+    # POS-tag the tokenized text
+    tokens = []
+    for sent in tokenizedText:
+        tokens += nltk.word_tokenize(sent)
+    posTags = nltk.pos_tag(tokens)
+
+    # Get nouns
+    nouns = [word[0] for word in posTags if word[1] == 'NN']
+
+    # Tag nouns
+    taggedNouns = st.tag(nouns)
+
+    # Print all tagged nouns with a string format
+    for el in taggedNouns[0]:
+        print("Noun is {} and tag is {}".format(el[0], el[1]))
+
+    #########################
+    ########## END ##########
+    #########################
 
 if __name__ == "__main__":
     main()
