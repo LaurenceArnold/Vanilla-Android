@@ -71,8 +71,7 @@ def getMaxSim(synsets1, synsets2):
                     maxSim = sim
             except WordNetError:
                 continue
-=======
-    
+
 def getMaxSim(synsets1, synsets2):
     """ From slides """
     # assignment 1.3
@@ -83,8 +82,7 @@ def getMaxSim(synsets1, synsets2):
             sim = syn1.lch_similarity(syn2)
             if ((maxSim == None) or (maxSim < sim)):
                 maxSim = sim
-    
->>>>>>> a92e151647fd355ed904e5046f83eee4383e6bb6
+
     return maxSim
 
 def main():
