@@ -4,10 +4,11 @@ from nltk.collocations import *
 from nltk.util import ngrams
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import wordnet
+import operator
 
 def hypernymOf(synset1, synset2):
     """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
-    # Lecture slide 43 (week3)
+    # Lecture slide 43 (week3), assignment 1.1
     if (synset1 == synset2):
         return True
     for hypernym in synset1.hypernyms():
@@ -19,6 +20,7 @@ def hypernymOf(synset1, synset2):
     return False
 
 def twiceUp(syn):
+    # assigment 1.2
     hyperSyn = syn.hypernyms()
     
     if (isinstance(hyperSyn, list)):
@@ -32,6 +34,7 @@ def findHypernym(currentSynset, highLevelNoun):
     For lack of a better solution.. :')
     Als iemand hier een slimmere suggestie heeft hoor ik 't graag haha
     """
+    # assignment 1.2
     print("Current synset: ", currentSynset)
     if (isinstance(currentSynset, list)):
         print("Hypernym of ^: ", currentSynset[0].hypernyms())
@@ -53,7 +56,18 @@ def findHypernym(currentSynset, highLevelNoun):
         
         return findHypernym(syn.hypernyms(), highLevelNoun)
     
-   
+def getMaxSim(synsets1, synsets2):
+    """ From slides """
+    # assignment 1.3
+    
+    maxSim = None
+    for syn1 in synsets1:
+        for syn2 in synsets2:
+            sim = syn1.lch_similarity(syn2)
+            if ((maxSim == None) or (maxSim < sim)):
+                maxSim = sim
+    
+    return maxSim
 
 def main():
     text = open('ada_lovelace.txt').read()
@@ -129,6 +143,32 @@ def main():
     # top level nouns. Die zitten vele malen lager. Functie twiceUp() gaat
     # 2 levels omhoog. Soms is dat goed, soms niet hoog genoeg. Iemand een
     # tactische manier om altijd t goede niveau te bereiken?
+    
+    # Assignment 1.3:
+    carSyns = wordnet.synsets("car", pos='n')
+    autoSyns = wordnet.synsets("automobile", pos='n')
+    coastSyns = wordnet.synsets("coast", pos='n')
+    shoreSyns = wordnet.synsets("shore", pos='n')
+    foodSyns = wordnet.synsets("food", pos='n')
+    fruitSyns = wordnet.synsets("fruit", pos='n')
+    journeySyns = wordnet.synsets("journey", pos='n')
+    monkSyns = wordnet.synsets("monk", pos='n')
+    slaveSyns = wordnet.synsets("slave", pos='n')
+    moonSyns = wordnet.synsets("moon", pos='n')
+    stringSyns = wordnet.synsets("string", pos='n')
+    
+    simDict = {"car <> auto: ": getMaxSim(carSyns, autoSyns),
+    "coast <> shore: ": getMaxSim(coastSyns, shoreSyns), 
+    "food <> fruit: ": getMaxSim(foodSyns, fruitSyns), 
+    "journey <> car: ": getMaxSim(journeySyns, carSyns), 
+    "monk <> slave: ": getMaxSim(monkSyns, slaveSyns),
+    "moon <> string: ": getMaxSim(moonSyns, stringSyns)}
+    
+    sortDesc = sorted(simDict.items(), key=operator.itemgetter(1), reverse=True)
+    
+    [print(sim[0], sim[1]) for sim in sortDesc]
+    
+    
 
 if __name__ == "__main__":
     main()
