@@ -22,7 +22,7 @@ def main():
     # Open NERTagger
     st = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
                    '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
-    """
+
     # Tag the file
     taggedFile = st.tag(file.split())
 
@@ -54,7 +54,7 @@ def main():
     #########################
     ########## END ##########
     #########################
-    """
+
     ########################
     ### BEGIN EXERCISE 3 ###
     ########################
