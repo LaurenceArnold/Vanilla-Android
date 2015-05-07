@@ -3,6 +3,8 @@
 import nltk
 from nltk.tag.stanford import NERTagger
 from nltk.collocations import *
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.corpus import wordnet
 
 def getLengthTags(listName, name):
     tags = [el for el in listName if el[1] == name]
@@ -70,12 +72,14 @@ def main():
     # Get nouns
     nouns = [word[0] for word in posTags if word[1] == 'NN']
 
-    # Tag nouns
+    # Tag nouns with Standford Tagger
     taggedNouns = st.tag(nouns)
 
-    # Print all tagged nouns with a string format
+    # Print all Stanford tagged nouns with a string format
     for el in taggedNouns[0]:
-        print("Noun is {} and tag is {}".format(el[0], el[1]))
+        if el[1] == "PERSON" or el[1] == "ORGANIZATION" or el[1] == "LOCATION":
+            print("Noun is {} and tag is {}".format(el[0], el[1]))
+            nouns.remove(el[0])
 
     #########################
     ########## END ##########
