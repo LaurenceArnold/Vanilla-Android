@@ -56,7 +56,6 @@ def findHypernym(currentSynset, highLevelNoun):
             return highLevelNoun
         
         return findHypernym(syn.hypernyms(), highLevelNoun)
-<<<<<<< HEAD
 
 def getMaxSim(synsets1, synsets2):
     maxSim = None
