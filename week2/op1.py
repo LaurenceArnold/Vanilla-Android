@@ -4,11 +4,8 @@ from nltk.collocations import *
 from nltk.util import ngrams
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import wordnet
-<<<<<<< HEAD
 from nltk.corpus.reader.wordnet import WordNetError
-=======
 import operator
->>>>>>> a92e151647fd355ed904e5046f83eee4383e6bb6
 
 def hypernymOf(synset1, synset2):
     """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
