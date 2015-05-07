@@ -78,5 +78,9 @@ def main():
     for el in taggedNouns[0]:
         print("Noun is {} and tag is {}".format(el[0],el[1]))
 
+    #########################
+    ########## END ##########
+    #########################
+
 if __name__ == "__main__":
     main()
