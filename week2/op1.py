@@ -7,6 +7,7 @@ from nltk.corpus import wordnet
 from nltk.corpus.reader.wordnet import WordNetError
 import operator
 
+
 def hypernymOf(synset1, synset2):
     """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
     # Lecture slide 43 (week3), assignment 1.1
@@ -17,19 +18,21 @@ def hypernymOf(synset1, synset2):
             return True
         if (hypernymOf(hypernym, synset2)):
             return True
-    
+
     return False
+
 
 def twiceUp(syn):
     # assigment 1.2
     hyperSyn = syn.hypernyms()
-    
+
     if (isinstance(hyperSyn, list)):
         if (hyperSyn):
             return hyperSyn[0].hypernyms()
     else:
         return hyperSyn.hypernyms()
-    
+
+
 def findHypernym(currentSynset, highLevelNoun):
     """ 
     For lack of a better solution.. :')
@@ -42,20 +45,21 @@ def findHypernym(currentSynset, highLevelNoun):
     else:
         print("Hypernym of ^: ", currentSynset.hypernyms())
     print("High level noun: ", highLevelNoun)
-    
+
     if not (isinstance(currentSynset, list)):
         tempList = []
         tempList.append(currentSynset)
         currentSynset = tempList
-    
+
     for syn in currentSynset:
         if ((syn.hypernyms() == syn.root_hypernyms()) or (highLevelNoun)):
             # We zitten op 't 1-na-hoogste niveau
             highLevelNoun = currentSynset
             print(highLevelNoun[0].definition())
             return highLevelNoun
-        
+
         return findHypernym(syn.hypernyms(), highLevelNoun)
+
 
 def getMaxSim(synsets1, synsets2):
     maxSim = None
@@ -68,10 +72,11 @@ def getMaxSim(synsets1, synsets2):
             except WordNetError:
                 continue
 
+
 def getMaxSim(synsets1, synsets2):
     """ From slides """
     # assignment 1.3
-    
+
     maxSim = None
     for syn1 in synsets1:
         for syn2 in synsets2:
@@ -80,6 +85,7 @@ def getMaxSim(synsets1, synsets2):
                 maxSim = sim
 
     return maxSim
+
 
 def main():
     text = open('ada_lovelace.txt').read()
@@ -99,9 +105,9 @@ def main():
     synsetList = []
     for word in nouns:
         # Lemmatize each word and add to the list of lemma's
-        result = lemmatizer.lemmatize(word, wordnet.VERB )
+        result = lemmatizer.lemmatize(word, wordnet.VERB)
         lemmaList.append(result)
-        
+
         # Retrieve the synsets for each lemma and add to list
         lemmaSynsets = wordnet.synsets(word, pos='n')
         if (isinstance(lemmaSynsets, list)):
@@ -114,13 +120,13 @@ def main():
     relative = wordnet.synsets("relative", pos='n')[0]
     illness = wordnet.synsets("illness", pos='n')[0]
     science = wordnet.synsets("science", pos='n')[0]
-    
+
 
     # Assignment 1.1:
     relativeHypo = []
     illnessHypo = []
     scienceHypo = []
-    
+
     for synset in synsetList:
         if (hypernymOf(synset, relative)):
             relativeHypo.append(synset)
@@ -128,19 +134,19 @@ def main():
             illnessHypo.append(synset)
         if (hypernymOf(synset, science)):
             scienceHypo.append(synset)
-    
+
     print("1.1:\n")
     print("Relatives (" + str(len(relativeHypo)) + "):\n", relativeHypo, "\n")
     print("Illness (" + str(len(illnessHypo)) + "):\n", illnessHypo, "\n")
     print("Science (" + str(len(scienceHypo)) + "):\n", scienceHypo, "\n")
-    
+
     # Assignment 1.2:
 
     print("\n\n\n")
     for synset in synsetList:
-        #print(findHypernym(synset, ""))
+        # print(findHypernym(synset, ""))
         print(twiceUp(synset))
-    
+
     # De functie findHypernym() vindt steeds het 1-na-hoogste resultaat,
     # maar in tegenstelling tot wat de slides zeggen zijn dat niet die
     # top level nouns. Die zitten vele malen lager. Functie twiceUp() gaat
@@ -161,17 +167,19 @@ def main():
     slaveSyns = wordnet.synsets("slave", pos='n')
     moonSyns = wordnet.synsets("moon", pos='n')
     stringSyns = wordnet.synsets("string", pos='n')
-    
+
     simDict = {"car <> auto: ": getMaxSim(carSyns, autoSyns),
-    "coast <> shore: ": getMaxSim(coastSyns, shoreSyns), 
-    "food <> fruit: ": getMaxSim(foodSyns, fruitSyns), 
-    "journey <> car: ": getMaxSim(journeySyns, carSyns), 
-    "monk <> slave: ": getMaxSim(monkSyns, slaveSyns),
-    "moon <> string: ": getMaxSim(moonSyns, stringSyns)}
-    
+               "coast <> shore: ": getMaxSim(coastSyns, shoreSyns),
+               "food <> fruit: ": getMaxSim(foodSyns, fruitSyns),
+               "journey <> car: ": getMaxSim(journeySyns, carSyns),
+               "monk <> slave: ": getMaxSim(monkSyns, slaveSyns),
+               "moon <> string: ": getMaxSim(moonSyns, stringSyns)}
+
     sortDesc = sorted(simDict.items(), key=operator.itemgetter(1), reverse=True)
-    
-    [print(sim[0], sim[1]) for sim in sortDesc]
+
+    for sim in sortDesc:
+        print(sim[0], sim[1])
+
 
 if __name__ == "__main__":
     main()
