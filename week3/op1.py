@@ -11,7 +11,10 @@ def main():
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
 
-        # Loop files
+
+
+
+        # every f is a file
         for file in filenames:
 
             # Check if the file is en.tok.off
@@ -20,11 +23,13 @@ def main():
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
 
-                    # Empty list for tokens
+                    # Empty list for tokens per file
                     tokenList = []
 
                     # Loop throug lines of file
                     for line in in_f:
+
+                        #variabele[1] in pos Tags in loop.append(line))
 
                         # Get tokens and append to list
                         columns = line.split()
@@ -34,8 +39,6 @@ def main():
                     # POS tag tokens
                     taggedTokens = nltk.pos_tag(tokenList)
                     print(taggedTokens)
-
-
 
 
 if __name__ == "__main__":
