@@ -31,12 +31,14 @@ def main():
 
                         #variabele[1] in pos Tags in loop.append(line))
 
+                        # Get tokens and append to list
                         columns = line.split()
-                        
-                        print(columns)
-                        [tokenList.append(token) for token in columns[3]]
+                        token = columns[3]
+                        tokenList.append(token)
 
-                    print(tokenList)
+                    # POS tag tokens
+                    taggedTokens = nltk.pos_tag(tokenList)
+                    print(taggedTokens)
 
 
 if __name__ == "__main__":
