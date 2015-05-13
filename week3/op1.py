@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# DON'T EXECUTE
+# ONLY WHEN THERE ARE NO TAGGED FILES
+
 
 import nltk
 import os, sys
@@ -39,8 +42,9 @@ def main():
                         columns.append(taggedTokens[0][1])
                         newLine = ' '.join(columns)
 
-                        print(newLine)
-
+                        # Write results to new file
+                        with open(root+'/en.tok.off.pos', 'a') as posfile:
+                            posfile.write(newLine + '\n')
 
 
 if __name__ == "__main__":
