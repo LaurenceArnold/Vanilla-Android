@@ -3,6 +3,7 @@
 import nltk
 import os, sys
 
+
 def main():
 
     # Get the directory of the file
@@ -11,10 +12,7 @@ def main():
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
 
-
-
-
-        # every f is a file
+        # Every f is a file
         for file in filenames:
 
             # Check if the file is en.tok.off
@@ -23,22 +21,22 @@ def main():
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
 
-                    # Empty list for tokens per file
-                    tokenList = []
-
-                    # Loop throug lines of file
+                    # Loop through lines of file
                     for line in in_f:
 
-                        #variabele[1] in pos Tags in loop.append(line))
+                        # Empty list for tokens per line
+                        tokenList = []
 
                         # Get tokens and append to list
                         columns = line.split()
                         token = columns[3]
                         tokenList.append(token)
 
-                    # POS tag tokens
-                    taggedTokens = nltk.pos_tag(tokenList)
-                    print(taggedTokens)
+                        # POS tag token
+                        taggedTokens = nltk.pos_tag(tokenList)
+
+                        print(taggedTokens)
+
 
 
 if __name__ == "__main__":
