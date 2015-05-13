@@ -12,8 +12,7 @@ def main():
     for root, dirs, filenames in os.walk(directory):
         for f in filenames:
             if f == "en.tok.off":
-                print(f)Bug fix
-
+                print(f)
 
 if __name__ == "__main__":
     main()
