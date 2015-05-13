@@ -10,9 +10,9 @@ def main():
 
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
-        for fLoop  in filenames:
+        for f in filenames:
             if f == "en.tok.off":
-                print(f)
+                print(f)Bug fix
 
 
 if __name__ == "__main__":
