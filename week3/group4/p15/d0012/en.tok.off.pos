@@ -1,7 +1,7 @@
-0 6 1001 French JJ
-7 16 1002 President NNP
-17 24 1003 Jacques NNS
-25 31 1004 Chirac NNP
+0 6 1001 French JJ 
+7 16 1002 President NNP 
+17 24 1003 Jacques NNS 
+25 31 1004 Chirac NNP 
 32 35 1005 has VBZ
 36 43 1006 offered VBD
 44 47 1007 his PRP$
