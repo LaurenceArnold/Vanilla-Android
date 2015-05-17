@@ -1,21 +1,21 @@
-0 9 1001 Singapore NNP
+0 9 1001 Singapore NNP COU http://en.wikipedia.org/wiki/Singapore
 10 13 1002 was VBD
 14 21 1003 founded VBD
 22 24 1004 as IN
 25 26 1005 a DT
-27 34 1006 British JJ
+27 34 1006 British JJ COU http://en.wikipedia.org/wiki/British
 35 42 1007 trading NN
 43 49 1008 colony NN
 50 52 1009 in IN
-53 57 1010 1819 CD
+53 57 1010 1819 CD CD http://en.wikipedia.org/wiki/1819
 57 58 1011 . .
 59 61 2001 It PRP
 62 68 2002 joined VBD
 69 72 2003 the DT
-73 82 2004 Malaysian JJ
-83 93 2005 Federation NN
+73 82 2004 Malaysian JJ ORG http://en.wikipedia.org/wiki/Malaysia
+83 93 2005 Federation NN ORG http://en.wikipedia.org/wiki/Malaysia
 94 96 2006 in IN
-97 101 2007 1963 CD
+97 101 2007 1963 CD CD http://en.wikipedia.org/wiki/1963
 102 105 2008 but CC
 106 115 2009 separated VBD
 116 119 2010 two CD
@@ -25,7 +25,7 @@
 136 142 2014 became VBD
 143 154 2015 independent NN
 154 155 2016 . .
-156 165 3001 Singapore NNP
+156 165 3001 Singapore NNP COU http://en.wikipedia.org/wiki/Singapore
 166 178 3002 subsequently RB
 179 185 3003 became VBD
 186 189 3004 one CD
@@ -61,7 +61,7 @@
 344 348 3034 with IN
 349 352 3035 per IN
 353 359 3036 capita NN
-360 363 3037 GDP NNP
+360 363 3037 GDP NNP ORG http://en.wikipedia.org/wiki/Gross_domestic_product
 364 369 3038 equal JJ
 370 372 3039 to TO
 373 377 3040 that DT
@@ -70,6 +70,6 @@
 385 392 3043 leading VBG
 393 400 3044 nations NNS
 401 403 3045 of IN
-404 411 3046 Western NNP
-412 418 3047 Europe NNP
+404 411 3046 Western NNP COU http://en.wikipedia.org/wiki/Western_Europe
+412 418 3047 Europe NNP COU http://en.wikipedia.org/wiki/Western_Europe
 418 419 3048 . .
