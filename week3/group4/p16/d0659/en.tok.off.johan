@@ -48,7 +48,7 @@
 272 278 4002 remain NN
 279 283 4003 high JJ
 284 286 4004 in IN
-287 293 4005 Kirkuk NNP
+287 293 4005 Kirkuk NNP CIT http://en.wikipedia.org/wiki/Kirkuk
 293 294 4006 , ,
 295 300 4007 whose NN
 301 307 4008 status NN

@@ -16,7 +16,7 @@
 81 88 1016 rebuild NN
 89 92 1017 and CC
 93 99 1018 reform NN
-100 105 1019 Haiti NNP
+100 105 1019 Haiti NNP COU https://en.wikipedia.org/wiki/Haiti
 105 107 1020 's VBZ
 108 117 1021 education NN
 118 124 1022 system NN
@@ -88,8 +88,8 @@
 513 514 4023 . .
 516 523 5001 Haitian JJ
 524 533 5002 President NNP
-534 538 5003 Rene NNP PER http://en.wikipedia.org/wiki/Earthquake
-539 545 5004 Preval NNP PER http://en.wikipedia.org/wiki/Earthquake
+534 538 5003 Rene NNP PER https://en.wikipedia.org/wiki/René_Préval
+539 545 5004 Preval NNP PER https://en.wikipedia.org/wiki/René_Préval
 546 555 5005 announced VBD
 556 559 5006 the DT
 560 564 5007 plan NN
