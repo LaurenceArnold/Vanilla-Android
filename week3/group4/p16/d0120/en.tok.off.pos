@@ -1,11 +1,11 @@
 0 3 1001 The DT
-4 12 1002 U.S.-led JJ
+4 12 1002 U.S.-led JJ COU http://en.wikipedia.org/wiki/United_States
 13 22 1003 coalition NN
 23 27 1004 said VBD
 28 30 1005 in IN
 31 32 1006 a DT
 33 42 1007 statement NN
-43 50 1008 Tuesday NNP
+43 50 1008 Tuesday NNP CD http://en.wikipedia.org/wiki/Tuesday
 51 55 1009 that DT
 56 59 1010 its PRP$
 60 66 1011 forces NNS
@@ -14,23 +14,23 @@
 77 86 1014 militants NNS
 87 89 1015 in IN
 90 98 1016 southern NN
-99 110 1017 Afghanistan NNP
+99 110 1017 Afghanistan NNP COU http://en.wikipedia.org/wiki/Afghanistan
 110 111 1018 . .
 113 116 2001 The DT
-117 123 2002 Afghan NNP
+117 123 2002 Afghan NNP COU http://en.wikipedia.org/wiki/Afghanistan
 124 127 2003 and CC
-128 136 2004 U.S.-led JJ
+128 136 2004 U.S.-led JJ COU http://en.wikipedia.org/wiki/United_States
 137 143 2005 troops NNS
 144 151 2006 battled VBD
 152 155 2007 the DT
 156 165 2008 militants NNS
-166 172 2009 Sunday NNP
+166 172 2009 Sunday NNP CD http://en.wikipedia.org/wiki/Sunday
 173 175 2010 in IN
-176 181 2011 Qalat NNP
+176 181 2011 Qalat NNP CIT http://en.wikipedia.org/wiki/Qalat
 182 190 2012 district NN
 191 193 2013 of IN
-194 199 2014 Zabul NNP
-200 208 2015 province NN
+194 199 2014 Zabul NNP COU http://en.wikipedia.org/wiki/Zabul_Province
+200 208 2015 province NN COU http://en.wikipedia.org/wiki/Zabul_Province
 208 209 2016 . .
 211 214 3001 The DT
 215 224 3002 statement NN
@@ -81,9 +81,9 @@
 473 482 6002 statement NN
 483 487 6003 said VBD
 488 490 6004 no DT
-491 497 6005 Afghan NNP
+491 497 6005 Afghan NNP COU http://en.wikipedia.org/wiki/Afghanistan
 498 500 6006 or CC
-501 509 6007 U.S.-led JJ
+501 509 6007 U.S.-led JJ COU http://en.wikipedia.org/wiki/United_States
 510 516 6008 troops NNS
 517 521 6009 were VBD
 522 528 6010 killed VBD

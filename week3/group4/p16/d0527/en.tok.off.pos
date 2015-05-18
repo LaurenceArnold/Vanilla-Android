@@ -16,15 +16,15 @@
 81 88 1016 rebuild NN
 89 92 1017 and CC
 93 99 1018 reform NN
-100 105 1019 Haiti NNP
-105 107 1020 's VBZ
+100 105 1019 Haiti NNP COU https://en.wikipedia.org/wiki/Haiti
+105 107 1020 's VBZ COU https://en.wikipedia.org/wiki/Haiti
 108 117 1021 education NN
 118 124 1022 system NN
 124 125 1023 . .
-127 130 2001 The DT
-131 145 2002 Inter-American JJ
-146 157 2003 Development NN
-158 162 2004 Bank NNP
+127 130 2001 The DT  
+131 145 2002 Inter-American JJ ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
+146 157 2003 Development NN ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
+158 162 2004 Bank NNP ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
 163 165 2005 is VBZ
 166 173 2006 leading VBG
 174 175 2007 a DT
@@ -55,7 +55,7 @@
 331 334 3010 the DT
 335 345 3011 earthquake NN
 346 348 3012 in IN
-349 356 3013 January NNP
+349 356 3013 January NNP CD http://en.wikipedia.org/wiki/January
 357 361 3014 that DT
 362 368 3015 killed VBD
 369 373 3016 more JJR
@@ -64,7 +64,7 @@
 387 393 3019 people NNS
 393 394 3020 . .
 396 399 4001 The DT
-400 403 4002 IDB NNP
+400 403 4002 IDB NNP ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
 404 408 4003 says VBZ
 409 413 4004 that DT
 414 420 4005 before IN
@@ -74,8 +74,8 @@
 437 441 4009 only RB
 442 446 4010 half NN
 447 449 4011 of IN
-450 455 4012 Haiti NNP
-455 457 4013 's VBZ
+450 455 4012 Haiti NNP COU https://en.wikipedia.org/wiki/Haiti
+455 457 4013 's VBZ COU https://en.wikipedia.org/wiki/Haiti
 458 466 4014 children NNS
 467 469 4015 of IN
 470 477 4016 primary JJ
@@ -88,17 +88,17 @@
 513 514 4023 . .
 516 523 5001 Haitian JJ
 524 533 5002 President NNP
-534 538 5003 Rene NNP
-539 545 5004 Preval NNP
+534 538 5003 Rene NNP PER https://en.wikipedia.org/wiki/René_Préval
+539 545 5004 Preval NNP PER https://en.wikipedia.org/wiki/René_Préval
 546 555 5005 announced VBD
 556 559 5006 the DT
 560 564 5007 plan NN
-565 573 5008 Saturday NNP
+565 573 5008 Saturday NNP CD https://en.wikipedia.org/wiki/Sunday
 574 579 5009 along IN
 580 584 5010 with IN
-585 588 5011 IDB NNP
+585 588 5011 IDB NNP ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
 589 598 5012 President NNP
-599 603 5013 Luis NNP
-604 611 5014 Alberto NNP
-612 618 5015 Moreno NNP
+599 603 5013 Luis NNP PER https://en.wikipedia.org/wiki/Luis_Alberto_Moreno
+604 611 5014 Alberto NNP PER https://en.wikipedia.org/wiki/Luis_Alberto_Moreno
+612 618 5015 Moreno NNP PER https://en.wikipedia.org/wiki/Luis_Alberto_Moreno
 618 619 5016 . .

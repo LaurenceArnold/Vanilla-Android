@@ -26,16 +26,16 @@
 144 150 1026 others NNS
 150 151 1027 , ,
 152 156 1028 near IN
-157 162 1029 Cairo NNP
+157 162 1029 Cairo NNP CIT https://en.wikipedia.org/wiki/Cairo
 162 163 1030 . .
 165 173 2001 Egyptian JJ
 174 186 2002 construction NN
 187 191 2003 firm NN
-192 196 2004 Arab NNP
-197 208 2005 Contractors NNS
+192 196 2004 Arab NNP ORG https://en.wikipedia.org/wiki/El-Mokawloon_El-Arab_(company)
+197 208 2005 Contractors NNS ORG https://en.wikipedia.org/wiki/El-Mokawloon_El-Arab_(company)
 209 213 2006 says VBZ
-214 221 2007 Mahmoud NNP
-222 229 2008 Sweilam NNP
+214 221 2007 Mahmoud NNP PER
+222 229 2008 Sweilam NNP PER
 229 230 2009 , ,
 231 232 2010 a DT
 233 240 2011 20-year JJ
@@ -50,11 +50,11 @@
 287 293 2020 deadly RB
 294 301 2021 rampage NN
 302 307 2022 early RB
-308 315 2023 Tuesday NNP
+308 315 2023 Tuesday NNP CD
 315 316 2024 . .
 320 331 3001 Authorities NNS
 332 335 3002 say VBP
-336 343 3003 Sweilam NNP
+336 343 3003 Sweilam NNP PER
 344 347 3004 was VBD
 348 355 3005 driving VBG
 356 360 3006 more JJR
@@ -82,7 +82,7 @@
 474 483 3028 automatic JJ
 484 489 3029 rifle NN
 489 490 3030 . .
-492 498 4001 Police NNP
+492 498 4001 Police NNP ORG http://en.wikipedia.org/wiki/Police
 499 502 4002 are VBP
 503 508 4003 still RB
 509 522 4004 investigating VBG
