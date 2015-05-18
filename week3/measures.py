@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from collections import Counter
 from nltk.metrics import ConfusionMatrix
 import os, sys  
@@ -16,23 +17,51 @@ def main():
                     for line in in_f:
                         columns = line.split()
                         if (len(columns) > 5):
-                            token = columns[5]
-                            
-                            if not len(tagsJohan) > 101:
-                                tagsJohan.append(token)
-            if ((file == "en.tok.off Laurence") or (file == "en.tok.off.pos Laurence")):
+                            token1 = columns[5]
+                            tagsJohan.append(token1)
+
+            elif (file == "en.tok.off.pos Laurence"):
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                         columns = line.split()
                         if len(columns) > 5:
-                            token = columns[5]
-                            tagsLaurence.append(token)
+                            token2 = columns[5]
+                            tagsLaurence.append(token2)
+
+            elif (file == "en.tok.off.pos"):
+                with open(root+'/'+file, 'r') as in_f:
+                     for line in in_f:
+                        columns = line.split()
+                        if len(columns) > 5:
+                             token3= columns[5]
+                             tagsJarik.append(token3)
 
 
-    #ref  = 'DET NN VB DET JJ NN NN IN DET NN'.split()
-    #tagged = 'DET VB VB DET NN NN NN IN DET NN'.split()
-    
-    print(len(tagsLaurence), len(tagsJohan))
+
+    lengthJohan = len(tagsJohan)
+    lengthLaurence = len(tagsLaurence)
+    lengthJarik = len(tagsJarik)
+    if lengthJohan != lengthJarik:
+        if lengthJarik > lengthJohan:
+            loop = lengthJarik - lengthJohan
+            for i in range(loop):
+                tagsJohan.append("NULL")
+        else:
+            loop = lengthJohan - lengthJarik
+            for i in range(loop):
+                tagsJarik.apend("NULL")
+
+    if len(tagsJohan) != lengthLaurence:
+        if len(tagsJohan) > lengthLaurence:
+            loop = len(tagsJohan) - lengthLaurence
+            for i in range(loop):
+                tagsLaurence.append("NULL")
+        else:
+            loop = lengthLaurence - len(tagsJohan)
+            for i in range(loop):
+                tagsJohan.append("NULL")
+
+
     cm = ConfusionMatrix(tagsLaurence, tagsJohan)
     print(cm)
 
