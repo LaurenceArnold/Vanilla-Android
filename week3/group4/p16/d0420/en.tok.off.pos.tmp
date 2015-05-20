@@ -4,7 +4,7 @@
 18 26 1004 National NNP ORG https://en.wikipedia.org/wiki/National_Geographic_Society
 27 37 1005 Geographic NNP ORG https://en.wikipedia.org/wiki/National_Geographic_Society
 38 45 1006 Society NN ORG https://en.wikipedia.org/wiki/National_Geographic_Society
-45 47 1007 's VBZ ORG https://en.wikipedia.org/wiki/National_Geographic_Society
+45 47 1007 's VBZ
 48 60 1008 headquarters NNS
 61 63 1009 in IN
 64 74 1010 Washington NNP CIT https://en.wikipedia.org/wiki/Washington,_D.C.
