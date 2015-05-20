@@ -42,7 +42,7 @@ def main():
                         else:
                             tagsJarik.append("NOPE")
 
-    cm = ConfusionMatrix(tagsLaurence, tagsJohan)
+    cm = ConfusionMatrix(tagsLaurence, tagsJarik)
     print(cm)
 
     labels = set('PER COU CIT ENT ORG NAT'.split())

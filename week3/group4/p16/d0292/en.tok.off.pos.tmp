@@ -93,7 +93,7 @@
 526 529 4031 men NNS
 529 530 4032 . .
 531 534 5001 VOA NNP ORG https://en.wikipedia.org/wiki/Voice_of_America
-534 536 5002 's VBZ ORG https://en.wikipedia.org/wiki/Voice_of_America
+534 536 5002 's VBZ
 537 542 5003 Mandy NNP PER -
 543 548 5004 Clark NNP PER -
 549 556 5005 reports NNS

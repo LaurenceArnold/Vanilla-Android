@@ -39,9 +39,9 @@
 194 202 2022 priority NN
 202 203 2023 . .
 204 206 3001 On IN
-207 209 3002 31 CD CD http://en.wikipedia.org/wiki/March_2008
-210 215 3003 March NNP CD http://en.wikipedia.org/wiki/March_2008
-216 221 3004 2008, CD CD http://en.wikipedia.org/wiki/March_2008
+207 209 3002 31 CD
+210 215 3003 March NNP
+216 221 3004 2008, CD
 222 225 3005 the DT
 226 232 3006 United NNP ORG http://en.wikipedia.org/wiki/United_Nations
 233 240 3007 Nations NNS ORG http://en.wikipedia.org/wiki/United_Nations
@@ -73,7 +73,7 @@
 368 376 3033 injuries NNS
 376 377 3034 . .
 378 381 4001 VOA NNP ORG http://en.wikipedia.org/wiki/Voice_of_America
-381 383 4002 's VBZ ORG http://en.wikipedia.org/wiki/Voice_of_America
+381 383 4002 's VBZ
 384 391 4003 Tetiana NNP PER -
 392 401 4004 Koprowicz NNP PER -
 402 405 4005 has VBZ

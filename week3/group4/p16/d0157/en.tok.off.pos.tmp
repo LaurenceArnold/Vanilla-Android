@@ -75,8 +75,8 @@
 389 399 5005 immigrants NNS
 400 402 5006 in IN
 403 406 5007 the DT
-407 413 5008 United NNP COU -
-414 420 5009 States NNS COU -
+407 413 5008 United NNP COU http://en.wikipedia.org/wiki/United_States
+414 420 5009 States NNS COU http://en.wikipedia.org/wiki/United_States
 421 424 5010 are VBP
 425 432 5011 sending VBG
 433 437 5012 food NN
@@ -87,7 +87,7 @@
 461 465 5017 home NN
 465 466 5018 . .
 468 471 6001 VOA NNP ORG http://en.wikipedia.org/wiki/Voice_of_America
-471 473 6002 's VBZ ORG http://en.wikipedia.org/wiki/Voice_of_America
+471 473 6002 's VBZ
 474 481 6003 Deborah NNP PER -
 482 487 6004 Block NNP PER -
 488 491 6005 has VBZ

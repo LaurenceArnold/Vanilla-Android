@@ -51,7 +51,7 @@
 293 296 3017 One CD
 296 297 3018 . .
 298 301 4001 VOA NNP ORG https://en.wikipedia.org/wiki/Voice_of_America
-301 303 4002 's VBZ ORG https://en.wikipedia.org/wiki/Voice_of_America
+301 303 4002 's VBZ
 304 309 4003 Carol NNP PER -
 310 317 4004 Pearson NNP PER -
 318 325 4005 reports NNS

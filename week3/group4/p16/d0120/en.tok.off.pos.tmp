@@ -5,7 +5,7 @@
 28 30 1005 in IN
 31 32 1006 a DT
 33 42 1007 statement NN
-43 50 1008 Tuesday NNP CD http://en.wikipedia.org/wiki/Tuesday
+43 50 1008 Tuesday NNP
 51 55 1009 that DT
 56 59 1010 its PRP$
 60 66 1011 forces NNS
@@ -24,7 +24,7 @@
 144 151 2006 battled VBD
 152 155 2007 the DT
 156 165 2008 militants NNS
-166 172 2009 Sunday NNP CD http://en.wikipedia.org/wiki/Sunday
+166 172 2009 Sunday NNP
 173 175 2010 in IN
 176 181 2011 Qalat NNP COU http://en.wikipedia.org/wiki/Qalat
 182 190 2012 district NN COU http://en.wikipedia.org/wiki/Qalat_District

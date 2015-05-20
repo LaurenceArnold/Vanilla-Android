@@ -31,7 +31,7 @@
 168 172 2013 that DT
 173 178 2014 began VBD
 179 183 2015 late RB
-184 190 2016 Friday NNP CD http://en.wikipedia.org/wiki/Friday
+184 190 2016 Friday NNP
 191 193 2017 in IN
 194 195 2018 a DT
 196 203 2019 village NN
@@ -68,8 +68,8 @@
 368 371 3008 the DT
 372 382 3009 government NN
 383 385 3010 in IN
-386 390 3011 July RB CD http://en.wikipedia.org/wiki/July_2006
-391 395 3012 2006 CD CD http://en.wikipedia.org/wiki/July_2006
+386 390 3011 July RB
+391 395 3012 2006 CD
 395 396 3013 , ,
 397 400 3014 but CC
 401 404 3015 the DT

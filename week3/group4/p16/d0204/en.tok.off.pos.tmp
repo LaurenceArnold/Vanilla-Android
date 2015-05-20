@@ -52,7 +52,7 @@
 295 305 2030 conditions NNS
 305 306 2031 . .
 307 310 3001 VOA NNP ORG https://en.wikipedia.org/wiki/Voice_of_America
-310 312 3002 's VBZ ORG https://en.wikipedia.org/wiki/Voice_of_America
+310 312 3002 's VBZ
 313 317 3003 Alex NNP PER -
 318 328 3004 Villarreal NNP PER -
 329 336 3005 reports NNS

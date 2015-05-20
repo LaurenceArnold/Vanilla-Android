@@ -50,7 +50,7 @@
 287 293 2020 deadly RB
 294 301 2021 rampage NN
 302 307 2022 early RB
-308 315 2023 Tuesday NNP CD -
+308 315 2023 Tuesday NNP
 315 316 2024 . .
 320 331 3001 Authorities NNS
 332 335 3002 say VBP
@@ -82,7 +82,7 @@
 474 483 3028 automatic JJ
 484 489 3029 rifle NN
 489 490 3030 . .
-492 498 4001 Police NNP ORG http://en.wikipedia.org/wiki/Police
+492 498 4001 Police NNP
 499 502 4002 are VBP
 503 508 4003 still RB
 509 522 4004 investigating VBG

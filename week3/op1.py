@@ -35,7 +35,7 @@ def main():
                         token = columns[3]
                         tokenList.append(token)
 
-                        # POS tag token
+                        # POS tag token w
                         taggedTokens = nltk.pos_tag(tokenList)
 
                         # Add token to the line

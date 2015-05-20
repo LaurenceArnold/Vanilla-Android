@@ -17,7 +17,7 @@
 89 92 1017 and CC
 93 99 1018 reform NN
 100 105 1019 Haiti NNP COU https://en.wikipedia.org/wiki/Haiti
-105 107 1020 's VBZ COU https://en.wikipedia.org/wiki/Haiti
+105 107 1020 's VBZ
 108 117 1021 education NN
 118 124 1022 system NN
 124 125 1023 . .
@@ -55,7 +55,7 @@
 331 334 3010 the DT
 335 345 3011 earthquake NN
 346 348 3012 in IN
-349 356 3013 January NNP CD http://en.wikipedia.org/wiki/January
+349 356 3013 January NNP
 357 361 3014 that DT
 362 368 3015 killed VBD
 369 373 3016 more JJR
@@ -93,7 +93,7 @@
 546 555 5005 announced VBD
 556 559 5006 the DT
 560 564 5007 plan NN
-565 573 5008 Saturday NNP CD https://en.wikipedia.org/wiki/Sunday
+565 573 5008 Saturday NNP
 574 579 5009 along IN
 580 584 5010 with IN
 585 588 5011 IDB NNP ORG https://en.wikipedia.org/wiki/Inter-American_Development_Bank
