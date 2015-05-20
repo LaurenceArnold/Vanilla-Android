@@ -9,8 +9,8 @@
 51 58 1009 Michael NNP PER https://en.wikipedia.org/wiki/Michael_Jackson
 59 66 1010 Jackson NNP PER https://en.wikipedia.org/wiki/Michael_Jackson
 66 68 1011 's VBZ
-69 78 1012 Neverland NNP - https://en.wikipedia.org/wiki/Neverland_Ranch
-79 84 1013 Ranch NN - https://en.wikipedia.org/wiki/Neverland_Ranch
+69 78 1012 Neverland NNP 
+79 84 1013 Ranch NN 
 85 87 1014 in IN
 88 98 1015 California NNP COU https://en.wikipedia.org/wiki/California
 98 99 1016 . . 
@@ -60,8 +60,8 @@
 352 353 4017 . .
 354 361 5001 Jackson NNP
 361 363 5002 's VBZ
-364 373 5003 Neverland NNP - https://en.wikipedia.org/wiki/Neverland_Ranch
-374 379 5004 Ranch NN - https://en.wikipedia.org/wiki/Neverland_Ranch
+364 373 5003 Neverland NNP
+374 379 5004 Ranch NN
 380 382 5005 is VBZ
 383 384 5006 a DT
 385 400 5007 theme-park-like JJ

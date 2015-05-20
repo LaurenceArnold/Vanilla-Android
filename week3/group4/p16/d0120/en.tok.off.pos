@@ -26,8 +26,8 @@
 156 165 2008 militants NNS
 166 172 2009 Sunday NNP CD http://en.wikipedia.org/wiki/Sunday
 173 175 2010 in IN
-176 181 2011 Qalat NNP CIT http://en.wikipedia.org/wiki/Qalat
-182 190 2012 district NN
+176 181 2011 Qalat NNP COU http://en.wikipedia.org/wiki/Qalat
+182 190 2012 district NN COU http://en.wikipedia.org/wiki/Qalat_District
 191 193 2013 of IN
 194 199 2014 Zabul NNP COU http://en.wikipedia.org/wiki/Zabul_Province
 200 208 2015 province NN COU http://en.wikipedia.org/wiki/Zabul_Province
@@ -81,9 +81,9 @@
 473 482 6002 statement NN
 483 487 6003 said VBD
 488 490 6004 no DT
-491 497 6005 Afghan NNP COU http://en.wikipedia.org/wiki/Afghanistan
+491 497 6005 Afghan NNP
 498 500 6006 or CC
-501 509 6007 U.S.-led JJ COU http://en.wikipedia.org/wiki/United_States
+501 509 6007 U.S.-led JJ 
 510 516 6008 troops NNS
 517 521 6009 were VBD
 522 528 6010 killed VBD

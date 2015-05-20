@@ -32,8 +32,8 @@
 170 172 2016 to TO
 173 180 2017 patrons NNS
 181 183 2018 as IN
-184 191 2019 Colonel NNP - https://en.wikipedia.org/wiki/Colonel_Sanders
-192 199 2020 Sanders NNS - https://en.wikipedia.org/wiki/Colonel_Sanders
+184 191 2019 Colonel NNP PER http://en.wikipedia.org/wiki/Colonel_Sanders
+192 199 2020 Sanders NNS PER http://en.wikipedia.org/wiki/Colonel_Sanders
 199 200 2021 . .
 202 204 3001 In IN
 205 210 3002 Kabul NNP CIT https://en.wikipedia.org/wiki/Kabul
