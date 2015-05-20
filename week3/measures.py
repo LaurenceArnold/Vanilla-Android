@@ -42,31 +42,6 @@ def main():
                         else:
                             tagsJarik.append("NOPE")
 
-
-    lengthJohan = len(tagsJohan)
-    lengthLaurence = len(tagsLaurence)
-    lengthJarik = len(tagsJarik)
-    if lengthJohan != lengthJarik:
-        if lengthJarik > lengthJohan:
-            loop = lengthJarik - lengthJohan
-            for i in range(loop):
-                tagsJohan.append("NULL")
-        else:
-            loop = lengthJohan - lengthJarik
-            for i in range(loop):
-                tagsJarik.append("NULL")
-
-    if len(tagsJohan) != lengthLaurence:
-        if len(tagsJohan) > lengthLaurence:
-            loop = len(tagsJohan) - lengthLaurence
-            for i in range(loop):
-                tagsLaurence.append("NULL")
-        else:
-            loop = lengthLaurence - len(tagsJohan)
-            for i in range(loop):
-                tagsJohan.append("NULL")
-
-
     cm = ConfusionMatrix(tagsLaurence, tagsJohan)
     print(cm)
 
