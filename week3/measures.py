@@ -49,7 +49,7 @@ def main():
         else:
             loop = lengthJohan - lengthJarik
             for i in range(loop):
-                tagsJarik.apend("NULL")
+                tagsJarik.append("NULL")
 
     if len(tagsJohan) != lengthLaurence:
         if len(tagsJohan) > lengthLaurence:
