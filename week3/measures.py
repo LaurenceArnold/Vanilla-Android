@@ -19,6 +19,8 @@ def main():
                         if (len(columns) > 5):
                             token1 = columns[5]
                             tagsJohan.append(token1)
+                        else:
+                            tagsJohan.append("NOPE")
 
             elif (file == "en.tok.off.pos Laurence.tmp"):
                 with open(root+'/'+file, 'r') as in_f:
@@ -27,6 +29,8 @@ def main():
                         if len(columns) > 5:
                             token2 = columns[5]
                             tagsLaurence.append(token2)
+                        else:
+                            tagsLaurence.append("NOPE")
 
             elif (file == "en.tok.off.pos.tmp"):
                 with open(root+'/'+file, 'r') as in_f:
@@ -35,7 +39,8 @@ def main():
                         if len(columns) > 5:
                              token3= columns[5]
                              tagsJarik.append(token3)
-
+                        else:
+                            tagsJarik.append("NOPE")
 
 
     lengthJohan = len(tagsJohan)
