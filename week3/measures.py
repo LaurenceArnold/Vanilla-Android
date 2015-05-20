@@ -12,7 +12,7 @@ def main():
     directory = os.getcwd()
     for root, dirs, filenames in os.walk(directory):
         for file in filenames:
-            if file == "en.tok.off.johan":
+            if file == "en.tok.off.johan.tmp":
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                         columns = line.split()
@@ -20,7 +20,7 @@ def main():
                             token1 = columns[5]
                             tagsJohan.append(token1)
 
-            elif (file == "en.tok.off.pos Laurence"):
+            elif (file == "en.tok.off.pos Laurence.tmp"):
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                         columns = line.split()
@@ -28,7 +28,7 @@ def main():
                             token2 = columns[5]
                             tagsLaurence.append(token2)
 
-            elif (file == "en.tok.off.pos"):
+            elif (file == "en.tok.off.pos.tmp"):
                 with open(root+'/'+file, 'r') as in_f:
                      for line in in_f:
                         columns = line.split()
@@ -90,6 +90,7 @@ def main():
         else:
             precision = true_positives[i] / float(true_positives[i]+false_positives[i])
             recall = true_positives[i] / float(true_positives[i]+false_negatives[i])
+            print(recall)
             fscore = 2 * (precision * recall) / float(precision + recall)
         print(i, fscore)
 
