@@ -15,8 +15,8 @@
 95 100 1015 Union NN ORG https://en.wikipedia.org/wiki/European_Union
 101 111 1016 membership NN
 111 112 1017 . .
-113 116 2001 Mr. NNP https://en.wikipedia.org/wiki/Jacques_Chirac
-117 123 2002 Chirac NNP https://en.wikipedia.org/wiki/Jacques_Chirac
+113 116 2001 Mr. NNP 
+117 123 2002 Chirac NNP
 124 128 2003 told VBD
 129 137 2004 visiting VBG
 138 146 2005 Croatian JJ https://en.wikipedia.org/wiki/Croatia
