@@ -19,7 +19,7 @@
 117 123 2002 Chirac NNP PER https://en.wikipedia.org/wiki/Jacques_Chirac 
 124 128 2003 told VBD
 129 137 2004 visiting VBG
-138 146 2005 Croatian JJ https://en.wikipedia.org/wiki/Croatia -
+138 146 2005 Croatian JJ COU https://en.wikipedia.org/wiki/Croatia
 147 152 2006 Prime NNP
 153 161 2007 Minister NNP
 162 165 2008 Ivo NNP PER -
