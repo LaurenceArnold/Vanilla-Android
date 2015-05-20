@@ -9,6 +9,7 @@ def main():
     tagsLaurence = []
     tagsJohan = []
 
+    # Fill taglist for each group member
     directory = os.getcwd()
     for root, dirs, filenames in os.walk(directory):
         for file in filenames:
@@ -41,10 +42,43 @@ def main():
                              tagsJarik.append(token3)
                         else:
                             tagsJarik.append("NOPE")
-
-    cm = ConfusionMatrix(tagsLaurence, tagsJarik)
-    print(cm)
-
+    
+    # Define confusion matrix
+    cm = ConfusionMatrix(tagsLaurence, tagsJohan)
+    
+    # Search for interesting vs non-interesting entities
+    # (how often we agree on finding anything, no matter the tag)
+    labelNope = set('PER COU CIT ENT ORG NAT NOPE'.split())
+    tpNopes = Counter()
+    fpNopes = Counter()
+    fnNopes = Counter()
+    
+    for i in labelNope:
+        for j in labelNope:
+            if ((i != 'NOPE') and (j != 'NOPE')):
+                tpNopes[i] += cm[i,j]
+            else:
+                fnNopes[i] += cm[i,j]
+                fpNopes[j] += cm[i,j]
+    
+    
+    print("\n\n##############################################################")
+    print("Opdracht 3.1:\n")
+    fscoresNope = 0
+    for i in sorted(labelNope):
+        print(i)
+        if tpNopes[i] == 0:
+            fscore = 0
+        else:
+            precision = tpNopes[i] / float(tpNopes[i]+fpNopes[i])
+            recall = tpNopes[i] / float(tpNopes[i]+fnNopes[i])
+            fscore = 2 * (precision * recall) / float(precision + recall)
+            print("Precision: " + str(precision))
+            print("Recall: " + str(recall))
+        print("f-score: " + str(fscore) + "\n")
+        fscoresNope += fscore
+    
+    
     labels = set('PER COU CIT ENT ORG NAT'.split())
 
     true_positives = Counter()
@@ -58,20 +92,28 @@ def main():
             else:
                 false_negatives[i] += cm[i,j]
                 false_positives[j] += cm[i,j]
-
-    print("TP:", sum(true_positives.values()), true_positives)
-    print("FN:", sum(false_negatives.values()), false_negatives)
-    print("FP:", sum(false_positives.values()), false_positives)
-    print() 
-
+    
+    print("##############################################################")
+    print("Opdracht 3.2:\n")
+    fscores = 0
+    
     for i in sorted(labels):
+        print(i)
         if true_positives[i] == 0:
             fscore = 0
         else:
             precision = true_positives[i] / float(true_positives[i]+false_positives[i])
             recall = true_positives[i] / float(true_positives[i]+false_negatives[i])
-            print(recall)
             fscore = 2 * (precision * recall) / float(precision + recall)
-        print(i, fscore)
+            print("Precision: " + str(precision))
+            print("Recall: " + str(recall))
+        print("f-score: " + str(fscore) + "\n")
+        fscores += fscore
+
+    print("\n\nGemiddelde f-score: " + str(fscores / 6))
+    print("##############################################################")
+    print("Opdracht 3.3 (matrix):\n")
+    print(cm)
+    print("##############################################################")
 
 main()
