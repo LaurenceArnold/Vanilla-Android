@@ -1,5 +1,5 @@
-0 7 1001 Sheriff NNP PER http://en.wikipedia.org/wiki/Sheriff
-7 9 1002 's VBZ PER http://en.wikipedia.org/wiki/Sheriff
+0 7 1001 Sheriff NNP 
+7 9 1002 's VBZ
 10 23 1003 investigators NNS
 24 28 1004 have VBP
 29 38 1005 conducted VBD
@@ -8,9 +8,9 @@
 48 50 1008 of IN
 51 58 1009 Michael NNP PER http://en.wikipedia.org/wiki/Michael_Jackson
 59 66 1010 Jackson NNP PER http://en.wikipedia.org/wiki/Michael_Jackson
-66 68 1011 's VBZ PER http://en.wikipedia.org/wiki/Michael_Jackson
-69 78 1012 Neverland NNP CIT http://en.wikipedia.org/wiki/Neverland_Ranch
-79 84 1013 Ranch NN CIT http://en.wikipedia.org/wiki/Neverland_Ranch
+66 68 1011 's VBZ
+69 78 1012 Neverland NNP 
+79 84 1013 Ranch NN
 85 87 1014 in IN
 88 98 1015 California NNP COU http://en.wikipedia.org/wiki/California
 98 99 1016 . .
@@ -26,8 +26,8 @@
 171 176 2010 music NN
 177 181 2011 star NN
 182 184 2012 in IN
-185 193 2013 December NNP CD http://en.wikipedia.org/wiki/December_2003
-194 198 2014 2003 CD CD http://en.wikipedia.org/wiki/December_2003
+185 193 2013 December NNP
+194 198 2014 2003 CD 
 198 199 2015 . .
 200 203 3001 The DT
 204 211 3002 charges NNS
@@ -46,8 +46,8 @@
 272 274 4003 's VBZ
 275 284 4004 spokesman NN
 285 294 4005 confirmed VBD
-295 301 4006 Friday NNP CD http://en.wikipedia.org/wiki/Friday
-301 303 4007 's VBZ http://en.wikipedia.org/wiki/Friday -
+295 301 4006 Friday NNP 
+301 303 4007 's VBZ
 304 310 4008 search NN
 310 311 4009 , ,
 312 315 4010 but CC
@@ -58,10 +58,10 @@
 337 344 4015 further RB
 345 352 4016 details NNS
 352 353 4017 . .
-354 361 5001 Jackson NNP PER http://en.wikipedia.org/wiki/Michael_Jackson
-361 363 5002 's VBZ PER http://en.wikipedia.org/wiki/Michael_Jackson
-364 373 5003 Neverland NNP CIT http://en.wikipedia.org/wiki/Neverland_Ranch
-374 379 5004 Ranch NN CIT http://en.wikipedia.org/wiki/Neverland_Ranch
+354 361 5001 Jackson NNP
+361 363 5002 's VBZ
+364 373 5003 Neverland NNP 
+374 379 5004 Ranch NN
 380 382 5005 is VBZ
 383 384 5006 a DT
 385 400 5007 theme-park-like JJ
@@ -97,6 +97,6 @@
 581 590 7004 scheduled VBN
 591 593 7005 to TO
 594 599 7006 being VBG
-600 607 7007 January NNP CD http://en.wikipedia.org/wiki/January_31
-608 610 7008 31 CD CD http://en.wikipedia.org/wiki/January_31
+600 607 7007 January NNP 
+608 610 7008 31 CD
 610 611 7009 . .

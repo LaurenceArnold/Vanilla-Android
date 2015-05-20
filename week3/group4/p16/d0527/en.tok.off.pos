@@ -102,3 +102,10 @@
 604 611 5014 Alberto NNP PER https://en.wikipedia.org/wiki/Luis_Alberto_Moreno
 612 618 5015 Moreno NNP PER https://en.wikipedia.org/wiki/Luis_Alberto_Moreno
 618 619 5016 . .
+0 2 1001 An DT
+3 16 1002 international JJ
+17 28 1003 development NN
+29 34 1004 group NN
+35 37 1005 is VBZ
+38 45 1006 working VBG
+46 48 1007 to TO

@@ -1,6 +1,6 @@
 0 1 1001 A DT
 2 9 1002 leftist NN
-10 19 1003 Colombian JJ PER http://en.wikipedia.org/wiki/Colombians
+10 19 1003 Colombian JJ 
 20 29 1004 guerrilla NN
 30 36 1005 leader NN
 37 40 1006 has VBZ
@@ -60,7 +60,7 @@
 328 333 3010 clash NN
 333 334 3011 . .
 335 343 4001 Colombia NNP COU http://en.wikipedia.org/wiki/Colombia
-343 345 4002 's VBZ COU http://en.wikipedia.org/wiki/Colombia
+343 345 4002 's VBZ
 346 358 4003 long-running JJ
 359 367 4004 conflict NN
 368 372 4005 pits NNS

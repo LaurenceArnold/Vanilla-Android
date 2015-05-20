@@ -4,11 +4,11 @@
 14 19 1004 Lanka NNP COU http://en.wikipedia.org/wiki/Sri_Lanka
 20 23 1005 say VBP
 24 27 1006 300 CD
-28 37 1007 prisoners NNS PER -
+28 37 1007 prisoners NNS
 38 42 1008 took VBD
 43 52 1009 advantage NN
 53 55 1010 of IN
-56 62 1011 Sunday NNP CD -
+56 62 1011 Sunday NNP
 62 64 1012 's VBZ
 65 72 1013 massive JJ
 73 83 1014 earthquake NN
@@ -39,8 +39,8 @@
 220 226 2016 prison NN
 226 227 2017 , ,
 228 229 2018 a DT
-230 234 2019 16th JJ CD http://en.wikipedia.org/wiki/16th_century
-235 242 2020 century NN CD http://en.wikipedia.org/wiki/16th_century
+230 234 2019 16th JJ
+235 242 2020 century NN
 243 254 2021 Dutch-built JJ
 255 259 2022 fort NN
 260 262 2023 in IN
@@ -60,7 +60,7 @@
 340 345 3008 break NN
 346 348 3009 in IN
 349 358 3010 Indonesia NNP COU http://en.wikipedia.org/wiki/Indonesia
-358 360 3011 's VBZ http://en.wikipedia.org/wiki/Indonesia -
+358 360 3011 's VBZ 
 361 365 3012 Aceh NNP COU http://en.wikipedia.org/wiki/Aceh
 366 374 3013 province NN
 374 375 3014 . .
@@ -68,7 +68,7 @@
 383 388 4002 there EX
 389 392 4003 say VBP
 393 396 4004 200 CD
-397 406 4005 prisoners NNS PER -
+397 406 4005 prisoners NNS
 407 411 4006 fled VBD
 412 417 4007 after IN
 418 419 4008 a DT

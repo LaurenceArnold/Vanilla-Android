@@ -1,14 +1,14 @@
-0 6 1001 French JJ PER http://en.wikipedia.org/wiki/French_Presidents
-7 16 1002 President NNP PER http://en.wikipedia.org/wiki/French_Presidents
+0 6 1001 French JJ
+7 16 1002 President NNP
 17 24 1003 Jacques NNS PER http://en.wikipedia.org/wiki/Jacques_Chirac
-25 31 1004 Chirac NNP PEr http://en.wikipedia.org/wiki/Jacques_Chirac
+25 31 1004 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 32 35 1005 has VBZ
 36 43 1006 offered VBD
 44 47 1007 his PRP$
 48 55 1008 support NN
 56 59 1009 for IN
 60 67 1010 Croatia NNP COU http://en.wikipedia.org/wiki/Croatia
-67 69 1011 's VBZ COU http://en.wikipedia.org/wiki/Croatia
+67 69 1011 's VBZ
 70 81 1012 aspirations NNS
 82 85 1013 for IN
 86 94 1014 European JJ ORG http://en.wikipedia.org/wiki/European_Union
@@ -19,11 +19,11 @@
 117 123 2002 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 124 128 2003 told VBD
 129 137 2004 visiting VBG
-138 146 2005 Croatian JJ PER http://en.wikipedia.org/wiki/Croatian_Prime_Minister
-147 152 2006 Prime NNP PER http://en.wikipedia.org/wiki/Croatian_Prime_Minister
-153 161 2007 Minister NNP PER http://en.wikipedia.org/wiki/Croatian_Prime_Minister
-162 165 2008 Ivo NNP PER http://en.wikipedia.org/wiki/Ivo_Sanader
-166 172 2009 Sander NNP PER http://en.wikipedia.org/wiki/Ivo_Sanader
+138 146 2005 Croatian JJ 
+147 152 2006 Prime NNP 
+153 161 2007 Minister NNP
+162 165 2008 Ivo NNP PER - 
+166 172 2009 Sander NNP PER - 
 173 177 2010 that DT
 178 181 2011 the DT
 182 190 2012 schedule NN
