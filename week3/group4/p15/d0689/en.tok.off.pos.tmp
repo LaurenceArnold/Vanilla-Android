@@ -3,11 +3,11 @@
 14 21 1003 founded VBD
 22 24 1004 as IN
 25 26 1005 a DT
-27 34 1006 British JJ COU http://en.wikipedia.org/wiki/British
+27 34 1006 British JJ
 35 42 1007 trading NN
 43 49 1008 colony NN
 50 52 1009 in IN
-53 57 1010 1819 CD CD http://en.wikipedia.org/wiki/1819
+53 57 1010 1819 CD
 57 58 1011 . .
 59 61 2001 It PRP
 62 68 2002 joined VBD
@@ -15,7 +15,7 @@
 73 82 2004 Malaysian JJ ORG http://en.wikipedia.org/wiki/Malaysia
 83 93 2005 Federation NN ORG http://en.wikipedia.org/wiki/Malaysia
 94 96 2006 in IN
-97 101 2007 1963 CD CD http://en.wikipedia.org/wiki/1963
+97 101 2007 1963 CD
 102 105 2008 but CC
 106 115 2009 separated VBD
 116 119 2010 two CD
@@ -61,7 +61,7 @@
 344 348 3034 with IN
 349 352 3035 per IN
 353 359 3036 capita NN
-360 363 3037 GDP NNP ORG http://en.wikipedia.org/wiki/Gross_domestic_product
+360 363 3037 GDP NNP
 364 369 3038 equal JJ
 370 372 3039 to TO
 373 377 3040 that DT
