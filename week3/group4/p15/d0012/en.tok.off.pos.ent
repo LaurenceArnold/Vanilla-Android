@@ -1,29 +1,29 @@
 0 6 1001 French JJ
 7 16 1002 President NNP
-17 24 1003 Jacques NNS
-25 31 1004 Chirac NNP
+17 24 1003 Jacques NNS PER http://en.wikipedia.org/wiki/Jacques_Chirac
+25 31 1004 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 32 35 1005 has VBZ
 36 43 1006 offered VBD
 44 47 1007 his PRP$
 48 55 1008 support NN
 56 59 1009 for IN
-60 67 1010 Croatia NNP
+60 67 1010 Croatia NNP COU http://en.wikipedia.org/wiki/Croatia
 67 69 1011 's VBZ
 70 81 1012 aspirations NNS
 82 85 1013 for IN
-86 94 1014 European JJ
-95 100 1015 Union NN
+86 94 1014 European JJ ORG http://en.wikipedia.org/wiki/European_Union
+95 100 1015 Union NN ORG http://en.wikipedia.org/wiki/European_Union
 101 111 1016 membership NN
 111 112 1017 . .
-113 116 2001 Mr. NNP
-117 123 2002 Chirac NNP
+113 116 2001 Mr. NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
+117 123 2002 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 124 128 2003 told VBD
 129 137 2004 visiting VBG
 138 146 2005 Croatian JJ
 147 152 2006 Prime NNP
 153 161 2007 Minister NNP
-162 165 2008 Ivo NNP
-166 172 2009 Sander NNP
+162 165 2008 Ivo NNP PER - 
+166 172 2009 Sander NNP PER - 
 173 177 2010 that DT
 178 181 2011 the DT
 182 190 2012 schedule NN
@@ -34,9 +34,9 @@
 219 221 2017 be VB
 222 231 2018 respected VBD
 231 232 2019 . .
-233 240 3001 Croatia NNP
+233 240 3001 Croatia NNP COU http://en.wikipedia.org/wiki/Croatia
 240 242 3002 's VBZ
-243 245 3003 EU NNP
+243 245 3003 EU NNP ORG http://en.wikipedia.org/wiki/European_Union
 246 256 3004 membership NN
 257 269 3005 negotiations NNS
 270 275 3006 began VBD
@@ -60,16 +60,16 @@
 368 374 3024 wanted VBD
 375 377 3025 by IN
 378 381 3026 the DT
-382 388 3027 United NNP
-389 396 3028 Nations NNS
-397 400 3029 war NN
-401 407 3030 crimes NNS
-408 416 3031 tribunal JJ
+382 388 3027 United NNP ORG http://en.wikipedia.org/wiki/United_Nations_War_Crimes_Commission
+389 396 3028 Nations NNS ORG http://en.wikipedia.org/wiki/United_Nations_War_Crimes_Commission
+397 400 3029 war NN ORG http://en.wikipedia.org/wiki/United_Nations_War_Crimes_Commission
+401 407 3030 crimes NNS ORG http://en.wikipedia.org/wiki/United_Nations_War_Crimes_Commission
+408 416 3031 tribunal JJ ORG http://en.wikipedia.org/wiki/United_Nations_War_Crimes_Commission
 416 417 3032 . .
-418 421 4001 Mr. NNP
-422 428 4002 Chirac NNP
+418 421 4001 Mr. NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
+422 428 4002 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 429 433 4003 says VBZ
-434 441 4004 Croatia NNP
+434 441 4004 Croatia NNP COU http://en.wikipedia.org/wiki/Croatia
 441 443 4005 's VBZ
 444 449 4006 rapid JJ
 450 458 4007 economic JJ

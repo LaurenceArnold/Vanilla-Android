@@ -1,4 +1,4 @@
-0 4 1001 U.S. NNP
+0 4 1001 U.S. NNP COU http://en.wikipedia.org/wiki/United_States
 5 10 1002 stock NN
 11 18 1003 markets NNS
 19 22 1004 are VBP
@@ -45,22 +45,22 @@
 260 264 3007 Asia NNP
 264 265 3008 , ,
 266 271 3009 where WRB
-272 277 3010 Japan NNP
+272 277 3010 Japan NNP COU http://en.wikipedia.org/wiki/Japan
 277 279 3011 's VBZ
 280 289 3012 benchmark NN
-290 296 3013 Nikkei NNP
-297 302 3014 index NN
+290 296 3013 Nikkei NNP ORG http://en.wikipedia.org/wiki/Nikkei_225
+297 302 3014 index NN ORG http://en.wikipedia.org/wiki/Nikkei_225
 303 307 3015 fell VBD
 308 311 3016 two CD
 312 319 3017 percent NN
 319 320 3018 , ,
 321 324 3019 and CC
-325 329 3020 Hong NNP
-330 334 3021 Kong NNP
+325 329 3020 Hong NNP COU http://en.wikipedia.org/wiki/Hong_Kong
+330 334 3021 Kong NNP COU http://en.wikipedia.org/wiki/Hong_Kong
 334 336 3022 's VBZ
-337 341 3023 Hang NNP
-342 346 3024 Seng NNP
-347 352 3025 index NN
+337 341 3023 Hang NNP ORG http://en.wikipedia.org/wiki/Hang_Seng_Index
+342 346 3024 Seng NNP ORG http://en.wikipedia.org/wiki/Hang_Seng_Index
+347 352 3025 index NN ORG http://en.wikipedia.org/wiki/Hang_Seng_Index
 353 356 3026 was VBD
 357 361 3027 down IN
 362 368 3028 nearly RB

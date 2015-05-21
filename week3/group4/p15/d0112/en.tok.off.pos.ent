@@ -6,15 +6,15 @@
 39 40 1006 a DT
 41 47 1007 search NN
 48 50 1008 of IN
-51 58 1009 Michael NNP
-59 66 1010 Jackson NNP
+51 58 1009 Michael NNP PER https://en.wikipedia.org/wiki/Michael_Jackson
+59 66 1010 Jackson NNP PER https://en.wikipedia.org/wiki/Michael_Jackson
 66 68 1011 's VBZ
 69 78 1012 Neverland NNP
 79 84 1013 Ranch NN
 85 87 1014 in IN
-88 98 1015 California NNP
+88 98 1015 California NNP COU http://en.wikipedia.org/wiki/California
 98 99 1016 . .
-100 110 2001 California NNP
+100 110 2001 California NNP COU http://en.wikipedia.org/wiki/California
 111 122 2002 authorities NNS
 123 128 2003 filed VBD
 129 134 2004 child NN
@@ -22,8 +22,8 @@
 147 154 2006 charges NNS
 155 162 2007 against IN
 163 166 2008 the DT
-167 170 2009 pop NN
-171 176 2010 music NN
+167 170 2009 pop NN ENT http://en.wikipedia.org/wiki/Pop_music
+171 176 2010 music NN ENT http://en.wikipedia.org/wiki/Pop_music
 177 181 2011 star NN
 182 184 2012 in IN
 185 193 2013 December NNP
@@ -71,11 +71,11 @@
 418 428 5011 kilometers NNS
 429 438 5012 northwest NN
 439 441 5013 of IN
-442 445 5014 Los NNP
-446 453 5015 Angeles NNS
+442 445 5014 Los NNP CIT http://en.wikipedia.org/wiki/Los_Angeles
+446 453 5015 Angeles NNS CIT http://en.wikipedia.org/wiki/Los_Angeles
 453 454 5016 . .
-455 462 6001 Michael NNP
-463 470 6002 Jackson NNP
+455 462 6001 Michael NNP PER http://en.wikipedia.org/wiki/Michael_Jackson
+463 470 6002 Jackson NNP PER http://en.wikipedia.org/wiki/Michael_Jackson
 471 474 6003 has VBZ
 475 482 6004 pleaded VBD
 483 486 6005 not RB

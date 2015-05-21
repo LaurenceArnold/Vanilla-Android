@@ -1,7 +1,7 @@
 0 6 1001 Police NNP
 7 9 1002 in IN
-10 13 1003 Sri NNP
-14 19 1004 Lanka NNP
+10 13 1003 Sri NNP COU http://en.wikipedia.org/wiki/Sri_Lanka
+14 19 1004 Lanka NNP COU http://en.wikipedia.org/wiki/Sri_Lanka
 20 23 1005 say VBP
 24 27 1006 300 CD
 28 37 1007 prisoners NNS
@@ -48,9 +48,9 @@
 265 273 2025 southern NN
 274 281 2026 coastal JJ
 282 286 2027 town NN
-287 293 2028 Matara NNP
+287 293 2028 Matara NNP CIT https://en.wikipedia.org/wiki/Matara,_Sri_Lanka
 293 294 2029 . .
-295 302 3001 Reuters NNP
+295 302 3001 Reuters NNP ORG http://en.wikipedia.org/wiki/Reuters
 303 307 3002 news NN
 308 314 3003 agency NN
 315 322 3004 reports NNS
@@ -59,10 +59,10 @@
 333 339 3007 prison NN
 340 345 3008 break NN
 346 348 3009 in IN
-349 358 3010 Indonesia NNP
+349 358 3010 Indonesia NNP COU http://en.wikipedia.org/wiki/Indonesia
 358 360 3011 's VBZ
-361 365 3012 Aceh NNP
-366 374 3013 province NN
+361 365 3012 Aceh NNP COU http://en.wikipedia.org/wiki/Aceh
+366 374 3013 province NN COU http://en.wikipedia.org/wiki/Aceh
 374 375 3014 . .
 376 382 4001 Police NNP
 383 388 4002 there EX
