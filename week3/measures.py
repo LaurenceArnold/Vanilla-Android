@@ -77,14 +77,17 @@ def main():
     print("\n\n##############################################################")
     print("Opdracht 3.1:\n")
 
+    # Get the precision, recall and fscore
     precisionOne, recallOne, fscoreOne = compare(tagsLaurence, tagsJohan)
     precisionTwo, recallTwo, fscoreTwo = compare(tagsLaurence, tagsJarik)
     precisionThree, recallThree, fscoreThree = compare(tagsJohan, tagsJarik)
 
+    # Calculate the average
     averagePrecision = (precisionOne + precisionTwo + precisionThree) / 3
     averageRecall = (recallOne + recallTwo + recallThree) / 3
     averageFscore = (fscoreOne + fscoreTwo + fscoreThree) / 3
 
+    # Show the average
     print("Average precision: {}".format(averagePrecision))
     print("Average recall: {}".format(averageRecall))
     print("Average fscore: {}".format(averageFscore))
