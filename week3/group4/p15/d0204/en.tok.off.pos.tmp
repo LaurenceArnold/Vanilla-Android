@@ -1,7 +1,7 @@
 1 4 1001 One CD
 5 7 1002 of IN
 8 14 1003 Russia NNP COU http://en.wikipedia.org/wiki/Russia
-14 16 1004 's VBZ COU http://en.wikipedia.org/wiki/Russia
+14 16 1004 's VBZ
 17 21 1005 most JJS
 22 29 1006 popular JJ
 30 37 1007 fashion NN
@@ -37,7 +37,7 @@
 195 202 1037 success NN
 203 205 1038 in IN
 206 213 1039 America NNP COU http://en.wikipedia.org/wiki/United_States
-213 215 1040 's VBZ COU http://en.wikipedia.org/wiki/United_States
+213 215 1040 's VBZ
 216 223 1041 fashion NN
 224 231 1042 capital NN
 232 235 1043 New NNP CIT http://en.wikipedia.org/wiki/New_York_City
@@ -45,7 +45,7 @@
 241 245 1045 City NNP CIT http://en.wikipedia.org/wiki/New_York_City
 245 246 1046 . .
 247 250 2001 VOA NNP ORG http://en.wikipedia.org/wiki/Voice_of_America
-250 252 2002 's VBZ ORG http://en.wikipedia.org/wiki/Voice_of_America
+250 252 2002 's VBZ ORG 
 253 258 2003 Elena NNP PER -
 259 269 2004 Mikhailova NNP PER -
 270 280 2005 introduces NNS

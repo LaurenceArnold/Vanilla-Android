@@ -13,7 +13,7 @@
 82 85 1013 for IN
 86 94 1014 European JJ ORG http://en.wikipedia.org/wiki/European_Union
 95 100 1015 Union NN ORG http://en.wikipedia.org/wiki/European_Union
-101 111 1016 membership NN ORG -
+101 111 1016 membership NN
 111 112 1017 . .
 113 116 2001 Mr. NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
 117 123 2002 Chirac NNP PER http://en.wikipedia.org/wiki/Jacques_Chirac
@@ -41,7 +41,7 @@
 257 269 3005 negotiations NNS
 270 275 3006 began VBD
 276 278 3007 in IN
-279 286 3008 October NNP CD http://en.wikipedia.org/wiki/October
+279 286 3008 October NNP
 287 292 3009 after IN
 293 295 3010 an DT
 296 307 3011 eight-month JJ
