@@ -56,7 +56,7 @@ def main():
                             tagsJarik.append("NOPE")
 
     # Define confusion matrix
-    cm = ConfusionMatrix(tagsLaurence, tagsJarik)
+    cm = ConfusionMatrix(tagsLaurence, tagsJohan)
     
     # Search for interesting vs non-interesting entities
     # (how often we agree on finding anything, no matter the tag)
