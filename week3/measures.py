@@ -3,8 +3,20 @@ from collections import Counter
 from nltk.metrics import ConfusionMatrix
 import os, sys  
 
+def compare(listOne, listTwo):
+
+    truePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j != 'NOPE'])
+    falseNegative = len([i for i, j in zip(listOne, listTwo) if i == 'NOPE' and j != 'NOPE'])
+    falsePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j == 'NOPE'])
+
+    precision = truePositive / float(truePositive+falsePositive)
+    recall = truePositive / float(truePositive+falseNegative)
+    fscore = 2 * (precision * recall) / float(precision + recall)
+
+    return precision, recall, fscore
 
 def main():
+
     tagsJarik = []
     tagsLaurence = []
     tagsJohan = []
@@ -42,9 +54,9 @@ def main():
                              tagsJarik.append(token3)
                         else:
                             tagsJarik.append("NOPE")
-    
+
     # Define confusion matrix
-    cm = ConfusionMatrix(tagsLaurence, tagsJohan)
+    cm = ConfusionMatrix(tagsLaurence, tagsJarik)
     
     # Search for interesting vs non-interesting entities
     # (how often we agree on finding anything, no matter the tag)
@@ -64,21 +76,19 @@ def main():
     
     print("\n\n##############################################################")
     print("Opdracht 3.1:\n")
-    fscoresNope = 0
-    for i in sorted(labelNope):
-        print(i)
-        if tpNopes[i] == 0:
-            fscore = 0
-        else:
-            precision = tpNopes[i] / float(tpNopes[i]+fpNopes[i])
-            recall = tpNopes[i] / float(tpNopes[i]+fnNopes[i])
-            fscore = 2 * (precision * recall) / float(precision + recall)
-            print("Precision: " + str(precision))
-            print("Recall: " + str(recall))
-        print("f-score: " + str(fscore) + "\n")
-        fscoresNope += fscore
-    
-    
+
+    precisionOne, recallOne, fscoreOne = compare(tagsLaurence, tagsJohan)
+    precisionTwo, recallTwo, fscoreTwo = compare(tagsLaurence, tagsJarik)
+    precisionThree, recallThree, fscoreThree = compare(tagsJohan, tagsJarik)
+
+    averagePrecision = (precisionOne + precisionTwo + precisionThree) / 3
+    averageRecall = (recallOne + recallTwo + recallThree) / 3
+    averageFscore = (fscoreOne + fscoreTwo + fscoreThree) / 3
+
+    print("Average precision: {}".format(averagePrecision))
+    print("Average recall: {}".format(averageRecall))
+    print("Average fscore: {}".format(averageFscore))
+
     labels = set('PER COU CIT ENT ORG NAT'.split())
 
     true_positives = Counter()
