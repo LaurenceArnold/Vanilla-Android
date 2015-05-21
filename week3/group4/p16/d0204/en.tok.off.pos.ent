@@ -25,14 +25,14 @@
 133 138 2003 study NN
 139 141 2004 in IN
 142 145 2005 the DT
-146 153 2006 Journal NNP
-154 156 2007 of IN
-157 160 2008 the DT
-161 169 2009 American NNP
-170 177 2010 Medical JJ
-178 189 2011 Association NN
+146 153 2006 Journal NNP ENT https://en.wikipedia.org/wiki/JAMA_(journal)
+154 156 2007 of IN ENT https://en.wikipedia.org/wiki/JAMA_(journal)
+157 160 2008 the DT ENT https://en.wikipedia.org/wiki/JAMA_(journal)
+161 169 2009 American NNP ENT https://en.wikipedia.org/wiki/JAMA_(journal)
+170 177 2010 Medical JJ ENT https://en.wikipedia.org/wiki/JAMA_(journal)
+178 189 2011 Association NN ENT https://en.wikipedia.org/wiki/JAMA_(journal)
 190 191 2012 [ NN
-191 195 2013 JAMA NNP
+191 195 2013 JAMA NNP ENT https://en.wikipedia.org/wiki/JAMA_(journal)
 195 196 2014 ] NN
 197 202 2015 finds NNS
 203 212 2016 treatment NN
@@ -51,9 +51,9 @@
 289 294 2029 heart NN
 295 305 2030 conditions NNS
 305 306 2031 . .
-307 310 3001 VOA NNP
+307 310 3001 VOA NNP ORG https://en.wikipedia.org/wiki/Voice_of_America
 310 312 3002 's VBZ
-313 317 3003 Alex NNP
-318 328 3004 Villarreal NNP
+313 317 3003 Alex NNP PER -
+318 328 3004 Villarreal NNP PER -
 329 336 3005 reports NNS
 336 337 3006 . .
