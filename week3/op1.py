@@ -43,7 +43,7 @@ def main():
                         newLine = ' '.join(columns)
 
                         # Write results to new file
-                        with open(root+'/en.tok.off.pos.en', 'a') as posfile:
+                        with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
                             posfile.write(newLine + '\n')
 
 
