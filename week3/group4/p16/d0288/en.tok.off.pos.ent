@@ -4,7 +4,7 @@
 24 30 1004 riders NNS
 31 34 1005 are VBP
 35 37 1006 in IN
-38 48 1007 Washington NNP
+38 48 1007 Washington NNP CIT https://en.wikipedia.org/wiki/Washington,_D.C.
 49 52 1008 for IN
 53 54 1009 a DT
 55 61 1010 parade NN
@@ -25,7 +25,7 @@
 128 131 1025 Day NNP
 132 139 1026 holiday NN
 140 148 1027 honoring VBG
-149 153 1028 U.S. NNP
+149 153 1028 U.S. NNP COU https://en.wikipedia.org/wiki/United_States
 154 162 1029 military JJ
 163 172 1030 personnel NN
 173 179 1031 killed VBD
@@ -37,7 +37,7 @@
 202 205 2003 are VBP
 206 214 2004 visiting VBG
 215 218 2005 the DT
-219 226 2006 Vietnam NNP
+219 226 2006 Vietnam NNP COU https://en.wikipedia.org/wiki/Vietnam
 227 235 2007 Veterans NNS
 236 244 2008 memorial JJ
 245 251 2009 Sunday NNP
@@ -72,15 +72,15 @@
 396 403 3015 include NN
 404 407 3016 pop NN
 408 413 3017 group NN
-414 418 3018 Paul NNP
-419 425 3019 Revere RB
-426 429 3020 and CC
-430 433 3021 The DT
-434 441 3022 Raiders NNS
+414 418 3018 Paul NNP ENT https://en.wikipedia.org/wiki/Paul_Revere_%26_the_Raiders
+419 425 3019 Revere RB ENT https://en.wikipedia.org/wiki/Paul_Revere_%26_the_Raiders
+426 429 3020 and CC ENT https://en.wikipedia.org/wiki/Paul_Revere_%26_the_Raiders
+430 433 3021 The DT ENT https://en.wikipedia.org/wiki/Paul_Revere_%26_the_Raiders
+434 441 3022 Raiders NNS ENT https://en.wikipedia.org/wiki/Paul_Revere_%26_the_Raiders
 442 445 3023 and CC
 446 452 3024 singer NN
-453 458 3025 Nancy NNP
-459 466 3026 Sinatra NNP
+453 458 3025 Nancy NNP PER https://en.wikipedia.org/wiki/Nancy_Sinatra
+459 466 3026 Sinatra NNP PER https://en.wikipedia.org/wiki/Nancy_Sinatra
 466 467 3027 . .
 468 471 4001 The DT
 472 473 4002 " NN
@@ -91,7 +91,7 @@
 496 508 4007 specifically RB
 509 515 4008 honors NNS
 516 523 4009 missing VBG
-524 528 4010 U.S. NNP
+524 528 4010 U.S. NNP COU https://en.wikipedia.org/wiki/United_States
 529 537 4011 soldiers NNS
 538 541 4012 and CC
 542 551 4013 prisoners NNS
