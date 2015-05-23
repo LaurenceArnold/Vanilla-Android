@@ -31,16 +31,35 @@ def main(file):
     # Filter all nouns
     nouns = [(word, tag) for word, tag in taggedWords if tag.startswith("N")]
 
+    # Set values for the answers
+    amountOfPolysemousWords = 0
+    amountOfSenses = 0
+
     # Get wordnet synsets
     for word, tag in nouns:
 
+        # Get the amount of senses
+        senses = len(wordnet.synsets(word, "n"))
+
         # Check if the word is polysemous
-        if len(wordnet.synsets(word, "n")) > 1:
+        if senses > 1:
+
+            # Count the polysemous words and senses
+            amountOfPolysemousWords = amountOfPolysemousWords + 1
+            amountOfSenses = amountOfSenses + senses
+
             print("\n\n All possible senses for " + word + ":")
 
             # Loop the synsets and print them
             for ss in wordnet.synsets(word, "n"):
                 print(ss, ss.definition())
+
+    # Answer for question 1
+    print("For this file, there are {} polysemous word".format(amountOfPolysemousWords))
+
+    # Answer for question 3
+    averageSenses = amountOfSenses/amountOfPolysemousWords
+    print("For this file, the average senses are {} per polysemous word".format(averageSenses))
 
 
 if __name__ == "__main__":
