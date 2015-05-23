@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Usage: ./disambiguation.py URL
 
+from collections import Counter
 import sys
 import os
 import nltk
@@ -34,6 +35,7 @@ def main(file):
     # Set values for the answers
     amountOfPolysemousWords = 0
     amountOfSenses = 0
+    listofsenses = []
 
     # Get wordnet synsets
     for word, tag in nouns:
@@ -48,11 +50,16 @@ def main(file):
             amountOfPolysemousWords = amountOfPolysemousWords + 1
             amountOfSenses = amountOfSenses + senses
 
-            print("\n\n All possible senses for " + word + ":")
+            listofsenses.append(senses)
+
+            #print("\n\n All possible senses for " + word + ":")
 
             # Loop the synsets and print them
-            for ss in wordnet.synsets(word, "n"):
-                print(ss, ss.definition())
+            #for ss in wordnet.synsets(word, "n"):
+                #print(ss, ss.definition())
+
+
+
 
     # Answer for question 1
     print("For this file, there are {} polysemous word".format(amountOfPolysemousWords))
@@ -61,6 +68,11 @@ def main(file):
     averageSenses = amountOfSenses/amountOfPolysemousWords
     print("For this file, the average senses are {} per polysemous word".format(averageSenses))
 
+    # Answer for question 4
+    result = Counter(listofsenses)
+    print(result)
+
+
 
 if __name__ == "__main__":
 
@@ -68,4 +80,4 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         main(sys.argv)
     else:
-        print("Wrong input.")
+        print("Wrong input, please enter a valid URL!")
