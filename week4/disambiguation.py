@@ -37,13 +37,15 @@ def main(file):
         # Check if the word is polysemous
         if len(wordnet.synsets(word, "n")) > 1:
             print("\n\n All possible senses for " + word + ":")
+
+            # Loop the synsets and print them
             for ss in wordnet.synsets(word, "n"):
                 print(ss, ss.definition())
 
 
 if __name__ == "__main__":
 
-    # Check if the lenght of input is 2
+    # Check if the length of input is 2
     if len(sys.argv) == 2:
         main(sys.argv)
     else:
