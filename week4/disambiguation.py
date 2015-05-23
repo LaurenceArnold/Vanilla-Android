@@ -33,9 +33,12 @@ def main(file):
 
     # Get wordnet synsets
     for word, tag in nouns:
-        print(word, tag)
-        for ss in wordnet.synsets(word, "n"):
-            print(ss, ss.definition())
+
+        # Check if the word is polysemous
+        if len(wordnet.synsets(word, "n")) > 1:
+            print("\n\n All possible senses for " + word + ":")
+            for ss in wordnet.synsets(word, "n"):
+                print(ss, ss.definition())
 
 
 if __name__ == "__main__":
