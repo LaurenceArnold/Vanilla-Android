@@ -6,6 +6,9 @@ import sys
 import os
 import nltk
 from nltk.corpus import wordnet
+from nltk import word_tokenize
+from nltk.wsd import lesk
+from nltk import sent_tokenize
 
 def getText(wiki):
 
@@ -25,9 +28,10 @@ def main(file):
 
     # Get the text of the  URL
     text = getText(file[1])
+    tokens = nltk.word_tokenize(text)
 
     # POS tag words
-    taggedWords = nltk.pos_tag(nltk.word_tokenize(text))
+    taggedWords = nltk.pos_tag(tokens)
 
     # Filter all nouns
     nouns = [(word, tag) for word, tag in taggedWords if tag.startswith("N")]
@@ -52,15 +56,6 @@ def main(file):
 
             listofsenses.append(senses)
 
-            print("\n\n All possible senses for " + word + ":")
-
-            # Loop the synsets and print them
-            for ss in wordnet.synsets(word, "n"):
-                print(ss, ss.definition())
-
-
-
-
     # Answer for question 1
     print("For this file, there are {} polysemous word".format(amountOfPolysemousWords))
 
@@ -72,6 +67,19 @@ def main(file):
     result = Counter(listofsenses)
     print(result)
 
+    # Answer for question 5
+    words = ["cars", "quantity", "carbon", "states", "change", "life"]
+    pos = "n"
+    textObject = nltk.Text(tokens)
+    for sent in sent_tokenize(text):
+        print(sent)
+        for word in words:
+            context = textObject.concordance(word)
+            print(context)
+            print (word, lesk(sent, word, pos))
+            print("\n\n All possible senses for " + word + ":")
+            for ss in wordnet.synsets(word, "n"):
+                print(ss, ss.definition())
 
 
 if __name__ == "__main__":
