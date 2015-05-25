@@ -52,11 +52,11 @@ def main(file):
 
             listofsenses.append(senses)
 
-            #print("\n\n All possible senses for " + word + ":")
+            print("\n\n All possible senses for " + word + ":")
 
             # Loop the synsets and print them
-            #for ss in wordnet.synsets(word, "n"):
-                #print(ss, ss.definition())
+            for ss in wordnet.synsets(word, "n"):
+                print(ss, ss.definition())
 
 
 
