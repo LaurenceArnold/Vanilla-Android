@@ -27,7 +27,7 @@ def main(file):
     text = getText(file[1])
 
     # POS tag words
-    taggedWords = nltk.pos_tag(text.split())
+    taggedWords = nltk.pos_tag(nltk.word_tokenize(text))
 
     # Filter all nouns
     nouns = [(word, tag) for word, tag in taggedWords if tag.startswith("N")]
