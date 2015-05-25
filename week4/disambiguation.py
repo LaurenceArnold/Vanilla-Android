@@ -72,11 +72,10 @@ def main(file):
     pos = "n"
     textObject = nltk.Text(tokens)
     for sent in sent_tokenize(text):
-        print(sent)
         for word in words:
             context = textObject.concordance(word)
-            print(context)
-            print (word, lesk(sent, word, pos))
+            print("\n\n" + str(context))
+            print ("\n\n The result of algorithm is: " + str(lesk(sent, word, pos)))
             print("\n\n All possible senses for " + word + ":")
             for ss in wordnet.synsets(word, "n"):
                 print(ss, ss.definition())
