@@ -7,6 +7,7 @@ from nltk.tag.stanford import NERTagger
 
 
 def main():
+
     # Get the directory of the file
     directory = os.getcwd()
 
@@ -14,7 +15,7 @@ def main():
     # List for the nouns
     # Need to be outside of the loop because of the list comprehesion
     nounList = []
-    taggedNouns
+    taggedNouns = []
 
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
