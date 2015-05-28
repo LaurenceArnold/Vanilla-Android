@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import nltk
+import os
 from nltk.corpus import wordnet
 from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
