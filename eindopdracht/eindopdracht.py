@@ -133,13 +133,11 @@ def main():
 
                     allTaggedWords = []
 
-                    for word in taggedWords[0]:
-                        print(len(word))
-                        allTaggedWords.append(word)
+                    for el in taggedWords:
+                        for word in el:
+                            allTaggedWords.append(word)
 
-                    print(allTaggedWords)
 
-                """
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineNumber = 0
@@ -148,18 +146,22 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
-                        print(line)
-                        print(taggedWords[0][lineNumber][1])
+
+                        # Get the number of lines
+                        currentTag = allTaggedWords[lineNumber][1]
+
+                        # It's not a Location, Person or Organization
+                        if currentTag != "O":
+                            columns.append(currentTag)
+
+                        else:
+                            if columns[4].startswith("N"):
+                                columns.append(currentTag)
+
+                        newLine = ' '.join(columns)
+                        print(newLine)
 
                         lineNumber += 1
-
-                """
-
-
-
-
-
-
 
 
     """
