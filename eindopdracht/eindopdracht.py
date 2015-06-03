@@ -47,7 +47,7 @@ def main():
     # Tag all the nouns
     muc.tag(nouns)
 
-
+    print(nouns)
 
     # eerst standaard entity tagger laten runnen op de inputfiles
     # daarna de rest handmatig laten taggen via Wordnet & hypernyms
