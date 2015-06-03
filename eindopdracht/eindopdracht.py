@@ -24,20 +24,25 @@ def main():
     # Get the directory of the file
     directory = os.getcwd()
 
-    # All declaretions for variables here
+    # All declarations for variables here
     # List for the nouns
-    # Need to be outside of the loop because of the list comprehesion
+    # Need to be outside of the loop because of the list comprehension
     nounList = []
     taggedNouns = []
+
+    # Open NERtagger
+    nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
+               '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
+
 
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
 
-        # Loop trough files
+        # Loop through files
         for file in filenames:
 
             # Check if the file is en.tok.off
-            if file == "en.tok.off.pos.ent":
+            if file == "en.tok.off.pos":
 
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
@@ -48,36 +53,28 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
 
-                        if columns[4].startswith == "N":
-
-
+                        if columns[4].startswith("N"):
+                            taggedNoun = nerTaggerStanford.tag(columns)
+                            columns.append(taggedNoun[0][3][1])
 
                         newLine = ' '.join(columns)
 
+                        print(newLine)
+
+                        """
                         # Write results to new file
                         with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
                             posfile.write(newLine + '\n')
+                        """
 
-
-    nouns = [tag for tag in nounList if tag.startswith("N")]
-
-    # MUC NER tagger
-    muc = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
-                   '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
-
-    # Tag all the nouns
-    muc.tag(nouns)
-
-    print(nouns)
-
+    """
     # eerst standaard entity tagger laten runnen op de inputfiles
     # daarna de rest handmatig laten taggen via Wordnet & hypernyms
 
     wordSyns = wordnet.synsets(str(word), pos = 'n')
     word2Syns = wordnet.sysnets(str(word2), pos = 'n')
     result = getMaxSim(wordSyns, Word2Syns)
-
-
+    """
 
 if __name__ == "__main__":
     main()
