@@ -71,8 +71,8 @@ def main():
     taggedNouns = []
 
     # Open NERtagger
-    nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
-               '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
+    nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
+                   '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
 
 
     # Loop through maps
@@ -151,13 +151,17 @@ def main():
                         currentTag = allTaggedWords[lineNumber][1]
 
                         # It's not a Location, Person or Organization
-                        if currentTag != "O":
-                            if currentTag == "Location":
+                        if currentTag == "LOCATION" or currentTag == "PERSON" or currentTag == "ORGANIZATION":
+
+                            # Check for location
+                            if currentTag == "LOCATION":
                                 # GO TO FUNCTION AND CHECK CITY OR COUNTRY
                                 print("LOCATIE!")
+
                             else:
                                 columns.append(currentTag)
 
+                        # Check for Others
                         else:
                             if columns[4].startswith("N"):
                                 columns.append(currentTag)
