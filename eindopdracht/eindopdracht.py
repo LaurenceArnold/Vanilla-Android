@@ -71,8 +71,8 @@ def main():
     taggedNouns = []
 
     # Open NERtagger
-    #nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
-               #'/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
+    nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
+               '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
 
 
     # Loop through maps
@@ -87,25 +87,79 @@ def main():
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
 
+                    lineList = " "
+
                     # Loop through lines of file
                     for line in in_f:
 
                         # Get tokens and append to list
                         columns = line.split()
 
-                        #if columns[4].startswith("N"):
-                            #taggedNoun = nerTaggerStanford.tag(columns)
-                            #columns.append(taggedNoun[0][3][1])
+                        lineList += " " + str(columns[3])
+
+                        """
+                        # Check for Location, Person or Organization
+                        if taggedWords[0][3][1] != "O":
+                            columns.append(taggedWords[0][3][1])
+
+                        # No Location, Person or Organization
+                        else:
+
+                            # We need to check then if it is a noun
+                            if columns[4].startswith("N"):
+                                columns.append(taggedWords[0][3][1])
 
                         newLine = ' '.join(columns)
+                        """
+                        """
+                        Eerst: alles met NER taggen
+                        Dan: alles met een O checken op noun
+                        Is het een noun? Dan kijken wat het verder is!
+                        Geen noun? Dan de O weghalen.
 
-                        print(newLine)
+                        """
+
+                        #print(newLine)
 
                         """
                         # Write results to new file
                         with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
                             posfile.write(newLine + '\n')
                         """
+
+                    # Tag words with NER and append
+                    tokenizedText = nltk.sent_tokenize(lineList)
+                    taggedWords = nerTaggerStanford.tag(tokenizedText)
+
+                    allTaggedWords = []
+
+                    for word in taggedWords[0]:
+                        allTaggedWords.append(word)
+
+                    print(allTaggedWords)
+
+                """
+                with open(root+'/'+file, 'r') as in_f:
+
+                    lineNumber = 0
+
+                    for line in in_f:
+
+                        # Get tokens and append to list
+                        columns = line.split()
+                        print(line)
+                        print(taggedWords[0][lineNumber][1])
+
+                        lineNumber += 1
+
+                """
+
+
+
+
+
+
+
 
     """
     # eerst standaard entity tagger laten runnen op de inputfiles
