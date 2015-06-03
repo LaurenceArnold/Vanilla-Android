@@ -215,6 +215,8 @@ def main():
     #if result == "None":
         #dan is het een locatie, maar dan kunnen we dus niet als city of country taggen wat kut is
 
+    #En als woord Other is, dan checken of het iets anders is dmv van de functies
+
 if __name__ == "__main__":
     main()
 
