@@ -6,6 +6,18 @@ from nltk.corpus import wordnet
 from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
 
+def getMaxSim(synsets1, synsets2):
+    """ From slides """
+    # assignment 1.3
+
+    maxSim = None
+    for syn1 in synsets1:
+        for syn2 in synsets2:
+            sim = syn1.lch_similarity(syn2)
+            if ((maxSim == None) or (maxSim < sim)):
+                maxSim = sim
+
+    return maxSim
 
 def main():
 
@@ -61,6 +73,9 @@ def main():
     # eerst standaard entity tagger laten runnen op de inputfiles
     # daarna de rest handmatig laten taggen via Wordnet & hypernyms
 
+    wordSyns = wordnet.synsets(str(word), pos = 'n')
+    word2Syns = wordnet.sysnets(str(word2), pos = 'n')
+    result = getMaxSim(wordSyns, Word2Syns)
 
 
 
