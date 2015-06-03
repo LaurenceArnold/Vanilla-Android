@@ -92,7 +92,7 @@ def main():
     source = text.decode("utf-8")
     # Decode is nodig voor de mac, anders spacete ie hem
 
-    sents = nltk.sent_tokenize(source)
+    sents = nltk.sent_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
     tokens = []

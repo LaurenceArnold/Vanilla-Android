@@ -31,8 +31,8 @@ def main():
     taggedNouns = []
 
     # Open NERtagger
-    nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
-               '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
+    #nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz',
+               #'/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
 
 
     # Loop through maps
@@ -53,9 +53,9 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
 
-                        if columns[4].startswith("N"):
-                            taggedNoun = nerTaggerStanford.tag(columns)
-                            columns.append(taggedNoun[0][3][1])
+                        #if columns[4].startswith("N"):
+                            #taggedNoun = nerTaggerStanford.tag(columns)
+                            #columns.append(taggedNoun[0][3][1])
 
                         newLine = ' '.join(columns)
 
@@ -71,10 +71,34 @@ def main():
     # eerst standaard entity tagger laten runnen op de inputfiles
     # daarna de rest handmatig laten taggen via Wordnet & hypernyms
 
-    wordSyns = wordnet.synsets(str(word), pos = 'n')
-    word2Syns = wordnet.sysnets(str(word2), pos = 'n')
-    result = getMaxSim(wordSyns, Word2Syns)
+
     """
+    CitySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
+    #variabele getagd met LOC
+    City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
+    CityResult = getMaxSim(CitySyns, City2Syns)
+    #print(CityResult)
+
+    CountrySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
+    #zelfde variabele getagd met LOC
+    Country2Syns = wordnet.synsets(str("America"), pos = 'n')
+    CountryResult= getMaxSim(CountrySyns, Country2Syns)
+    #print(CountryResult)
+
+    NPSyns = wordnet.synsets(str("lake"), pos = 'n')
+    #zelfde variabele getagd met LOC
+    NP2Syns = wordnet.synsets(str("ocean"), pos = 'n')
+    result3= getMaxSim(NPSyns, NP2Syns)
+    print(result3)
+
+    NPSyns2 = wordnet.synsets(str("lake"), pos = 'n')
+    #zelfde variabele getagd met LOC
+    NP2Syns2 = wordnet.synsets(str("drive"), pos = 'n')
+    result4= getMaxSim(CountrySyns, Country2Syns)
+    print(result4)
+
+    #if result == "None":
+        #dan is het een locatie, maar dan kunnen we dus niet als city of country taggen wat kut is
 
 if __name__ == "__main__":
     main()
