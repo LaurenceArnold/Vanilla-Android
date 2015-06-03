@@ -35,8 +35,17 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
-                        token = columns[4]
-                        nounList.append(token)
+
+                        if columns[4].startswith == "N":
+
+
+
+                        newLine = ' '.join(columns)
+
+                        # Write results to new file
+                        with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
+                            posfile.write(newLine + '\n')
+
 
     nouns = [tag for tag in nounList if tag.startswith("N")]
 
