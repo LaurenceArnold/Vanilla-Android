@@ -150,20 +150,25 @@ def main():
                         # Get the number of lines
                         currentTag = allTaggedWords[lineNumber][1]
 
-                        # It's not a Location, Person or Organization
-                        if currentTag == "LOCATION" or currentTag == "PERSON" or currentTag == "ORGANIZATION":
+                        # It's a Location, Person or Organization
+                        if currentTag != "O":
 
-                            # Check for location
-                            if currentTag == "LOCATION":
-                                # GO TO FUNCTION AND CHECK CITY OR COUNTRY
-                                print("LOCATIE!")
+                            if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
 
-                            else:
-                                columns.append(currentTag)
+                                # Check for location
+                                if currentTag == "LOCATION":
+
+                                    # GO TO FUNCTION AND CHECK CITY OR COUNTRY
+                                    print("LOCATIE!")
+
+                                else:
+                                    columns.append(currentTag)
 
                         # Check for Others
                         else:
+
                             if columns[4].startswith("N"):
+
                                 columns.append(currentTag)
 
                         newLine = ' '.join(columns)
