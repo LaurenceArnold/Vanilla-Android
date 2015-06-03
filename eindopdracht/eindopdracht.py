@@ -58,6 +58,9 @@ def findSport(noun):
 
     return False
 
+def findCity(word1,word2)
+
+
 
 def main():
 
@@ -88,6 +91,7 @@ def main():
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineList = " "
+                    allLocations = []
 
                     # Loop through lines of file
                     for line in in_f:
@@ -155,7 +159,7 @@ def main():
 
                             # Check for location
                             if currentTag == "LOCATION":
-                                # GO TO FUNCTION AND CHECK CITY OR COUNTRY
+                                allLocations.append(currentTag)
                                 print("LOCATIE!")
 
                             else:
@@ -179,8 +183,8 @@ def main():
 
     """
 
-
-    CitySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
+    # If tag is location, loop through these lines
+    CitySyns = wordnet.synsets(str(LocWord), pos = 'n')
     #variabele getagd met LOC
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
     CityResult = getMaxSim(CitySyns, City2Syns)
