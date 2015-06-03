@@ -134,6 +134,7 @@ def main():
                     allTaggedWords = []
 
                     for word in taggedWords[0]:
+                        print(len(word))
                         allTaggedWords.append(word)
 
                     print(allTaggedWords)
@@ -167,6 +168,8 @@ def main():
 
 
     """
+
+
     CitySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
     #variabele getagd met LOC
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
