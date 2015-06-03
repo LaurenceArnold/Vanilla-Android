@@ -102,30 +102,6 @@ def main():
                         lineList += " " + str(columns[3])
 
                         """
-                        # Check for Location, Person or Organization
-                        if taggedWords[0][3][1] != "O":
-                            columns.append(taggedWords[0][3][1])
-
-                        # No Location, Person or Organization
-                        else:
-
-                            # We need to check then if it is a noun
-                            if columns[4].startswith("N"):
-                                columns.append(taggedWords[0][3][1])
-
-                        newLine = ' '.join(columns)
-                        """
-                        """
-                        Eerst: alles met NER taggen
-                        Dan: alles met een O checken op noun
-                        Is het een noun? Dan kijken wat het verder is!
-                        Geen noun? Dan de O weghalen.
-
-                        """
-
-                        #print(newLine)
-
-                        """
                         # Write results to new file
                         with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
                             posfile.write(newLine + '\n')
@@ -154,20 +130,23 @@ def main():
                         # Get the number of lines
                         currentTag = allTaggedWords[lineNumber][1]
 
-                        # It's not a Location, Person or Organization
-                        if currentTag == "LOCATION" or currentTag == "PERSON" or currentTag == "ORGANIZATION":
+                        # It's a Location, Person or Organization
+                        if currentTag != "O":
 
-                            # Check for location
-                            if currentTag == "LOCATION":
-                                allLocations.append(currentTag)
-                                print("LOCATIE!")
+                            if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
+                                # Check for location
+                                if currentTag == "LOCATION":
+                                    allLocations.append(currentTag)
+                                    print("LOCATIE!")
 
-                            else:
-                                columns.append(currentTag)
+                                else:
+                                    columns.append(currentTag)
 
                         # Check for Others
                         else:
+
                             if columns[4].startswith("N"):
+
                                 columns.append(currentTag)
 
                         newLine = ' '.join(columns)
