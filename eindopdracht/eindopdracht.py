@@ -42,7 +42,7 @@ def main():
         for file in filenames:
 
             # Check if the file is en.tok.off
-            if file == "en.tok.off.pos.ent":
+            if file == "en.tok.off.pos":
 
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
@@ -66,14 +66,14 @@ def main():
                             posfile.write(newLine + '\n')
                         """
 
+    """
     # eerst standaard entity tagger laten runnen op de inputfiles
     # daarna de rest handmatig laten taggen via Wordnet & hypernyms
 
     wordSyns = wordnet.synsets(str(word), pos = 'n')
     word2Syns = wordnet.sysnets(str(word2), pos = 'n')
     result = getMaxSim(wordSyns, Word2Syns)
-
-
+    """
 
 if __name__ == "__main__":
     main()
