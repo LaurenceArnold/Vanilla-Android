@@ -53,8 +53,9 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
 
-                        if columns[4].startswith == "N":
-                            nerTaggerStanford.tag(columns[3])
+                        if columns[4].startswith("N"):
+                            taggedNoun = nerTaggerStanford.tag(columns)
+                            columns.append(taggedNoun[0][3][1])
 
                         newLine = ' '.join(columns)
 
