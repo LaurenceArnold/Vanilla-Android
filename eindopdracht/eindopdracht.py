@@ -152,7 +152,11 @@ def main():
 
                         # It's not a Location, Person or Organization
                         if currentTag != "O":
-                            columns.append(currentTag)
+                            if currentTag == "Location":
+                                # GO TO FUNCTION AND CHECK CITY OR COUNTRY
+                                print("LOCATIE!")
+                            else:
+                                columns.append(currentTag)
 
                         else:
                             if columns[4].startswith("N"):
