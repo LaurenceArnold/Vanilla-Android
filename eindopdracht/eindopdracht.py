@@ -19,6 +19,46 @@ def getMaxSim(synsets1, synsets2):
 
     return maxSim
 
+def hypernymOf(synset1, synset2):
+    """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
+    if (synset1 == synset2):
+        return True
+    for hypernym in synset1.hypernyms():
+        if (synset2 == hypernym):
+            return True
+        if (hypernymOf(hypernym, synset2)):
+            return True
+
+    return False
+
+
+def findAnimal(noun):
+    synset1 = wordnet.synsets(noun, pos='n')
+    if (isinstance(synset1, list)):
+        synset1 = synset1[0]
+
+    # Synsets to look for:
+    animal = wordnet.synsets("animal", pos='n')[0]
+
+    if (hypernymOf(synset1, animal)):
+        return True
+
+    return False
+
+def findSport(noun):
+    synset1 = wordnet.synsets(noun, pos='n')
+    if (isinstance(synset1, list)):
+        synset1 = synset1[0]
+
+    # Synsets to look for:
+    sport = wordnet.synsets("sport", pos='n')[0]
+
+    if (hypernymOf(synset1, sport)):
+        return True
+
+    return False
+
+
 def main():
 
     # Get the directory of the file
@@ -96,6 +136,9 @@ def main():
     NP2Syns2 = wordnet.synsets(str("drive"), pos = 'n')
     result4= getMaxSim(CountrySyns, Country2Syns)
     print(result4)
+
+    print(findAnimal("dog"))
+    print(findSport("football"))
 
     #if result == "None":
         #dan is het een locatie, maar dan kunnen we dus niet als city of country taggen wat kut is
