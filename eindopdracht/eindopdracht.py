@@ -145,7 +145,7 @@ def main():
 
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
                                 # Check for location, and dubble location, like New York or Sri Lanka
-                                if currentTag == "LOCATION" and ( currentTag[-1] == "LOCATION" or currentTag[1]=="LOCATION"):
+                                if currentTag == "LOCATION" and (currentTag[-1] == "LOCATION" or currentTag[1] == "LOCATION"):
                                         print("dubbele tag!", currentTag)
 
                                 elif currentTag == "LOCATION":
