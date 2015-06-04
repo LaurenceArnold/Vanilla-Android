@@ -70,13 +70,13 @@ def findCityorCountry(word):
     CountryResult= getMaxSim(CountrySyns, Country2Syns)
 
     if CityResult > CountryResult:
-        return "City"
+        return "CIT"
 
     elif CountryResult > CityResult:
-        return "Country"
+        return "COU"
 
     else:
-        return "Locatie"
+        return "LOCATION"
 
 
 def main():
@@ -144,9 +144,10 @@ def main():
                         if currentTag != "O":
 
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
+
                                 # Check for location, and dubble location, like New York or Sri Lanka
-                                if currentTag == "LOCATION" and (currentTag[-1] == "LOCATION" or currentTag[1] == "LOCATION"):
-                                        print("dubbele tag!", currentTag)
+                                if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
+                                        print("dubbele tag!", columns[3],allTaggedWords[lineNumber-1][0] )
 
                                 elif currentTag == "LOCATION":
                                     tagCityorCountry = findCityorCountry(columns[3])
