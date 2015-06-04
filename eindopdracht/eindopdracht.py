@@ -133,7 +133,7 @@ def main():
 
                                 # Check for location
                                 if currentTag == "LOCATION":
-
+g
                                     # GO TO FUNCTION AND CHECK CITY OR COUNTRY
                                     print("LOCATIE!")
 
