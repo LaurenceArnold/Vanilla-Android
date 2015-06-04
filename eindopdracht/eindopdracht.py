@@ -58,17 +58,13 @@ def findSport(noun):
 
     return False
 
-
 def main():
 
     # Get the directory of the file
     directory = os.getcwd()
 
     # All declarations for variables here
-    # List for the nouns
-    # Need to be outside of the loop because of the list comprehension
-    nounList = []
-    taggedNouns = []
+    allLocations = []
 
     # Open NERtagger
     nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
@@ -130,15 +126,17 @@ def main():
                         if currentTag != "O":
 
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
-
                                 # Check for location
                                 if currentTag == "LOCATION":
-g
+
                                     # GO TO FUNCTION AND CHECK CITY OR COUNTRY
                                     print("LOCATIE!")
 
+                                    allLocations.append(columns[3])
+
                                 else:
                                     columns.append(currentTag)
+
 
                         # Check for Others
                         else:
@@ -148,10 +146,9 @@ g
                                 columns.append(currentTag)
 
                         newLine = ' '.join(columns)
-                        print(newLine)
+                        #print(newLine)
 
                         lineNumber += 1
-
 
     """
     # eerst standaard entity tagger laten runnen op de inputfiles
@@ -159,37 +156,51 @@ g
 
 
     """
+    print("locaties zijn", allLocations)
 
+    for LocWord in allLocations:
+         # If tag is location, loop through these lines
+        CitySyns = wordnet.synsets(str(LocWord), pos = 'n')
+        City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
+        CityResult = getMaxSim(CitySyns, City2Syns)
+        #print(CityResult)
 
-    CitySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
-    #variabele getagd met LOC
-    City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
-    CityResult = getMaxSim(CitySyns, City2Syns)
-    #print(CityResult)
+        CountrySyns = wordnet.synsets(str(LocWord), pos = 'n')
+        #zelfde variabele getagd met LOC
+        Country2Syns = wordnet.synsets(str("America"), pos = 'n')
+        CountryResult= getMaxSim(CountrySyns, Country2Syns)
+        #print(CountryResult)
 
-    CountrySyns = wordnet.synsets(str("Utrecht"), pos = 'n')
-    #zelfde variabele getagd met LOC
-    Country2Syns = wordnet.synsets(str("America"), pos = 'n')
-    CountryResult= getMaxSim(CountrySyns, Country2Syns)
-    #print(CountryResult)
+        if CityResult > CountryResult:
+            tag = "City"
+            #print(tag)
+
+        elif CountryResult > CityResult:
+            tag = "Country"
+            #print(tag)
+
+        else:
+            tag = "Locatie"
+            #print(tag)
+        #print(LocWord)
+    # nu dus ervoor zorgen dat woorden die uit meer dan 2 woorden bestaan een _ ertussen krijgen, zoals New_York!
 
     NPSyns = wordnet.synsets(str("lake"), pos = 'n')
     #zelfde variabele getagd met LOC
     NP2Syns = wordnet.synsets(str("ocean"), pos = 'n')
     result3= getMaxSim(NPSyns, NP2Syns)
-    print(result3)
+    #print(result3)
 
     NPSyns2 = wordnet.synsets(str("lake"), pos = 'n')
     #zelfde variabele getagd met LOC
     NP2Syns2 = wordnet.synsets(str("drive"), pos = 'n')
-    result4= getMaxSim(CountrySyns, Country2Syns)
-    print(result4)
+    #result4= getMaxSim(CountrySyns, Country2Syns)
+    #print(result4)
 
-    print(findAnimal("dog"))
-    print(findSport("football"))
+    #print(findAnimal("dog"))
+    #print(findSport("football"))
 
-    #if result == "None":
-        #dan is het een locatie, maar dan kunnen we dus niet als city of country taggen wat kut is
+
 
     #En als woord Other is, dan checken of het iets anders is dmv van de functies
 
