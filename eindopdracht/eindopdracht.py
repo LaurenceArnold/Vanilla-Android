@@ -58,13 +58,31 @@ def findSport(noun):
 
     return False
 
+def findCityorCountry(word):
+    #If tag is location, loop through these lines
+
+    CitySyns = wordnet.synsets(str(word), pos = 'n')
+    City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
+    CityResult = getMaxSim(CitySyns, City2Syns)
+
+    CountrySyns = wordnet.synsets(str(word), pos = 'n')
+    Country2Syns = wordnet.synsets(str("America"), pos = 'n')
+    CountryResult= getMaxSim(CountrySyns, Country2Syns)
+
+    if CityResult > CountryResult:
+        return "City"
+
+    elif CountryResult > CityResult:
+        return "Country"
+
+    else:
+        return "Locatie"
+
+
 def main():
 
     # Get the directory of the file
     directory = os.getcwd()
-
-    # All declarations for variables here
-    allLocations = []
 
     # Open NERtagger
     nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
@@ -126,9 +144,13 @@ def main():
                         if currentTag != "O":
 
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
-                                # Check for location
-                                if currentTag == "LOCATION":
-                                    allLocations.append(columns[3])
+                                # Check for location, and dubble location, like New York or Sri Lanka
+                                if currentTag == "LOCATION" and ( currentTag[-1] == "LOCATION" or currentTag[1]=="LOCATION"):
+                                        print("dubbele tag!", currentTag)
+
+                                elif currentTag == "LOCATION":
+                                    tagCityorCountry = findCityorCountry(columns[3])
+                                    #print(tagCityorCountry, columns[3])
 
                                 else:
                                     columns.append(currentTag)
@@ -152,34 +174,6 @@ def main():
 
 
     """
-    print("locaties zijn", allLocations)
-
-    for LocWord in allLocations:
-         # If tag is location, loop through these lines
-        CitySyns = wordnet.synsets(str(LocWord), pos = 'n')
-        City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
-        CityResult = getMaxSim(CitySyns, City2Syns)
-        #print(CityResult)
-
-        CountrySyns = wordnet.synsets(str(LocWord), pos = 'n')
-        #zelfde variabele getagd met LOC
-        Country2Syns = wordnet.synsets(str("America"), pos = 'n')
-        CountryResult= getMaxSim(CountrySyns, Country2Syns)
-        #print(CountryResult)
-
-        if CityResult > CountryResult:
-            tag = "City"
-            #print(tag)
-
-        elif CountryResult > CityResult:
-            tag = "Country"
-            #print(tag)
-
-        else:
-            tag = "Locatie"
-            #print(tag)
-        #print(LocWord)
-    # nu dus ervoor zorgen dat woorden die uit meer dan 2 woorden bestaan een _ ertussen krijgen, zoals New_York!
 
     NPSyns = wordnet.synsets(str("lake"), pos = 'n')
     #zelfde variabele getagd met LOC
