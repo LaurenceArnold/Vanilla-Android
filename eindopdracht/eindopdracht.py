@@ -115,8 +115,14 @@ def isNatural(noun):
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
-        wiki = wikipedia.page(newNoun)
         print("wikiwoord is, ", newNoun)
+
+        try:
+            wiki = wikipedia.page(newNoun)
+
+        except:
+            return False
+
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
@@ -142,7 +148,13 @@ def isEntertainment(noun):
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
-        wiki = wikipedia.page(newNoun)
+        print("wikiwoord is, ", newNoun)
+
+        try:
+            wiki = wikipedia.page(newNoun)
+
+        except:
+            return False
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
