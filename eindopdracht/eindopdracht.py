@@ -5,6 +5,7 @@ import nltk
 from nltk.corpus import wordnet
 from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
+import wikipedia
 
 def getMaxSim(synsets1, synsets2):
     """ From slides """
@@ -59,8 +60,8 @@ def findSport(noun):
     return False
 
 def findCityorCountry(word):
-    #If tag is location, loop through these lines
 
+    #If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
     CityResult = getMaxSim(CitySyns, City2Syns)
@@ -76,7 +77,23 @@ def findCityorCountry(word):
         return "COU"
 
     else:
-        return "LOC"
+
+        # Get wikipedia content
+        wiki = wikipedia.page(word)
+
+        # Get first sentence
+        firstSentence = wiki.content.split(".")[0]
+
+        # Loop through sentence
+        for i in firstSentence:
+
+            # If the word is a city
+            if i == "city":
+                return "CIT"
+
+           # Else it is a country
+            else:
+                return "COU"
 
 
 def main():
@@ -110,12 +127,6 @@ def main():
                         columns = line.split()
 
                         lineList += " " + str(columns[3])
-
-                        """
-                        # Write results to new file
-                        with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
-                            posfile.write(newLine + '\n')
-                        """
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
