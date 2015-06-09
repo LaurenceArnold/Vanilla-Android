@@ -279,8 +279,8 @@ def main():
                             allTaggedWords.append(word)
 
                 # Open file again
-                in_f = open(root+'/'+file):
-
+                with open(root+'/'+file, 'r') as in_f:
+    
                     lineNumber = 0
                     nextLine = in_f.read(1)
                     while nextLine != "":
