@@ -109,10 +109,18 @@ def isNatural(noun):
     naturalList = ["volcano", "river", "forest", "jungle", "ocean", "water", "lake",
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
-    # Get wikipedia content
-    wiki = wikipedia.page(noun)
+    # Try to get wikipedia content
+    try:
+        wiki = wikipedia.page(noun)
+
+    except wikipedia.exceptions.DisambiguationError as e:
+        newNoun = e.options[0]
+        wiki = wikipedia.page(newNoun)
+        print("wikiwoord is, ", newNoun)
+
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
+    print('hallo', firstSentence)
 
     for word in firstSentence:
         for item in naturalList:
@@ -128,8 +136,14 @@ def isEntertainment(noun):
     entertainmentList = ["newspaper", "television", "radio", "magazine",
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
-    # Get wikipedia content
-    wiki = wikipedia.page(noun)
+    # Try to get wikipedia content
+    try:
+        wiki = wikipedia.page(noun)
+
+    except wikipedia.exceptions.DisambiguationError as e:
+        newNoun = e.options[0]
+        wiki = wikipedia.page(newNoun)
+
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
 
@@ -234,11 +248,11 @@ def main():
                                     columns.append(result)
 
                             # It is a person
-                            if currentTag == "PERSON":
+                            elif currentTag == "PERSON":
                                 columns.append("PER")
 
                             # It is an organization
-                            if currentTag == "ORGANIZATION":
+                            elif currentTag == "ORGANIZATION":
                                 columns.append("ORG")
 
                         # Check for Others (Natural Places, Animals, Sports)
