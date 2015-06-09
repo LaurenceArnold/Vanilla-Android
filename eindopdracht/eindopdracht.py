@@ -103,7 +103,7 @@ def findCityOrCountry(word):
             return "COU"
 
 def isNatural(noun):
-    naturalList = ["volcano", "river", "forest", "ocean", "water", "lake",
+    naturalList = ["volcano", "river", "forest", "jungle", "ocean", "water", "lake",
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
     # Get wikipedia content
