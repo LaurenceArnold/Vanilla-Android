@@ -245,7 +245,7 @@ def main():
                                     columns.append("ENT")
 
                         newLine = ' '.join(columns)
-                        #print(newLine)
+                        print(newLine)
 
                         lineNumber += 1
 
