@@ -173,9 +173,11 @@ def main():
                                     result = findCityOrCountry(noun)
                                     columns.append(result)
 
+                            # It is a person
                             if currentTag == "PERSON":
                                 columns.append("PER")
 
+                            # It is an organization
                             if currentTag == "ORGANIZATION":
                                 columns.append("ORG")
 
@@ -195,32 +197,6 @@ def main():
                         print(newLine)
 
                         lineNumber += 1
-
-    """
-    # eerst standaard entity tagger laten runnen op de inputfiles
-    # daarna de rest handmatig laten taggen via Wordnet & hypernyms
-
-
-    """
-
-    NPSyns = wordnet.synsets(str("lake"), pos = 'n')
-    #zelfde variabele getagd met LOC
-    NP2Syns = wordnet.synsets(str("ocean"), pos = 'n')
-    result3= getMaxSim(NPSyns, NP2Syns)
-    #print(result3)
-
-    NPSyns2 = wordnet.synsets(str("lake"), pos = 'n')
-    #zelfde variabele getagd met LOC
-    NP2Syns2 = wordnet.synsets(str("drive"), pos = 'n')
-    #result4= getMaxSim(CountrySyns, Country2Syns)
-    #print(result4)
-
-    #print(findAnimal("dog"))
-    #print(findSport("football"))
-
-
-
-    #En als woord Other is, dan checken of het iets anders is dmv van de functies
 
 if __name__ == "__main__":
     main()
