@@ -200,26 +200,26 @@ def getWikiURL(noun, tag):
     """
 
     if tag == "PER":
-        searchList = wikipedia.search(tag, results=2)
-        print(searchList)
+        try:
+            wiki = wikipedia.page(noun)
 
-        if len(searchList) == 2:
-            wikipage = wikipedia.page(searchList[0])
-            firstSentence = wikipage.content.split(".")[0]
+        except wikipedia.exceptions.DisambiguationError as e:
+            newNoun = e.options[0]
+            newNoun2 = e.options[1]
 
-            if "born" in firstSentence:
-                return wikipage.url
+            wiki = wikipedia.page(newNoun)
+            wiki2 = wikipedia.page(newNoun2)
 
-            else:
-                wikipage = wikipedia.page(searchList[1])
-                firstSentence = wikipage.contgent.split(".")[0]
+            firstSentence1 = wiki.content.split(".")[0]
+            firstSentence2 = wiki2.content.split(".")[0]
+            print("hallo", firstSentence1, "en hoi", firstSentence2)
 
-                if "born" in firstSentence:
-                    return wikipage.url
+            #if "born" in firstSentence1 or firstSentence2:
+                #return wiki.url
 
-                else:
-                    wikipage = wikipedia.page(searchList[0])
-                    return wikipage.url
+            #else:
+                #return wiki2.url
+
 
     else:
         # Check for disambiguation on Wikipedia
