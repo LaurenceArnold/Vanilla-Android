@@ -70,6 +70,7 @@ def findAnimal(noun):
             synset1 = synset1[0]
 
     except:
+
         return False
 
     # Synsets to look for:
