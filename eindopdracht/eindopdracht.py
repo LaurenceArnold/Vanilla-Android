@@ -200,7 +200,7 @@ def getWikiURL(noun, tag):
     """
 
     if tag == "PER":
-        searchList = wikipedia.search(tag, results=2)
+        searchList = wikipedia.search(noun, results=2)
 
         if len(searchList) == 2:
             wikipage = wikipedia.page(searchList[0])
