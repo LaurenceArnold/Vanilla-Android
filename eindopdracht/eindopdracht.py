@@ -65,10 +65,13 @@ def findAnimal(noun):
     """
     Look with synsets for an animal
     """
+    try:
+        synset1 = wordnet.synsets(noun, pos='n')
+        if (isinstance(synset1, list)):
+            synset1 = synset1[0]
 
-    synset1 = wordnet.synsets(noun, pos='n')
-    if (isinstance(synset1, list)):
-        synset1 = synset1[0]
+    except:
+        return False
 
     # Synsets to look for:
     animal = wordnet.synsets("animal", pos='n')[0]
@@ -84,9 +87,13 @@ def findSport(noun):
     Look with synsets for a sport
     """
 
-    synset1 = wordnet.synsets(noun, pos='n')
-    if (isinstance(synset1, list)):
-        synset1 = synset1[0]
+    try:
+        synset1 = wordnet.synsets(noun, pos='n')
+        if (isinstance(synset1, list)):
+            synset1 = synset1[0]
+
+    except:
+        return False
 
     # Synsets to look for:
     sport = wordnet.synsets("sport", pos='n')[0]
@@ -122,6 +129,9 @@ def findCityOrCountry(word):
 
         wiki = disambiguationWikipedia(word)
 
+        if wiki == False:
+            return False
+
         # Get first sentence
         firstSentence = wiki.content.split(".")[0]
 
@@ -146,6 +156,9 @@ def isNatural(noun):
     wiki = disambiguationWikipedia(noun)
 
     # Get first sentence
+    if wiki == False:
+        return False
+
     firstSentence = wiki.content.split(".")[0]
     print('hallo', firstSentence)
 
@@ -166,6 +179,9 @@ def isEntertainment(noun):
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
     wiki = disambiguationWikipedia(noun)
+
+    if wiki == False:
+        return False
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
