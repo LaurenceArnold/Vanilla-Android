@@ -151,7 +151,6 @@ def main():
     nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
                    '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
 
-    words = []
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
 
