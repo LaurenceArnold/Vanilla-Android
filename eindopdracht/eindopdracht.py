@@ -15,14 +15,18 @@ def disambiguationWikipedia(noun):
     # Try to get wikipedia content
     try:
         wiki = wikipedia.page(noun)
+        print("functie 1 wiki", wiki)
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
+        print("Newnoun", newNoun)
 
         try:
             wiki = wikipedia.page(newNoun)
+            print("functie 1 poging 2 wiki", wiki)
 
         except:
+            print("Nu returnt ie False!")
             return False
 
     return wiki
@@ -193,53 +197,27 @@ def isEntertainment(noun):
 
     return False
 
-def getWikiURL(noun, tag):
+def getWikiURL(tag):
 
     """
     Get the Wikipedia URL
     """
 
-    if tag == "PER":
-        try:
-            wiki = wikipedia.page(noun)
-
-        except wikipedia.exceptions.DisambiguationError as e:
-            newNoun = e.options[0]
-            newNoun2 = e.options[1]
-
-            wiki = wikipedia.page(newNoun)
-            wiki2 = wikipedia.page(newNoun2)
-
-            firstSentence1 = wiki.content.split(".")[0]
-            firstSentence2 = wiki2.content.split(".")[0]
-            print("hallo", firstSentence1, "en hoi", firstSentence2)
-
-            #if "born" in firstSentence1 or firstSentence2:
-                #return wiki.url
-
-            #else:
-                #return wiki2.url
+    # Check for disambiguation on Wikipedia
 
 
-    else:
-        # Check for disambiguation on Wikipedia
-        wiki = disambiguationWikipedia(noun)
+    try:
+        wiki = disambiguationWikipedia(tag)
+        url = wiki.url
+        print("link is", url)
 
-        firstSentence = wiki.content.split(".")[0]
+    except:
+        print("nu komt er NULL!")
+        return "Null"
 
-
-        try:
-
-            url = wiki.url
-
-        except:
-
-            return "Null"
-
-        return url
+    return url
 
 def main():
-
     # Get the directory of the file
     directory = os.getcwd()
 
@@ -280,11 +258,11 @@ def main():
                             allTaggedWords.append(word)
 
                 # Open file again
-                in_f = open(root+'/'+file):
+                with open(root+'/'+file, 'r') as in_f:
 
                     lineNumber = 0
-                    nextLine = in_f.read(1)
-                    while nextLine != "":
+
+                    for line in in_f:
 
                         # Get tokens and append to list
                         columns = line.split()
@@ -311,22 +289,13 @@ def main():
 
                                         if allTaggedWords[lineNumber+2][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
-                                            lineNumber += 2
-                                            nextLine = in_f.read(2)
-                                            
+
                                         elif allTaggedWords[lineNumber+3][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
-                                            lineNumber += 3
-                                            nextLine = in_f.read(3)
 
                                         elif allTaggedWords[lineNumber+4][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
-                                            lineNumber += 4
-                                            nextLine = in_f.read(4)
-                                        else:
-                                            lineNumber += 1
-                                            nextLine = in_f.read(1)
-                                            
+
                                         tagCityOrCountry = findCityOrCountry(wordResult)
 
                                         columns.append(tagCityOrCountry)
@@ -368,13 +337,12 @@ def main():
                                     columns.append("ENT")
 
                         if len(columns) == 7:
-                            tag = columns[6]
-                            columns.append(getWikiURL(noun, tag))
+                            columns.append(getWikiURL(noun))
 
                         newLine = ' '.join(columns)
-                        #print(newLine)
+                        print(newLine)
 
-    
+                        lineNumber += 1
 
 if __name__ == "__main__":
     main()

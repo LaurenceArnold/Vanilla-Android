@@ -23,21 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="measures.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/week3/measures.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.02819549" vertical-offset="3870" max-vertical-offset="5160">
-              <caret line="259" column="44" selection-start-line="259" selection-start-column="44" selection-end-line="259" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.7894737" vertical-offset="0" max-vertical-offset="5295">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -48,8 +38,8 @@
       <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.4615383" vertical-offset="87057" max-vertical-offset="224625">
-              <caret line="5815" column="2" selection-start-line="5815" selection-start-column="0" selection-end-line="5815" selection-end-column="2" />
+            <state vertical-scroll-proportion="3.3461537" vertical-offset="11202" max-vertical-offset="224625">
+              <caret line="741" column="4" selection-start-line="741" selection-start-column="1" selection-end-line="741" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -208,6 +198,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesPython" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -716,16 +707,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4615383" vertical-offset="87057" max-vertical-offset="224625">
-          <caret line="5815" column="2" selection-start-line="5815" selection-start-column="0" selection-end-line="5815" selection-end-column="2" />
+        <state vertical-scroll-proportion="3.3461537" vertical-offset="11202" max-vertical-offset="224625">
+          <caret line="741" column="4" selection-start-line="741" selection-start-column="1" selection-end-line="741" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02819549" vertical-offset="3870" max-vertical-offset="5160">
-          <caret line="259" column="44" selection-start-line="259" selection-start-column="44" selection-end-line="259" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.7894737" vertical-offset="0" max-vertical-offset="5295">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>
