@@ -256,8 +256,8 @@ def main():
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineNumber = 0
-
-                    for line in in_f:
+                    nextLine = in_f.read(1)
+                    while nextLine != "":
 
                         # Get tokens and append to list
                         columns = line.split()
@@ -284,13 +284,22 @@ def main():
 
                                         if allTaggedWords[lineNumber+2][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
-
+                                            lineNumber += 2
+                                            nextLine = in_f.read(2)
+                                            
                                         elif allTaggedWords[lineNumber+3][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
+                                            lineNumber += 3
+                                            nextLine = in_f.read(3)
 
                                         elif allTaggedWords[lineNumber+4][1] == "LOCATION":
                                             wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
-
+                                            lineNumber += 4
+                                            nextLine = in_f.read(4)
+                                        else:
+                                            lineNumber += 1
+                                            nextLine = in_f.read(1)
+                                            
                                         tagCityOrCountry = findCityOrCountry(wordResult)
 
                                         columns.append(tagCityOrCountry)
@@ -337,7 +346,7 @@ def main():
                         newLine = ' '.join(columns)
                         print(newLine)
 
-                        lineNumber += 1
+    
 
 if __name__ == "__main__":
     main()
