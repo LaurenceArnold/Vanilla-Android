@@ -206,9 +206,10 @@ def getWikiURL(tag):
     if wiki == False:
         return "Null"
 
-    wiki = wikipedia.page(tag)
+    else:
+        wiki = wikipedia.page(tag)
 
-    return wiki.url
+        return wiki.url
 
 def main():
     # Get the directory of the file
@@ -324,6 +325,10 @@ def main():
                                 # Check if it is entertainment
                                 elif isEntertainment(noun):
                                     columns.append("ENT")
+
+                                print(columns)
+                                if len(columns) == 5:
+                                    columns.append(getWikiURL(noun))
 
                         newLine = ' '.join(columns)
                         print(newLine)
