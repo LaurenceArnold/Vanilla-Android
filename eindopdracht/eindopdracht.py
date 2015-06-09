@@ -106,7 +106,7 @@ def isNatural(noun):
 
     """ Check if it is a natural place """
 
-    naturalList = ["volcano", "river", "forest", "ocean", "water", "lake",
+    naturalList = ["volcano", "river", "forest", "jungle", "ocean", "water", "lake",
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
     # Get wikipedia content
