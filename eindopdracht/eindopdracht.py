@@ -165,7 +165,7 @@ def main():
                                 columns.append(currentTag)
 
                         newLine = ' '.join(columns)
-                        #print(newLine)
+                        print(newLine)
 
                         lineNumber += 1
 
