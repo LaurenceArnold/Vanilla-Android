@@ -193,26 +193,52 @@ def isEntertainment(noun):
 
     return False
 
-def getWikiURL(tag):
+def getWikiURL(noun, tag):
 
     """
     Get the Wikipedia URL
     """
 
-    # Check for disambiguation on Wikipedia
-    wiki = disambiguationWikipedia(tag)
+    if tag == "PER":
+        searchList = wikipedia.search(tag, results=2)
 
-    try:
+        if len(searchList) == 2:
+            wikipage = wikipedia.page(searchList[0])
+            firstSentence = wikipage.content.split(".")[0]
 
-        url = wiki.url
+            if "born" in firstSentence:
+                return wikipage.url
 
-    except:
+            else:
+                wikipage = wikipedia.page(searchList[1])
+                firstSentence = wikipage.content.split(".")[0]
 
-        return "Null"
+                if "born" in firstSentence:
+                    return wikipage.url
 
-    return url
+                else:
+                    wikipage = wikipedia.page(searchList[0])
+                    return wikipage.url
+
+    else:
+        # Check for disambiguation on Wikipedia
+        wiki = disambiguationWikipedia(noun)
+
+        firstSentence = wiki.content.split(".")[0]
+
+
+        try:
+
+            url = wiki.url
+
+        except:
+
+            return "Null"
+
+        return url
 
 def main():
+
     # Get the directory of the file
     directory = os.getcwd()
 
@@ -332,7 +358,8 @@ def main():
                                     columns.append("ENT")
 
                         if len(columns) == 7:
-                            columns.append(getWikiURL(noun))
+                            tag = columns[6]
+                            columns.append(getWikiURL(noun, tag))
 
                         newLine = ' '.join(columns)
                         print(newLine)
