@@ -120,6 +120,7 @@ def findCityOrCountry(word):
     # City or country is not in the Wordnet database
     else:
 
+        # Check for disambiguation on Wikipedia
         wiki = disambiguationWikipedia(word)
 
         # Get first sentence
