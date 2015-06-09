@@ -5,6 +5,7 @@ import nltk
 from nltk.corpus import wordnet
 from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
+import wikipedia
 
 def getMaxSim(synsets1, synsets2):
     """ From slides """
@@ -58,9 +59,9 @@ def findSport(noun):
 
     return False
 
-def findCityorCountry(word):
-    #If tag is location, loop through these lines
+def findCityOrCountry(word):
 
+    #If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
     CityResult = getMaxSim(CitySyns, City2Syns)
@@ -76,7 +77,21 @@ def findCityorCountry(word):
         return "COU"
 
     else:
-        return "LOC"
+
+        # Get wikipedia content
+        wiki = wikipedia.page(word)
+
+        # Get first sentence
+        firstSentence = wiki.content.split(".")[0]
+
+        # Check for city in the first sentence
+        if "city" in firstSentence:
+            return "CIT"
+
+        # City is not found in the sentence
+        else:
+            return "COU"
+
 
 
 def main():
@@ -111,12 +126,6 @@ def main():
 
                         lineList += " " + str(columns[3])
 
-                        """
-                        # Write results to new file
-                        with open(root+'/en.tok.off.pos.ent', 'a') as posfile:
-                            posfile.write(newLine + '\n')
-                        """
-
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
@@ -149,15 +158,14 @@ def main():
                                 # Check for location, and dubble location tag, like New York or Sri Lanka
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
                                         wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
-                                        tagCityorCountry = findCityorCountry(wordResult)
-                                        tagCityorCountry2 = tagCityorCountry
-                                        #print(tagCityorCountry, wordResult)
+                                        tagCityOrCountry = findCityOrCountry(wordResult)
+                                        print(tagCityOrCountry, wordResult)
                                         #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
-                                        if currentTag == "LOCATION":
-                                            tagCityorCountry = findCityorCountry(columns[3])
-                                            #print(tagCityorCountry, columns[3])
-                                            #append tagCityorCountry in kolom, als kolom == " "
+                                if currentTag == "LOCATION":
+                                    result = findCityOrCountry(columns[3])
+                                    print(result)
+                                    #append tagCityorCountry in kolom, als kolom == " "
 
                                 else:
 
@@ -173,7 +181,7 @@ def main():
                                 columns.append(currentTag)
 
                         newLine = ' '.join(columns)
-                        #print(newLine)
+                        print(newLine)
 
                         lineNumber += 1
 
