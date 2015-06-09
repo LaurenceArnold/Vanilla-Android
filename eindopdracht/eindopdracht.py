@@ -201,15 +201,14 @@ def getWikiURL(tag):
     """
 
     # Check for disambiguation on Wikipedia
-    wiki = disambiguationWikipedia(tag)
+    disambigu = disambiguationWikipedia(tag)
 
-    if wiki == False:
+    if disambigu == False:
         return "Null"
 
-    else:
-        wiki = wikipedia.page(tag)
+    wiki = wikipedia.page(disambigu)
 
-        return wiki.url
+    return wiki.url
 
 def main():
     # Get the directory of the file
