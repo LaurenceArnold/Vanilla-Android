@@ -323,9 +323,8 @@ def main():
                                 elif isEntertainment(noun):
                                     columns.append("ENT")
 
-                                print(columns)
-                                if len(columns) == 5:
-                                    columns.append(getWikiURL(noun))
+                        if len(columns) == 6:
+                            columns.append(getWikiURL(noun))
 
                         newLine = ' '.join(columns)
                         print(newLine)
