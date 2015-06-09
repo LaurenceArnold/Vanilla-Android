@@ -210,10 +210,23 @@ def main():
                             if currentTag == "LOCATION":
 
                                 # Check for locations like New-York (multiple words)
-                                if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
-                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(noun)
+                                if currentTag == "LOCATION" and allTaggedWords[lineNumber+1][1] == "LOCATION":
+                                        wordResult = str(noun) + "_" + str(allTaggedWords[lineNumber+1][0])
+
+                                        if allTaggedWords[lineNumber+2][1] == "LOCATION":
+                                            wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
+
+                                        elif allTaggedWords[lineNumber+3][1] == "LOCATION":
+                                            wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
+
+                                        elif allTaggedWords[lineNumber+4][1] == "LOCATION":
+                                            wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
+
                                         tagCityOrCountry = findCityOrCountry(wordResult)
-                                        #print(tagCityOrCountry, wordResult)
+
+                                        columns.append(tagCityOrCountry)
+
+                                        print(tagCityOrCountry, wordResult)
 
                                 # City of country exists of a single word
                                 else:
