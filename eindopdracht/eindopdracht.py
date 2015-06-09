@@ -143,6 +143,7 @@ def main():
                         # It's a Location, Person or Organization
                         if currentTag != "O":
 
+
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
 
                                 # Check for location, and dubble location tag, like New York or Sri Lanka
@@ -150,7 +151,7 @@ def main():
                                         wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
                                         tagCityorCountry = findCityorCountry(wordResult)
                                         tagCityorCountry2 = tagCityorCountry
-                                        print(tagCityorCountry, wordResult)
+                                        #print(tagCityorCountry, wordResult)
                                         #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
                                         if currentTag == "LOCATION":
@@ -159,11 +160,13 @@ def main():
                                             #append tagCityorCountry in kolom, als kolom == " "
 
                                 else:
+
                                     columns.append(currentTag)
 
 
                         # Check for Others
                         else:
+                            print(currentTag, columns[3])
 
                             if columns[4].startswith("N"):
 
