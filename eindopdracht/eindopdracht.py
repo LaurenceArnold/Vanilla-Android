@@ -76,7 +76,7 @@ def findCityorCountry(word):
         return "COU"
 
     else:
-        return "LOCATION"
+        return "LOC"
 
 
 def main():
@@ -88,7 +88,7 @@ def main():
     nerTaggerStanford = NERTagger('/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/classifiers/english.muc.7class.distsim.crf.ser.gz',
                    '/Library/Python/2.7/site-packages/stanford-ner-2014-06-16/stanford-ner-3.4.jar')
 
-
+    words = []
     # Loop through maps
     for root, dirs, filenames in os.walk(directory):
 
@@ -145,13 +145,18 @@ def main():
 
                             if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
 
-                                # Check for location, and dubble location, like New York or Sri Lanka
+                                # Check for location, and dubble location tag, like New York or Sri Lanka
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
-                                        print("dubbele tag!", currentTag)
+                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
+                                        tagCityorCountry = findCityorCountry(wordResult)
+                                        tagCityorCountry2 = tagCityorCountry
+                                        print(tagCityorCountry, wordResult)
+                                        #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
-                                elif currentTag == "LOCATION":
-                                    tagCityorCountry = findCityorCountry(columns[3])
-                                    #print(tagCityorCountry, columns[3])
+                                        if currentTag == "LOCATION":
+                                            tagCityorCountry = findCityorCountry(columns[3])
+                                            #print(tagCityorCountry, columns[3])
+                                            #append tagCityorCountry in kolom, als kolom == " "
 
                                 else:
                                     columns.append(currentTag)
