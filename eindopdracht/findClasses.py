@@ -21,7 +21,7 @@ def hypernymOf(synset1, synset2):
     return False
 
 
-def findAnimal(noun):
+def isAnimal(noun):
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -34,7 +34,7 @@ def findAnimal(noun):
 
     return False
 
-def findSport(noun):
+def isSport(noun):
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -47,7 +47,39 @@ def findSport(noun):
 
     return False
 
+def isNatural(noun):
+    naturalList = ["volcano", "river", "forest", "ocean", "water", "lake",
+    "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
+    
+    # Get wikipedia content
+    wiki = wikipedia.page(noun)
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
+    
+    for word in firstSentence:
+        for item in naturalList:
+            if (word == item):
+                return True
+    
+    return False
+    
+def isEntertainment(noun):
+    entertainmentList = ["newspaper", "television", "radio", "magazine",
+    "show", "musical", "song", "album", "tv", "Netflix"]
+    
+    # Get wikipedia content
+    wiki = wikipedia.page(noun)
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
+    
+    for word in firstSentence:
+        for item in entertainmentList:
+            if (word == item):
+                return True
+    
+    return False
+
 if __name__ == "__main__":
-    print(findAnimal("dog"))
-    print(findSport("football"))
+    print(isAnimal("dog"))
+    print(isSport("football"))
 
