@@ -120,7 +120,7 @@ def isNatural(noun):
 
 def isEntertainment(noun):
     entertainmentList = ["newspaper", "television", "radio", "magazine",
-    "show", "musical", "song", "album", "tv", "Netflix"]
+    "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
     # Get wikipedia content
     wiki = wikipedia.page(noun)
@@ -143,7 +143,6 @@ def getWikiURL(tag):
     return wiki.url
 
 def main():
-
     # Get the directory of the file
     directory = os.getcwd()
 
@@ -208,7 +207,7 @@ def main():
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
                                         wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(noun)
                                         tagCityOrCountry = findCityOrCountry(wordResult)
-                                        print(tagCityOrCountry, wordResult)
+                                        #print(tagCityOrCountry, wordResult)
 
                                 # City of country exists of a single word
                                 else:
@@ -246,7 +245,7 @@ def main():
                                     columns.append("ENT")
 
                         newLine = ' '.join(columns)
-                        print(newLine)
+                        #print(newLine)
 
                         lineNumber += 1
 

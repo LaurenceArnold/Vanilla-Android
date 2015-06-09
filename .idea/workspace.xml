@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="eindopdracht.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2813" max-vertical-offset="3345">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.37969926" vertical-offset="1628" max-vertical-offset="3840">
+              <caret line="122" column="55" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="findClasses.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="findClasses.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/findClasses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.87406015" vertical-offset="675" max-vertical-offset="1365">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1365">
+              <caret line="79" column="16" selection-start-line="49" selection-start-column="0" selection-end-line="79" selection-end-column="16" />
               <folding>
                 <element signature="e#18#29#0" expanded="true" />
               </folding>
@@ -74,6 +74,7 @@
         <option value="$PROJECT_DIR$/week2/op1.py" />
         <option value="$PROJECT_DIR$/eindopdracht/animalorsport.py" />
         <option value="$PROJECT_DIR$/eindopdracht/group4/p15/d0012/en.tok.off.pos" />
+        <option value="$PROJECT_DIR$/eindopdracht/findClasses.py" />
         <option value="$PROJECT_DIR$/eindopdracht/eindopdracht.py" />
       </list>
     </option>
@@ -427,7 +428,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28480205" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28480205" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -703,12 +704,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/findClasses.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2813" max-vertical-offset="3345">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1365">
+          <caret line="79" column="16" selection-start-line="49" selection-start-column="0" selection-end-line="79" selection-end-column="16" />
           <folding>
-            <element signature="e#19#28#0" expanded="true" />
+            <element signature="e#18#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -721,12 +722,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/findClasses.py">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.87406015" vertical-offset="675" max-vertical-offset="1365">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.37969926" vertical-offset="1628" max-vertical-offset="3840">
+          <caret line="122" column="55" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
           <folding>
-            <element signature="e#18#29#0" expanded="true" />
+            <element signature="e#19#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
