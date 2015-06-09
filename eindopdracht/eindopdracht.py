@@ -15,21 +15,14 @@ def disambiguationWikipedia(noun):
     # Try to get wikipedia content
     try:
         wiki = wikipedia.page(noun)
-        print("functie 1 wiki", wiki)
-
-    #alleen als er een woord is die niet bestaat in Wikipedia gaat hij dus naar except: maar die except is te specifiek (?)
-    # waardoor hij dus een error geeft
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
-        print("Newnoun", newNoun)
 
         try:
             wiki = wikipedia.page(newNoun)
-            print("functie 1 poging 2 wiki", wiki)
 
         except:
-            print("Nu returnt ie False!")
             return False
 
     return wiki
@@ -202,20 +195,17 @@ def isEntertainment(noun):
 
 def getWikiURL(tag):
 
+
     """
     Get the Wikipedia URL
     """
 
     # Check for disambiguation on Wikipedia
-
-
-    try:
-        wiki = disambiguationWikipedia(tag)
+    wiki = disambiguationWikipedia(tag)
+    if bool(wiki.url):
         url = wiki.url
-        print("link is", url)
-    # hij komt dus nooit bij deze except uit waardoor er nog errors voorkomen in het geheel
-    except:
-        print("nu komt er NULL!")
+
+    else:
         return "Null"
 
     return url
