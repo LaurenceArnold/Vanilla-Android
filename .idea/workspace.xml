@@ -23,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="measures.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week3/measures.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.3289475" vertical-offset="2055" max-vertical-offset="5055">
-              <caret line="326" column="38" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.02819549" vertical-offset="3870" max-vertical-offset="5160">
+              <caret line="259" column="44" selection-start-line="259" selection-start-column="44" selection-end-line="259" selection-end-column="44" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -38,8 +48,8 @@
       <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="18.923077" vertical-offset="31212" max-vertical-offset="224625">
-              <caret line="2048" column="25" selection-start-line="2048" selection-start-column="25" selection-end-line="2048" selection-end-column="25" />
+            <state vertical-scroll-proportion="-6.4615383" vertical-offset="87057" max-vertical-offset="224625">
+              <caret line="5815" column="2" selection-start-line="5815" selection-start-column="0" selection-end-line="5815" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -183,106 +193,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="eindopdracht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eindopdracht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p15" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eindopdracht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p15" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="d0077" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eindopdracht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p15" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="d0046" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vanilla-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eindopdracht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="p15" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="d0012" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -746,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/week3/op1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2387218" vertical-offset="293" max-vertical-offset="840">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/week4/disambiguation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2406015" vertical-offset="0" max-vertical-offset="1935">
@@ -796,18 +698,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/week3/op1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6766917" vertical-offset="300" max-vertical-offset="840">
+          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/measures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.923077" vertical-offset="31212" max-vertical-offset="224625">
-          <caret line="2048" column="25" selection-start-line="2048" selection-start-column="25" selection-end-line="2048" selection-end-column="25" />
+        <state vertical-scroll-proportion="-6.4615383" vertical-offset="87057" max-vertical-offset="224625">
+          <caret line="5815" column="2" selection-start-line="5815" selection-start-column="0" selection-end-line="5815" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.3289475" vertical-offset="2055" max-vertical-offset="5055">
-          <caret line="326" column="38" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.02819549" vertical-offset="3870" max-vertical-offset="5160">
+          <caret line="259" column="44" selection-start-line="259" selection-start-column="44" selection-end-line="259" selection-end-column="44" />
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>

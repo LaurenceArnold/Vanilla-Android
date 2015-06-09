@@ -202,10 +202,15 @@ def getWikiURL(tag):
     # Check for disambiguation on Wikipedia
     wiki = disambiguationWikipedia(tag)
 
-    if wiki == False:
+    try:
+
+        url = wiki.url
+
+    except:
+
         return "Null"
 
-    return wiki.url
+    return url
 
 def main():
     # Get the directory of the file
@@ -256,6 +261,11 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
+
+                        if len(columns) == 8:
+                            columns.pop(7)
+                            columns.pop(6)
+
 
                         # Get the noun
                         noun = columns[4]
