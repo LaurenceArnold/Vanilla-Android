@@ -200,6 +200,12 @@ def getWikiURL(tag):
     Get the Wikipedia URL
     """
 
+    # Check for disambiguation on Wikipedia
+    wiki = disambiguationWikipedia(tag)
+
+    if wiki == False:
+        return "Null"
+
     wiki = wikipedia.page(tag)
 
     return wiki.url
