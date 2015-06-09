@@ -18,7 +18,6 @@ def disambiguationWikipedia(noun):
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
-        print("wikiwoord is, ", newNoun)
 
         try:
             wiki = wikipedia.page(newNoun)
@@ -161,7 +160,6 @@ def isNatural(noun):
         return False
 
     firstSentence = wiki.content.split(".")[0]
-    print('hallo', firstSentence)
 
     for word in firstSentence:
         for item in naturalList:
@@ -223,7 +221,7 @@ def main():
         for file in filenames:
 
             # Check if the file is en.tok.off
-            if file == "en.tok.off.pos":
+            if file == "development.set":
 
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
@@ -235,8 +233,8 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
-
-                        lineList += " " + str(columns[3])
+                        if len(columns) > 2:
+                            lineList += " " + str(columns[4])
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
@@ -259,7 +257,7 @@ def main():
                         columns = line.split()
 
                         # Get the noun
-                        noun = columns[3]
+                        noun = columns[4]
 
                         # Get the number of lines
                         currentTag = allTaggedWords[lineNumber][1]
@@ -286,7 +284,6 @@ def main():
 
                                         columns.append(tagCityOrCountry)
 
-                                        print(tagCityOrCountry, wordResult)
 
                                 # City of country exists of a single word
                                 else:
@@ -305,7 +302,7 @@ def main():
                         else:
 
                             # If it is a noun
-                            if columns[4].startswith("N"):
+                            if columns[5].startswith("N"):
 
                                 # Check if the noun is an animal
                                 if findAnimal(noun):
@@ -323,7 +320,7 @@ def main():
                                 elif isEntertainment(noun):
                                     columns.append("ENT")
 
-                        if len(columns) == 6:
+                        if len(columns) == 7:
                             columns.append(getWikiURL(noun))
 
                         newLine = ' '.join(columns)
