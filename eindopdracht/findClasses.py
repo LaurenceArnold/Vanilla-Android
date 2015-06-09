@@ -58,7 +58,7 @@ def isNatural(noun):
     
     for word in firstSentence:
         for item in naturalList:
-            if (word == item):
+            if (word.lower() == item.lower()):
                 return True
     
     return False
@@ -74,7 +74,7 @@ def isEntertainment(noun):
     
     for word in firstSentence:
         for item in entertainmentList:
-            if (word == item):
+            if (word.lower() == item.lower()):
                 return True
     
     return False
