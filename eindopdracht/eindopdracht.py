@@ -17,6 +17,9 @@ def disambiguationWikipedia(noun):
         wiki = wikipedia.page(noun)
         print("functie 1 wiki", wiki)
 
+    #alleen als er een woord is die niet bestaat in Wikipedia gaat hij dus naar except: maar die except is te specifiek (?)
+    # waardoor hij dus een error geeft
+
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
         print("Newnoun", newNoun)
@@ -210,7 +213,7 @@ def getWikiURL(tag):
         wiki = disambiguationWikipedia(tag)
         url = wiki.url
         print("link is", url)
-
+    # hij komt dus nooit bij deze except uit waardoor er nog errors voorkomen in het geheel
     except:
         print("nu komt er NULL!")
         return "Null"
