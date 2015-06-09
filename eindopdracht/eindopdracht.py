@@ -226,6 +226,7 @@ def main():
                         # Check for Others (Natural Places, Animals, Sports)
                         else:
 
+                            # If it is a noun
                             if columns[4].startswith("N"):
 
                                 # Check if the noun is an animal
@@ -248,8 +249,6 @@ def main():
                         #print(newLine)
 
                         lineNumber += 1
-
-
 
 if __name__ == "__main__":
     main()
