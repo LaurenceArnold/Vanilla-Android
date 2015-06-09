@@ -236,6 +236,12 @@ def main():
                                 elif findSport(noun):
                                     columns.append("SPO")
 
+                                elif isNatural(noun):
+                                    columns.append("NAT")
+
+                                elif isEntertainment(noun):
+                                    columns.append("ENT")
+
                         newLine = ' '.join(columns)
                         print(newLine)
 
