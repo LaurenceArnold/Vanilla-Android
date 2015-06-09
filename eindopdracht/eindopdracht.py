@@ -142,7 +142,6 @@ def getWikiURL(tag):
 
     return wiki.url
 
-
 def main():
     # Get the directory of the file
     directory = os.getcwd()
@@ -233,8 +232,17 @@ def main():
                                 if findAnimal(noun):
                                     columns.append("ANI")
 
+                                # Check if it is a sport
                                 elif findSport(noun):
                                     columns.append("SPO")
+
+                                # Check if it is a natural place
+                                elif isNatural(noun):
+                                    columns.append("NAT")
+
+                                # Check if it is entertainment
+                                elif isEntertainment(noun):
+                                    columns.append("ENT")
 
                         newLine = ' '.join(columns)
                         #print(newLine)
@@ -245,6 +253,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
