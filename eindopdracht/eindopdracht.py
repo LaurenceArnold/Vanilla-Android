@@ -201,12 +201,10 @@ def getWikiURL(tag):
     """
 
     # Check for disambiguation on Wikipedia
-    disambigu = disambiguationWikipedia(tag)
+    wiki = disambiguationWikipedia(tag)
 
-    if disambigu == False:
+    if wiki == False:
         return "Null"
-
-    wiki = wikipedia.page(disambigu)
 
     return wiki.url
 
