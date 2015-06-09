@@ -92,6 +92,11 @@ def findCityOrCountry(word):
         else:
             return "COU"
 
+def getWikiURL(tag):
+
+    wiki = wikipedia.page(tag)
+
+    print(wiki.url)
 
 
 def main():
@@ -136,7 +141,7 @@ def main():
                         for word in el:
                             allTaggedWords.append(word)
 
-
+                # Open file again
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineNumber = 0
@@ -146,36 +151,45 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
 
+                        # Get the noun
+                        noun = columns[3]
+
                         # Get the number of lines
                         currentTag = allTaggedWords[lineNumber][1]
 
                         # It's a Location, Person or Organization
                         if currentTag != "O":
 
-                            if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
+                            if currentTag == "LOCATION":
 
-                                # Check for location, and dubble location tag, like New York or Sri Lanka
+                                # Check for locations like New-York (multiple words)
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
-                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
+                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(noun)
                                         tagCityOrCountry = findCityOrCountry(wordResult)
                                         print(tagCityOrCountry, wordResult)
-                                        #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
-                                if currentTag == "LOCATION":
-                                    result = findCityOrCountry(columns[3])
-                                    print(result)
-                                    #append tagCityorCountry in kolom, als kolom == " "
-
+                                # City of country exists of a single word
                                 else:
-                                    columns.append(currentTag)
+                                    result = findCityOrCountry(noun)
+                                    columns.append(result)
 
+                            if currentTag == "PERSON":
+                                columns.append("PER")
 
-                        # Check for Others
+                            if currentTag == "ORGANIZATION":
+                                columns.append("ORG")
+
+                        # Check for Others (Natural Places, Animals, Sports)
                         else:
 
                             if columns[4].startswith("N"):
 
-                                columns.append(currentTag)
+                                # Check if the noun is an animal
+                                if findAnimal(noun):
+                                    columns.append("ANI")
+
+                                elif findSport(noun):
+                                    columns.append("SPO")
 
                         newLine = ' '.join(columns)
                         print(newLine)
