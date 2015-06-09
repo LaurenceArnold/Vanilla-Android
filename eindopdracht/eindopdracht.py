@@ -372,7 +372,7 @@ def main():
                             columns.append(getWikiURL(noun, tag))
 
                         newLine = ' '.join(columns)
-                        print(newLine)
+                        #print(newLine)
 
     
 
