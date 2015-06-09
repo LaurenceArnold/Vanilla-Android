@@ -280,7 +280,7 @@ def main():
                             allTaggedWords.append(word)
 
                 # Open file again
-                with open(root+'/'+file, 'r') as in_f:
+                in_f = open(root+'/'+file):
 
                     lineNumber = 0
                     nextLine = in_f.read(1)
