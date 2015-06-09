@@ -233,12 +233,15 @@ def main():
                                 if findAnimal(noun):
                                     columns.append("ANI")
 
+                                # Check if it is a sport
                                 elif findSport(noun):
                                     columns.append("SPO")
 
+                                # Check if it is a natural place
                                 elif isNatural(noun):
                                     columns.append("NAT")
 
+                                # Check if it is entertainment
                                 elif isEntertainment(noun):
                                     columns.append("ENT")
 
