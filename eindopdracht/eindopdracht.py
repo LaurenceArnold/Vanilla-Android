@@ -3,13 +3,12 @@
 import os
 import nltk
 from nltk.corpus import wordnet
-from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
 import wikipedia
 
 def getMaxSim(synsets1, synsets2):
+
     """ From slides """
-    # assignment 1.3
 
     maxSim = None
     for syn1 in synsets1:
@@ -21,7 +20,9 @@ def getMaxSim(synsets1, synsets2):
     return maxSim
 
 def hypernymOf(synset1, synset2):
+
     """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
+
     if (synset1 == synset2):
         return True
     for hypernym in synset1.hypernyms():
@@ -34,6 +35,9 @@ def hypernymOf(synset1, synset2):
 
 
 def findAnimal(noun):
+
+    """ Look with synsets for an animal """
+
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -47,6 +51,9 @@ def findAnimal(noun):
     return False
 
 def findSport(noun):
+
+    """ Look with synsets for a sport """
+
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -61,7 +68,9 @@ def findSport(noun):
 
 def findCityOrCountry(word):
 
-    #If tag is location, loop through these lines
+    """ Check if it is a country or city """
+
+    # If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
     CityResult = getMaxSim(CitySyns, City2Syns)
@@ -76,6 +85,7 @@ def findCityOrCountry(word):
     elif CountryResult > CityResult:
         return "COU"
 
+    # City or country is not in the Wordnet database
     else:
 
         # Get wikipedia content
@@ -94,9 +104,11 @@ def findCityOrCountry(word):
 
 def getWikiURL(tag):
 
+    """ Get the Wikipedia URL """
+
     wiki = wikipedia.page(tag)
 
-    print(wiki.url)
+    return wiki.url
 
 
 def main():
