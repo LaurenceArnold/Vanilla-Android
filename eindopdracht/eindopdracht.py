@@ -201,6 +201,7 @@ def getWikiURL(noun, tag):
 
     if tag == "PER":
         searchList = wikipedia.search(tag, results=2)
+        print(searchList)
 
         if len(searchList) == 2:
             wikipage = wikipedia.page(searchList[0])
@@ -211,7 +212,7 @@ def getWikiURL(noun, tag):
 
             else:
                 wikipage = wikipedia.page(searchList[1])
-                firstSentence = wikipage.content.split(".")[0]
+                firstSentence = wikipage.contgent.split(".")[0]
 
                 if "born" in firstSentence:
                     return wikipage.url
