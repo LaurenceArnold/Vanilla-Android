@@ -142,7 +142,6 @@ def getWikiURL(tag):
 
     return wiki.url
 
-
 def main():
 
     # Get the directory of the file
@@ -244,6 +243,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
