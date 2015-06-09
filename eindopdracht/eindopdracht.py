@@ -102,6 +102,38 @@ def findCityOrCountry(word):
         else:
             return "COU"
 
+def isNatural(noun):
+    naturalList = ["volcano", "river", "forest", "ocean", "water", "lake",
+    "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
+
+    # Get wikipedia content
+    wiki = wikipedia.page(noun)
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
+
+    for word in firstSentence:
+        for item in naturalList:
+            if (word.lower() == item.lower()):
+                return True
+
+    return False
+
+def isEntertainment(noun):
+    entertainmentList = ["newspaper", "television", "radio", "magazine",
+    "show", "musical", "song", "album", "tv", "Netflix"]
+
+    # Get wikipedia content
+    wiki = wikipedia.page(noun)
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
+
+    for word in firstSentence:
+        for item in entertainmentList:
+            if (word.lower() == item.lower()):
+                return True
+
+    return False
+
 def getWikiURL(tag):
 
     """ Get the Wikipedia URL """
