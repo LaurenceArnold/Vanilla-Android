@@ -3,13 +3,12 @@
 import os
 import nltk
 from nltk.corpus import wordnet
-from nltk.wsd import lesk
 from nltk.tag.stanford import NERTagger
 import wikipedia
 
 def getMaxSim(synsets1, synsets2):
+
     """ From slides """
-    # assignment 1.3
 
     maxSim = None
     for syn1 in synsets1:
@@ -21,7 +20,9 @@ def getMaxSim(synsets1, synsets2):
     return maxSim
 
 def hypernymOf(synset1, synset2):
+
     """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
+
     if (synset1 == synset2):
         return True
     for hypernym in synset1.hypernyms():
@@ -34,6 +35,9 @@ def hypernymOf(synset1, synset2):
 
 
 def findAnimal(noun):
+
+    """ Look with synsets for an animal """
+
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -47,6 +51,9 @@ def findAnimal(noun):
     return False
 
 def findSport(noun):
+
+    """ Look with synsets for a sport """
+
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
         synset1 = synset1[0]
@@ -61,7 +68,9 @@ def findSport(noun):
 
 def findCityOrCountry(word):
 
-    #If tag is location, loop through these lines
+    """ Check if it is a country or city """
+
+    # If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
     City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
     CityResult = getMaxSim(CitySyns, City2Syns)
@@ -76,6 +85,7 @@ def findCityOrCountry(word):
     elif CountryResult > CityResult:
         return "COU"
 
+    # City or country is not in the Wordnet database
     else:
 
         # Get wikipedia content
@@ -92,6 +102,13 @@ def findCityOrCountry(word):
         else:
             return "COU"
 
+def getWikiURL(tag):
+
+    """ Get the Wikipedia URL """
+
+    wiki = wikipedia.page(tag)
+
+    return wiki.url
 
 
 def main():
@@ -136,7 +153,7 @@ def main():
                         for word in el:
                             allTaggedWords.append(word)
 
-
+                # Open file again
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineNumber = 0
@@ -146,70 +163,52 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
 
+                        # Get the noun
+                        noun = columns[3]
+
                         # Get the number of lines
                         currentTag = allTaggedWords[lineNumber][1]
 
                         # It's a Location, Person or Organization
                         if currentTag != "O":
 
+                            if currentTag == "LOCATION":
 
-                            if currentTag == "LOCATION" or currentTag == "ORGANIZATION" or currentTag == "PERSON":
-
-                                # Check for location, and dubble location tag, like New York or Sri Lanka
+                                # Check for locations like New-York (multiple words)
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
-                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
+                                        wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(noun)
                                         tagCityOrCountry = findCityOrCountry(wordResult)
                                         print(tagCityOrCountry, wordResult)
-                                        #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
-                                if currentTag == "LOCATION":
-                                    result = findCityOrCountry(columns[3])
-                                    print(result)
-                                    #append tagCityorCountry in kolom, als kolom == " "
-
+                                # City of country exists of a single word
                                 else:
+                                    result = findCityOrCountry(noun)
+                                    columns.append(result)
 
-                                    columns.append(currentTag)
+                            # It is a person
+                            if currentTag == "PERSON":
+                                columns.append("PER")
 
+                            # It is an organization
+                            if currentTag == "ORGANIZATION":
+                                columns.append("ORG")
 
-                        # Check for Others
+                        # Check for Others (Natural Places, Animals, Sports)
                         else:
-                            print(currentTag, columns[3])
 
                             if columns[4].startswith("N"):
 
-                                columns.append(currentTag)
+                                # Check if the noun is an animal
+                                if findAnimal(noun):
+                                    columns.append("ANI")
+
+                                elif findSport(noun):
+                                    columns.append("SPO")
 
                         newLine = ' '.join(columns)
                         print(newLine)
 
                         lineNumber += 1
-
-    """
-    # eerst standaard entity tagger laten runnen op de inputfiles
-    # daarna de rest handmatig laten taggen via Wordnet & hypernyms
-
-
-    """
-
-    NPSyns = wordnet.synsets(str("lake"), pos = 'n')
-    #zelfde variabele getagd met LOC
-    NP2Syns = wordnet.synsets(str("ocean"), pos = 'n')
-    result3= getMaxSim(NPSyns, NP2Syns)
-    #print(result3)
-
-    NPSyns2 = wordnet.synsets(str("lake"), pos = 'n')
-    #zelfde variabele getagd met LOC
-    NP2Syns2 = wordnet.synsets(str("drive"), pos = 'n')
-    #result4= getMaxSim(CountrySyns, Country2Syns)
-    #print(result4)
-
-    #print(findAnimal("dog"))
-    #print(findSport("football"))
-
-
-
-    #En als woord Other is, dan checken of het iets anders is dmv van de functies
 
 if __name__ == "__main__":
     main()
