@@ -59,7 +59,7 @@ def findSport(noun):
 
     return False
 
-def findCityorCountry(word):
+def findCityOrCountry(word):
 
     #If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
@@ -84,16 +84,14 @@ def findCityorCountry(word):
         # Get first sentence
         firstSentence = wiki.content.split(".")[0]
 
-        # Loop through sentence
-        for i in firstSentence:
+        # Check for city in the first sentence
+        if "city" in firstSentence:
+            return "CIT"
 
-            # If the word is a city
-            if i == "city":
-                return "CIT"
+        # City is not found in the sentence
+        else:
+            return "COU"
 
-           # Else it is a country
-            else:
-                return "COU"
 
 
 def main():
@@ -159,15 +157,14 @@ def main():
                                 # Check for location, and dubble location tag, like New York or Sri Lanka
                                 if currentTag == "LOCATION" and allTaggedWords[lineNumber-1][1] == "LOCATION":
                                         wordResult = str(allTaggedWords[lineNumber-1][0]) + "_" + str(columns[3])
-                                        tagCityorCountry = findCityorCountry(wordResult)
-                                        tagCityorCountry2 = tagCityorCountry
-                                        print(tagCityorCountry, wordResult)
+                                        tagCityOrCountry = findCityOrCountry(wordResult)
+                                        print(tagCityOrCountry, wordResult)
                                         #append tagCitryorCountry als tagCityorCountry in kolom: zowel in index -1 als 0
 
-                                        if currentTag == "LOCATION":
-                                            tagCityorCountry = findCityorCountry(columns[3])
-                                            #print(tagCityorCountry, columns[3])
-                                            #append tagCityorCountry in kolom, als kolom == " "
+                                if currentTag == "LOCATION":
+                                    result = findCityOrCountry(columns[3])
+                                    print(result)
+                                    #append tagCityorCountry in kolom, als kolom == " "
 
                                 else:
                                     columns.append(currentTag)

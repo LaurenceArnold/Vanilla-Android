@@ -3,8 +3,8 @@
 17 24 1003 Jacques NNS
 25 31 1004 Chirac NNP
 32 35 1005 has VBZ
-36 43 1006 offered VBD
 44 47 1007 his PRP$
+36 43 1006 offered VBD
 48 55 1008 support NN
 56 59 1009 for IN
 60 67 1010 Croatia NNP
@@ -90,4 +90,6 @@
 556 560 4022 with IN
 561 564 4023 the DT
 565 569 4024 bloc NN
+36 43 1006 in VBD
+1 1 1001 Groningen NNP
 569 570 4025 . .
