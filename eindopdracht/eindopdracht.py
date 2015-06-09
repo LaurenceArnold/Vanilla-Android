@@ -103,6 +103,9 @@ def findCityOrCountry(word):
             return "COU"
 
 def isNatural(noun):
+
+    """ Check if it is a natural place """
+
     naturalList = ["volcano", "river", "forest", "ocean", "water", "lake",
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
@@ -119,6 +122,9 @@ def isNatural(noun):
     return False
 
 def isEntertainment(noun):
+
+    """ Check if it is an entertainment """
+
     entertainmentList = ["newspaper", "television", "radio", "magazine",
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
