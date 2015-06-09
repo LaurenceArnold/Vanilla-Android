@@ -6,9 +6,33 @@ from nltk.corpus import wordnet
 from nltk.tag.stanford import NERTagger
 import wikipedia
 
+def disambiguationWikipedia(noun):
+
+    """
+    Disambiguation for Wikipedia errors
+    """
+
+    # Try to get wikipedia content
+    try:
+        wiki = wikipedia.page(noun)
+
+    except wikipedia.exceptions.DisambiguationError as e:
+        newNoun = e.options[0]
+        print("wikiwoord is, ", newNoun)
+
+        try:
+            wiki = wikipedia.page(newNoun)
+
+        except:
+            return False
+
+    return wiki
+
 def getMaxSim(synsets1, synsets2):
 
-    """ From slides """
+    """
+    From slides
+    """
 
     maxSim = None
     for syn1 in synsets1:
@@ -21,7 +45,9 @@ def getMaxSim(synsets1, synsets2):
 
 def hypernymOf(synset1, synset2):
 
-    """ True als synset2 een hypernym is van synset1 (of dezelfde synset)"""
+    """
+    True als synset2 een hypernym is van synset1 (of dezelfde synset)
+    """
 
     if (synset1 == synset2):
         return True
@@ -36,7 +62,9 @@ def hypernymOf(synset1, synset2):
 
 def findAnimal(noun):
 
-    """ Look with synsets for an animal """
+    """
+    Look with synsets for an animal
+    """
 
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
@@ -52,7 +80,9 @@ def findAnimal(noun):
 
 def findSport(noun):
 
-    """ Look with synsets for a sport """
+    """
+    Look with synsets for a sport
+    """
 
     synset1 = wordnet.synsets(noun, pos='n')
     if (isinstance(synset1, list)):
@@ -68,7 +98,9 @@ def findSport(noun):
 
 def findCityOrCountry(word):
 
-    """ Check if it is a country or city """
+    """
+    Check if it is a country or city
+    """
 
     # If tag is location, loop through these lines
     CitySyns = wordnet.synsets(str(word), pos = 'n')
@@ -88,8 +120,7 @@ def findCityOrCountry(word):
     # City or country is not in the Wordnet database
     else:
 
-        # Get wikipedia content
-        wiki = wikipedia.page(word)
+        wiki = disambiguationWikipedia(word)
 
         # Get first sentence
         firstSentence = wiki.content.split(".")[0]
@@ -104,25 +135,15 @@ def findCityOrCountry(word):
 
 def isNatural(noun):
 
-    """ Check if it is a natural place """
+    """
+    Check if it is a natural place
+    """
 
     naturalList = ["volcano", "river", "forest", "jungle", "ocean", "water", "lake",
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
-    # Try to get wikipedia content
-    try:
-        wiki = wikipedia.page(noun)
-
-    except wikipedia.exceptions.DisambiguationError as e:
-        newNoun = e.options[0]
-        print("wikiwoord is, ", newNoun)
-
-        try:
-            wiki = wikipedia.page(newNoun)
-
-        except:
-            return False
-
+    # Check for disambiguation on Wikipedia
+    wiki = disambiguationWikipedia(noun)
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
@@ -137,24 +158,14 @@ def isNatural(noun):
 
 def isEntertainment(noun):
 
-    """ Check if it is an entertainment """
+    """
+    Check if it is an entertainment
+    """
 
     entertainmentList = ["newspaper", "television", "radio", "magazine",
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
-    # Try to get wikipedia content
-    try:
-        wiki = wikipedia.page(noun)
-
-    except wikipedia.exceptions.DisambiguationError as e:
-        newNoun = e.options[0]
-        print("wikiwoord is, ", newNoun)
-
-        try:
-            wiki = wikipedia.page(newNoun)
-
-        except:
-            return False
+    wiki = disambiguationWikipedia(noun)
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
@@ -168,7 +179,9 @@ def isEntertainment(noun):
 
 def getWikiURL(tag):
 
-    """ Get the Wikipedia URL """
+    """
+    Get the Wikipedia URL
+    """
 
     wiki = wikipedia.page(tag)
 
