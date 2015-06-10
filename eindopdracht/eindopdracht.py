@@ -16,12 +16,32 @@ def disambiguationWikipedia(noun):
     try:
         wiki = wikipedia.page(noun)
 
-    except:
+    except wikipedia.exceptions.DisambiguationError as e:
+        new = e.options[0]
+
         try:
-            wiki = wikipedia.page(noun)
-        # deze except, daar gaat het fout als een woord niet bestaat, hoe te fixen?
+            wiki = wikipedia.page(new)
+
         except:
-            return "Null"
+            return 'Null'
+
+    except wikipedia.exceptions.PageError:
+        new = wikipedia.search(noun)
+
+        try:
+            wiki = wikipedia.page(new[0])
+
+        except:
+            return 'Null'
+
+    except:
+        return 'Null'
+
+        #try:
+        #    wiki = wikipedia.page(noun)
+        # deze except, daar gaat het fout als een woord niet bestaat, hoe te fixen?
+        #except:
+        #    return "Null"
             #wikipedia.exceptions.DisambiguationError as e:
             #newNoun = e.options[0]
             #print(newNoun)
@@ -218,6 +238,9 @@ def getWikiURL(tag):
     return url
 
 def main():
+
+    wordList = []
+
     # Get the directory of the file
     directory = os.getcwd()
 
@@ -238,7 +261,7 @@ def main():
                 with open(root+'/'+file, 'r') as in_f:
 
                     lineList = " "
-
+                    lineNum = 0
                     # Loop through lines of file
                     for line in in_f:
 
@@ -246,6 +269,9 @@ def main():
                         columns = line.split()
                         if len(columns) > 3:
                             lineList += " " + str(columns[4])
+                            lineNum += 1
+                            wordList.append([lineNum, str(columns[4]), "", ""])
+
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
@@ -253,100 +279,160 @@ def main():
 
                     allTaggedWords = []
 
+                    listIndex = 0
                     for el in taggedWords:
-                        print("el is", el)
+
                         for word in el:
-                            print("word is", word)
-                            allTaggedWords.append(word)
+                            wordList[listIndex][2] = str(word[1])
+                            listIndex += 1
 
-                # Open file again
-                with open(root+'/'+file, 'r') as in_f:
+                for item in wordList:
+                    if item[3]:
+                        print(item)
+                        continue
 
-                    lineNumber = 0
+                    lineNumber = item[0]
+                    currentTag = item[2]
+                    # It's a Location, Person or Organization
+                    if currentTag != "O":
+                        if currentTag == "LOCATION":
+                            wordResult = item[1]
+                            wordLen = 1
 
-                    for line in in_f:
+                            # Check for locations like New-York (multiple words)
+                            # Line number is always 1 ahead of index (line 1 is index 0)
+                            if wordList[lineNumber][2] == "LOCATION":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                                wordLen = 2
 
-                        # Get tokens and append to list
-                        columns = line.split()
+                                if wordList[lineNumber+1][2] == "LOCATION":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                    wordLen = 3
 
-                        if len(columns) == 8:
-                            columns.pop(7)
-                            columns.pop(6)
+                                    if wordList[lineNumber+2][2] == "LOCATION":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                        wordLen = 4
 
+                                        if wordList[lineNumber+3][2] == "LOCATION":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                            wordLen = 5
 
-                        # Get the noun
-                        if len(columns) > 5:
-                            noun = columns[4]
-
-                            # Get the number of lines
-                            currentTag = allTaggedWords[lineNumber][1]
-
-                            # It's a Location, Person or Organization
-                            if currentTag != "O":
-
-                                if currentTag == "LOCATION":
-
-                                    # Check for locations like New-York (multiple words)
-                                    if currentTag == "LOCATION" and allTaggedWords[lineNumber+1][1] == "LOCATION":
-                                            wordResult = str(noun) + "_" + str(allTaggedWords[lineNumber+1][0])
-
-                                            if allTaggedWords[lineNumber+2][1] == "LOCATION":
-                                                wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
-
-                                            elif allTaggedWords[lineNumber+3][1] == "LOCATION":
-                                                wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
-
-                                            elif allTaggedWords[lineNumber+4][1] == "LOCATION":
-                                                wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
-
-                                            tagCityOrCountry = findCityOrCountry(wordResult)
-
-                                            columns.append(tagCityOrCountry)
+                                            if wordList[lineNumber+4][2] == "LOCATION":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                                wordLen = 6
 
 
-                                    # City of country exists of a single word
-                                    else:
-                                        result = findCityOrCountry(noun)
-                                        columns.append(result)
+                            tagCityOrCountry = findCityOrCountry(wordResult)
+                            thisLine = lineNumber - 1
+                            countryWiki = getWikiURL(wordResult)
+                            for i in range(wordLen):
+                                wordList[thisLine+i][2] = tagCityOrCountry
+                                wordList[thisLine+i][3] = countryWiki
 
-                                # It is a person
-                                elif currentTag == "PERSON":
-                                    columns.append("PER")
 
-                                # It is an organization
-                                elif currentTag == "ORGANIZATION":
-                                    columns.append("ORG")
 
-                            # Check for Others (Natural Places, Animals, Sports)
-                            else:
+                        # It is a person
 
-                                # If it is a noun
+                        elif currentTag == "PERSON":
+                            wordResult = item[1]
+                            wordLen = 1
 
-                                if columns[5].startswith("N"):
+                            # Check for locations like New-York (multiple words)
+                            # Line number is always 1 ahead of index (line 1 is index 0)
+                            if wordList[lineNumber][2] == "PERSON":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                                wordLen = 2
 
-                                    # Check if the noun is an animal
-                                    if findAnimal(noun):
-                                        columns.append("ANI")
+                                if wordList[lineNumber+1][2] == "PERSON":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                    wordLen = 3
 
-                                    # Check if it is a sport
-                                    elif findSport(noun):
-                                        columns.append("SPO")
+                                    if wordList[lineNumber+2][2] == "PERSON":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                        wordLen = 4
 
-                                    # Check if it is a natural place
-                                    elif isNatural(noun):
-                                        columns.append("NAT")
+                                        if wordList[lineNumber+3][2] == "PERSON":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                            wordLen = 5
 
-                                    # Check if it is entertainment
-                                    elif isEntertainment(noun):
-                                        columns.append("ENT")
+                                            if wordList[lineNumber+4][2] == "PERSON":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                                wordLen = 6
 
-                            if len(columns) == 7:
-                                columns.append(getWikiURL(noun))
+                            thisLine = lineNumber - 1
+                            personWiki = getWikiURL(wordResult)
+                            for i in range(wordLen):
+                                wordList[thisLine+i][2] = "PER"
+                                wordList[thisLine+i][3] = personWiki
 
-                            newLine = ' '.join(columns)
-                            print(newLine)
 
-                            lineNumber += 1
+                        # It is an organization
+                        elif currentTag == "ORGANIZATION":
+                            wordResult = item[1]
+                            wordLen = 1
+
+                            # Check for locations like New-York (multiple words)
+                            # Line number is always 1 ahead of index (line 1 is index 0)
+                            if wordList[lineNumber][2] == "ORGANIZATION":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                                wordLen = 2
+
+                                if wordList[lineNumber+1][2] == "ORGANIZATION":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                    wordLen = 3
+
+                                    if wordList[lineNumber+2][2] == "ORGANIZATION":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                        wordLen = 4
+
+                                        if wordList[lineNumber+3][2] == "ORGANIZATION":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                            wordLen = 5
+
+                                            if wordList[lineNumber+4][2] == "ORGANIZATION":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                                wordLen = 6
+
+                            thisLine = lineNumber - 1
+                            orgWiki = getWikiURL(wordResult)
+                            for i in range(wordLen):
+                                wordList[thisLine+i][2] = "ORG"
+                                wordList[thisLine+i][3] = orgWiki
+
+                    # Check for Others (Natural Places, Animals, Sports)
+                    else:
+
+                        # If it is a noun
+
+                        if columns[5].startswith("N"):
+
+                            # Check if the noun is an animal
+                            if findAnimal(item[1]):
+                                item[2] = "ANI"
+                                item[3] = "http"
+
+                            # Check if it is a sport
+                            elif findSport(item[1]):
+                                item[2] = "SPO"
+                                item[3] = "http"
+
+                            # Check if it is a natural place
+                            elif isNatural(item[1]):
+                                item[2] = "NAT"
+                                item[3] = "http"
+
+                            # Check if it is entertainment
+                            elif isEntertainment(item[1]):
+                                item[2] = "ENT"
+                                item[3] = "http"
+
+                        if len(columns) == 7:
+                            item[3] = getWikiURL(noun)
+
+                        #newLine = ' '.join(columns)
+                        #print(newLine)
+
+                    print(item)
 
 if __name__ == "__main__":
     main()
