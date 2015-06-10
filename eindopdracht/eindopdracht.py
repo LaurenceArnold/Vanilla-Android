@@ -16,17 +16,21 @@ def disambiguationWikipedia(noun):
     try:
         wiki = wikipedia.page(noun)
 
-        if bool(wiki)!= "True":
-            return False
-
-    except wikipedia.exceptions.DisambiguationError as e:
-        newNoun = e.options[0]
-
+    except:
         try:
-            wiki = wikipedia.page(newNoun)
-
+            wiki = wikipedia.page(noun)
+        # deze except, daar gaat het fout als een woord niet bestaat, hoe te fixen?
         except:
-            return False
+            return "Null"
+            #wikipedia.exceptions.DisambiguationError as e:
+            #newNoun = e.options[0]
+            #print(newNoun)
+
+            #try:
+                #wiki = wikipedia.page(newNoun)
+
+            #except:
+                #return "Null"
 
     return wiki
 
@@ -133,8 +137,8 @@ def findCityOrCountry(word):
         # Check for disambiguation on Wikipedia
         wiki = disambiguationWikipedia(word)
 
-        if wiki == False:
-            return False
+        if wiki == "Null":
+            return "Null"
 
         # Get first sentence
         firstSentence = wiki.content.split(".")[0]
@@ -160,20 +164,17 @@ def isNatural(noun):
     wiki = disambiguationWikipedia(noun)
 
     # Get first sentence
-    if wiki == False:
+    if wiki == "Null":
         return False
 
-    else:
-        firstSentence = wiki.content.split(".")[0]
+    firstSentence = wiki.content.split(".")[0]
 
-        for word in firstSentence:
-            for item in naturalList:
-                if (word.lower() == item.lower()):
-                    return True
-
+    for word in firstSentence:
+        for item in naturalList:
+            if (word.lower() == item.lower()):
+                return True
 
     return False
-
 
 def isEntertainment(noun):
 
@@ -186,7 +187,7 @@ def isEntertainment(noun):
 
     wiki = disambiguationWikipedia(noun)
 
-    if wiki == False:
+    if wiki == "Null":
         return False
 
     # Get first sentence
@@ -201,12 +202,12 @@ def isEntertainment(noun):
 
 def getWikiURL(tag):
 
-
     """
     Get the Wikipedia URL
     """
 
     # Check for disambiguation on Wikipedia
+
     wiki = disambiguationWikipedia(tag)
     try:
         url = wiki.url
@@ -243,8 +244,8 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
-                        if len(columns) > 2:
-                            lineList += " " + unicode(str(columns[4]), errors='ignore')
+                        if len(columns) > 3:
+                            lineList += " " + str(columns[4])
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
@@ -272,76 +273,78 @@ def main():
 
 
                         # Get the noun
-                        noun = columns[4]
+                        if len(columns) > 3:
+                            noun = columns[4]
 
-                        # Get the number of lines
-                        currentTag = allTaggedWords[lineNumber][1]
+                            # Get the number of lines
+                            currentTag = allTaggedWords[lineNumber][1]
 
-                        # It's a Location, Person or Organization
-                        if currentTag != "O":
+                            # It's a Location, Person or Organization
+                            if currentTag != "O":
 
-                            if currentTag == "LOCATION":
+                                if currentTag == "LOCATION":
 
-                                # Check for locations like New-York (multiple words)
-                                if currentTag == "LOCATION" and allTaggedWords[lineNumber+1][1] == "LOCATION":
-                                        wordResult = str(noun) + "_" + str(allTaggedWords[lineNumber+1][0])
+                                    # Check for locations like New-York (multiple words)
+                                    if currentTag == "LOCATION" and allTaggedWords[lineNumber+1][1] == "LOCATION":
+                                            wordResult = str(noun) + "_" + str(allTaggedWords[lineNumber+1][0])
 
-                                        if allTaggedWords[lineNumber+2][1] == "LOCATION":
-                                            wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
+                                            if allTaggedWords[lineNumber+2][1] == "LOCATION":
+                                                wordResult += "_" + str(allTaggedWords[lineNumber+2][0])
 
-                                        elif allTaggedWords[lineNumber+3][1] == "LOCATION":
-                                            wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
+                                            elif allTaggedWords[lineNumber+3][1] == "LOCATION":
+                                                wordResult += "_" + str(allTaggedWords[lineNumber+3][0])
 
-                                        elif allTaggedWords[lineNumber+4][1] == "LOCATION":
-                                            wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
+                                            elif allTaggedWords[lineNumber+4][1] == "LOCATION":
+                                                wordResult += "_" + str(allTaggedWords[lineNumber+4][0])
 
-                                        tagCityOrCountry = findCityOrCountry(wordResult)
+                                            tagCityOrCountry = findCityOrCountry(wordResult)
 
-                                        columns.append(tagCityOrCountry)
+                                            columns.append(tagCityOrCountry)
 
 
-                                # City of country exists of a single word
-                                else:
-                                    result = findCityOrCountry(noun)
-                                    columns.append(result)
+                                    # City of country exists of a single word
+                                    else:
+                                        result = findCityOrCountry(noun)
+                                        columns.append(result)
 
-                            # It is a person
-                            elif currentTag == "PERSON":
-                                columns.append("PER")
+                                # It is a person
+                                elif currentTag == "PERSON":
+                                    columns.append("PER")
 
-                            # It is an organization
-                            elif currentTag == "ORGANIZATION":
-                                columns.append("ORG")
+                                # It is an organization
+                                elif currentTag == "ORGANIZATION":
+                                    columns.append("ORG")
 
-                        # Check for Others (Natural Places, Animals, Sports)
-                        else:
+                            # Check for Others (Natural Places, Animals, Sports)
+                            else:
 
-                            # If it is a noun
-                            if columns[5].startswith("N"):
+                                # If it is a noun
 
-                                # Check if the noun is an animal
-                                if findAnimal(noun):
-                                    columns.append("ANI")
 
-                                # Check if it is a sport
-                                elif findSport(noun):
-                                    columns.append("SPO")
+                                if columns[5].startswith("N"):
 
-                                # Check if it is a natural place
-                                elif isNatural(noun):
-                                    columns.append("NAT")
+                                    # Check if the noun is an animal
+                                    if findAnimal(noun):
+                                        columns.append("ANI")
 
-                                # Check if it is entertainment
-                                elif isEntertainment(noun):
-                                    columns.append("ENT")
+                                    # Check if it is a sport
+                                    elif findSport(noun):
+                                        columns.append("SPO")
 
-                        if len(columns) == 7:
-                            columns.append(getWikiURL(noun))
+                                    # Check if it is a natural place
+                                    elif isNatural(noun):
 
-                        newLine = ' '.join(columns)
-                        print(newLine)
+                                    # Check if it is entertainment
+                                    elif isEntertainment(noun):
+                                        columns.append("ENT")
 
-                        lineNumber += 1
+                            if len(columns) == 7:
+                                columns.append(getWikiURL(noun))
+
+                            newLine = ' '.join(columns)
+                            print(newLine)
+
+                            lineNumber += 1
 
 if __name__ == "__main__":
     main()
