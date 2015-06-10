@@ -238,7 +238,7 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
                         if len(columns) > 2:
-                            lineList += " " + str(columns[4])
+                            lineList += " " + unicode(str(columns[4]), errors='ignore')
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
