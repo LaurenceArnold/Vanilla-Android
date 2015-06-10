@@ -16,11 +16,10 @@ def disambiguationWikipedia(noun):
     try:
         wiki = wikipedia.page(noun)
 
-        if bool(wiki) == "True":
-            print("match!")
-            return wiki
+        if bool(wiki) != "True":
+            return False
 
-    # wat nou als de try mislukt, en de except ook? Waar gaat de code dan verder?
+
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
 
@@ -159,20 +158,27 @@ def isNatural(noun):
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
     # Check for disambiguation on Wikipedia
-    wiki = disambiguationWikipedia(noun)
+    try:
+        wiki = disambiguationWikipedia(noun)
+
+    except:
+        return False
 
     # Get first sentence
     if wiki == False:
         return False
 
-    firstSentence = wiki.content.split(".")[0]
+    else:
+        try:
+            firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
-        for item in naturalList:
-            if (word.lower() == item.lower()):
-                return True
+            for word in firstSentence:
+                for item in naturalList:
+                    if (word.lower() == item.lower()):
+                        return True
 
-    return False
+        except:
+            return False
 
 def isEntertainment(noun):
 
@@ -183,20 +189,26 @@ def isEntertainment(noun):
     entertainmentList = ["newspaper", "television", "radio", "magazine",
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
-    wiki = disambiguationWikipedia(noun)
+    try:
+        wiki = disambiguationWikipedia(noun)
+
+    except:
+        return False
 
     if wiki == False:
         return False
 
-    # Get first sentence
-    firstSentence = wiki.content.split(".")[0]
+    else:
+        try:
+            firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
-        for item in entertainmentList:
-            if (word.lower() == item.lower()):
-                return True
+            for word in firstSentence:
+                for item in naturalList:
+                    if (word.lower() == item.lower()):
+                        return True
 
-    return False
+        except:
+            return False
 
 def getWikiURL(tag):
 
@@ -207,12 +219,17 @@ def getWikiURL(tag):
 
     # Check for disambiguation on Wikipedia
     wiki = disambiguationWikipedia(tag)
-    link = wiki.url
+
+    try:
+        link = wiki.url
+
+    except:
+        return "Null"
+
     if bool(link):
         url = wiki.url
 
     elif wiki == "False":
-
         return "Null"
 
     else:
