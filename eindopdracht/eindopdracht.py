@@ -16,9 +16,8 @@ def disambiguationWikipedia(noun):
     try:
         wiki = wikipedia.page(noun)
 
-        if bool(wiki) != "True":
+        if bool(wiki)!= "True":
             return False
-
 
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
@@ -158,27 +157,23 @@ def isNatural(noun):
     "mountain", "hill", "sea", "woods", "island", "islands", "sea"]
 
     # Check for disambiguation on Wikipedia
-    try:
-        wiki = disambiguationWikipedia(noun)
-
-    except:
-        return False
+    wiki = disambiguationWikipedia(noun)
 
     # Get first sentence
     if wiki == False:
         return False
 
     else:
-        try:
-            firstSentence = wiki.content.split(".")[0]
+        firstSentence = wiki.content.split(".")[0]
 
-            for word in firstSentence:
-                for item in naturalList:
-                    if (word.lower() == item.lower()):
-                        return True
+        for word in firstSentence:
+            for item in naturalList:
+                if (word.lower() == item.lower()):
+                    return True
 
-        except:
-            return False
+
+    return False
+
 
 def isEntertainment(noun):
 
@@ -189,26 +184,20 @@ def isEntertainment(noun):
     entertainmentList = ["newspaper", "television", "radio", "magazine",
     "show", "musical", "song", "album", "tv", "Netflix", "film", "book", "novel"]
 
-    try:
-        wiki = disambiguationWikipedia(noun)
-
-    except:
-        return False
+    wiki = disambiguationWikipedia(noun)
 
     if wiki == False:
         return False
 
-    else:
-        try:
-            firstSentence = wiki.content.split(".")[0]
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
 
-            for word in firstSentence:
-                for item in naturalList:
-                    if (word.lower() == item.lower()):
-                        return True
+    for word in firstSentence:
+        for item in entertainmentList:
+            if (word.lower() == item.lower()):
+                return True
 
-        except:
-            return False
+    return False
 
 def getWikiURL(tag):
 
@@ -219,20 +208,10 @@ def getWikiURL(tag):
 
     # Check for disambiguation on Wikipedia
     wiki = disambiguationWikipedia(tag)
-
     try:
-        link = wiki.url
-
-    except:
-        return "Null"
-
-    if bool(link):
         url = wiki.url
 
-    elif wiki == "False":
-        return "Null"
-
-    else:
+    except:
         return "Null"
 
     return url
