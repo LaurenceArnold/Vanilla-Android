@@ -16,6 +16,11 @@ def disambiguationWikipedia(noun):
     try:
         wiki = wikipedia.page(noun)
 
+        if bool(wiki) == "True":
+            print("match!")
+            return wiki
+
+    # wat nou als de try mislukt, en de except ook? Waar gaat de code dan verder?
     except wikipedia.exceptions.DisambiguationError as e:
         newNoun = e.options[0]
 
@@ -202,8 +207,13 @@ def getWikiURL(tag):
 
     # Check for disambiguation on Wikipedia
     wiki = disambiguationWikipedia(tag)
-    if bool(wiki.url):
+    link = wiki.url
+    if bool(link):
         url = wiki.url
+
+    elif wiki == "False":
+
+        return "Null"
 
     else:
         return "Null"
