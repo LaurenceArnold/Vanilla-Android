@@ -409,25 +409,27 @@ def main():
                             # Check if the noun is an animal
                             if findAnimal(item[1]):
                                 item[2] = "ANI"
-                                item[3] = "http"
+                                item[3] = getWikiURL(item[1])
 
                             # Check if it is a sport
                             elif findSport(item[1]):
                                 item[2] = "SPO"
-                                item[3] = "http"
+                                item[3] = getWikiURL(item[1])
 
                             # Check if it is a natural place
                             elif isNatural(item[1]):
                                 item[2] = "NAT"
-                                item[3] = "http"
+                                item[3] = getWikiURL(item[1])
 
                             # Check if it is entertainment
                             elif isEntertainment(item[1]):
                                 item[2] = "ENT"
-                                item[3] = "http"
+                                item[3] = getWikiURL(item[1])
 
-                        if len(columns) == 7:
-                            item[3] = getWikiURL(noun)
+                            else:
+                                item[2] = "-"
+                                item[3] = "-"
+
 
                         #newLine = ' '.join(columns)
                         #print(newLine)
