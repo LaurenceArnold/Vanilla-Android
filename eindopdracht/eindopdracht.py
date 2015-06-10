@@ -254,7 +254,9 @@ def main():
                     allTaggedWords = []
 
                     for el in taggedWords:
+                        print("el is", el)
                         for word in el:
+                            print("word is", word)
                             allTaggedWords.append(word)
 
                 # Open file again
@@ -273,7 +275,7 @@ def main():
 
 
                         # Get the noun
-                        if len(columns) > 3:
+                        if len(columns) > 5:
                             noun = columns[4]
 
                             # Get the number of lines
@@ -319,7 +321,6 @@ def main():
                             else:
 
                                 # If it is a noun
-
 
                                 if columns[5].startswith("N"):
 
