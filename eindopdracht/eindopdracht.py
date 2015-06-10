@@ -333,6 +333,7 @@ def main():
 
                                     # Check if it is a natural place
                                     elif isNatural(noun):
+                                        columns.append("NAT")
 
                                     # Check if it is entertainment
                                     elif isEntertainment(noun):
