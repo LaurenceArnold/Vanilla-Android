@@ -465,6 +465,8 @@ def main():
                         #newLine = ' '.join(columns)
                         #print(newLine)
 
+                    # Remove our linenumber used in some pieces of code
+                    item.pop(0)
                     print(item)
 
 if __name__ == "__main__":
