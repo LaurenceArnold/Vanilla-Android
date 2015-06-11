@@ -300,6 +300,13 @@ def main():
 
                 for item in wordList:
                     if item[8]:
+
+                        item.pop(0)
+                        newLine = ' '.join(item)
+
+                        with open(root+'/developed.set', 'a') as finalfile:
+                            finalfile.write(newLine + '\n')
+
                         continue
 
                     lineNumber = item[0]
@@ -350,7 +357,6 @@ def main():
                         elif currentTag == "PERSON":
                             wordResult = item[5]
                             wordLen = 1
-
 
                             # Check for locations like New-York (multiple words)
                             # Line number is always 1 ahead of index (line 1 is index 0)
