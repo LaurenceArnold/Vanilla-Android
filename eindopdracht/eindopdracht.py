@@ -12,7 +12,7 @@ def disambiguationWikipedia(noun):
     Disambiguation for Wikipedia errors
     """
 
-    # Try to get wikipedia content
+        # Try to get wikipedia content
     try:
         wiki = wikipedia.page(noun)
 
@@ -37,20 +37,6 @@ def disambiguationWikipedia(noun):
     except:
         return 'Null'
 
-        #try:
-        #    wiki = wikipedia.page(noun)
-        # deze except, daar gaat het fout als een woord niet bestaat, hoe te fixen?
-        #except:
-        #    return "Null"
-            #wikipedia.exceptions.DisambiguationError as e:
-            #newNoun = e.options[0]
-            #print(newNoun)
-
-            #try:
-                #wiki = wikipedia.page(newNoun)
-
-            #except:
-                #return "Null"
 
     return wiki
 
@@ -220,22 +206,61 @@ def isEntertainment(noun):
 
     return False
 
-def getWikiURL(tag):
+def getWikiURL(noun, tag):
 
     """
     Get the Wikipedia URL
     """
+    #print(tag)
+    if tag == "PERSON":
 
-    # Check for disambiguation on Wikipedia
+        try:
+            wiki = wikipedia.page(noun)
 
-    wiki = disambiguationWikipedia(tag)
-    try:
-        url = wiki.url
+        except wikipedia.exceptions.DisambiguationError as e:
+            try:
+                newNoun = e.options[0]
+                newNoun2 = e.options[1]
 
-    except:
-        return "Null"
+                wiki = wikipedia.page(newNoun)
+                wiki2 = wikipedia.page(newNoun2)
 
-    return url
+                firstSentence1 = wiki.content.split(".")[0]
+                firstSentence2 = wiki2.content.split(".")[0]
+
+                if "born" in firstSentence1:
+                    return wiki.url
+
+                elif "born" in firstSentence2:
+                    return wiki2.url
+
+                else:
+                    return "Null"
+
+            except:
+                return "Null"
+
+        except wikipedia.exceptions.PageError:
+            new = wikipedia.search(noun)
+
+        try:
+            wiki = wikipedia.page(new[0])
+
+        except:
+            return 'Null'
+
+    else:
+        # Check for disambiguation on Wikipedia
+        wiki = disambiguationWikipedia(noun)
+
+
+        try:
+            url = wiki.url
+
+        except:
+            return "Null"
+
+        return url
 
 def main():
 
@@ -324,7 +349,7 @@ def main():
 
                             tagCityOrCountry = findCityOrCountry(wordResult)
                             thisLine = lineNumber - 1
-                            countryWiki = getWikiURL(wordResult)
+                            countryWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
                                 wordList[thisLine+i][2] = tagCityOrCountry
                                 wordList[thisLine+i][3] = countryWiki
@@ -360,7 +385,7 @@ def main():
                                                 wordLen = 6
 
                             thisLine = lineNumber - 1
-                            personWiki = getWikiURL(wordResult)
+                            personWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
                                 wordList[thisLine+i][2] = "PER"
                                 wordList[thisLine+i][3] = personWiki
@@ -394,7 +419,7 @@ def main():
                                                 wordLen = 6
 
                             thisLine = lineNumber - 1
-                            orgWiki = getWikiURL(wordResult)
+                            orgWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
                                 wordList[thisLine+i][2] = "ORG"
                                 wordList[thisLine+i][3] = orgWiki
@@ -409,22 +434,22 @@ def main():
                             # Check if the noun is an animal
                             if findAnimal(item[1]):
                                 item[2] = "ANI"
-                                item[3] = getWikiURL(item[1])
+                                item[3] = getWikiURL(item[1], currentTag)
 
                             # Check if it is a sport
                             elif findSport(item[1]):
                                 item[2] = "SPO"
-                                item[3] = getWikiURL(item[1])
+                                item[3] = getWikiURL(item[1], currentTag)
 
                             # Check if it is a natural place
                             elif isNatural(item[1]):
                                 item[2] = "NAT"
-                                item[3] = getWikiURL(item[1])
+                                item[3] = getWikiURL(item[1], currentTag)
 
                             # Check if it is entertainment
                             elif isEntertainment(item[1]):
                                 item[2] = "ENT"
-                                item[3] = getWikiURL(item[1])
+                                item[3] = getWikiURL(item[1], currentTag)
 
                             else:
                                 item[2] = "-"
