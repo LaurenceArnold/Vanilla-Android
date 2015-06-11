@@ -28,22 +28,27 @@ def main():
         for file in filenames:
             if file == "development.set":
                 with open(root+'/'+file, 'r') as in_f:
+                    linenr = 0
                     for line in in_f:
-                        columns = line.split()
-                        if (len(columns) > 5):
-                            token1 = columns[7]
-                            links1 = columns [7]
-                            goldenStandardTags.append(token1)
-                            goldenStandardLinks.append(links1)
-                        else:
-                            goldenStandardTags.append("NOPE")
-                            goldenStandardLinks.append("NOPE")
+                        if linenr <= 2286:
+                            columns = line.split()
 
-            elif (file == "en.tok.off.pos.tmp"):
+                            if (len(columns) > 7):
+                                token1 = columns[6]
+                                links1 = columns[7]
+                                goldenStandardTags.append(token1)
+                                goldenStandardLinks.append(links1)
+                            else:
+                                goldenStandardTags.append("NOPE")
+                                goldenStandardLinks.append("NOPE")
+
+                            linenr += 1
+
+            elif (file == "developed.set"):
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                         columns = line.split()
-                        if len(columns) > 5:
+                        if len(columns) > 7:
                             token2 = columns[6]
                             links2 = columns[7]
                             ourTags.append(token2)
@@ -51,6 +56,8 @@ def main():
                         else:
                             ourTags.append("NOPE")
                             ourWikilinks.append("NOPE")
+
+    print(len(goldenStandardLinks), len(ourWikilinks))
 
 
     # Define confusion matrix
