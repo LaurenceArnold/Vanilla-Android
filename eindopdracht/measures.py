@@ -58,16 +58,16 @@ def main():
 
 
     # Define confusion matrix
-    print(len(goldenStandardTags), len(ourTags))
 
     for word in goldenStandardTags:
         if word == "-":
-            word = "NOPE"
+            word.replace(word, "NOPE")
+
 
 
     for word in ourTags:
         if word == "-":
-            word = "NOPE"
+            word.replace(word, "NOPE")
 
 
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)
@@ -102,6 +102,7 @@ def main():
     fscores = 0
 
     for i in sorted(labels):
+        print(i)
         if true_positives[i] == 0:
             fscore = 0
         else:
@@ -112,6 +113,7 @@ def main():
             print("Recall: " + str(recall))
         print("f-score: " + str(fscore) + "\n")
         fscores += fscore
+
 
     print("\n\nGemiddelde f-score: " + str(fscores / 6))
     print("##############################################################")
