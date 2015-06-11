@@ -19,8 +19,6 @@ def main():
 
     ourTags = []
     goldenStandardTags = []
-    ourWikilinks = []
-    goldenStandardLinks = []
 
     # Fill taglist for each group member
     directory = os.getcwd()
@@ -37,12 +35,13 @@ def main():
                                 token1 = columns[6]
                                 links1 = columns[7]
                                 goldenStandardTags.append(token1)
-                                goldenStandardLinks.append(links1)
+
                             else:
                                 goldenStandardTags.append("NOPE")
-                                goldenStandardLinks.append("NOPE")
 
                             linenr += 1
+
+
 
             elif (file == "developed.set"):
                 with open(root+'/'+file, 'r') as in_f:
@@ -52,13 +51,14 @@ def main():
                             token2 = columns[6]
                             links2 = columns[7]
                             ourTags.append(token2)
-                            ourWikilinks.append(links2)
                         else:
                             ourTags.append("NOPE")
-                            ourWikilinks.append("NOPE")
+
+
 
 
     # Define confusion matrix
+    print(len(goldenStandardTags), len(ourTags))
 
     for word in goldenStandardTags:
         if word == "-":
@@ -68,23 +68,9 @@ def main():
     for word in ourTags:
         if word == "-":
             word = "NOPE"
+
+
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)
-
-    # Search for interesting vs non-interesting entities
-    # (how often we agree on finding anything, no matter the tag)
-    labelNope = set('PER COU CIT ENT ORG NAT NOPE'.split())
-    tpNopes = Counter()
-    fpNopes = Counter()
-    fnNopes = Counter()
-
-    for i in labelNope:
-        for j in labelNope:
-            if ((i != 'NOPE') and (j != 'NOPE')):
-                tpNopes[i] += cmTags[i,j]
-            else:
-                fnNopes[i] += cmTags[i,j]
-                fpNopes[j] += cmTags[i,j]
-
 
     print("\n\n##############################################################")
 
@@ -117,8 +103,6 @@ def main():
 
     for i in sorted(labels):
         if true_positives[i] == 0:
-            print(i)
-            print(true_positives)
             fscore = 0
         else:
             precision = true_positives[i] / float(true_positives[i]+false_positives[i])
