@@ -74,10 +74,10 @@ def main():
     for i in labelNope:
         for j in labelNope:
             if ((i != 'NOPE') and (j != 'NOPE')):
-                tpNopes[i] += cm[i,j]
+                tpNopes[i] += cmTags[i,j]
             else:
-                fnNopes[i] += cm[i,j]
-                fpNopes[j] += cm[i,j]
+                fnNopes[i] += cmTags[i,j]
+                fpNopes[j] += cmTags[i,j]
 
 
     print("\n\n##############################################################")

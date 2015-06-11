@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from collections import Counter
 from nltk.metrics import ConfusionMatrix
-import os, sys  
+import os
 
 def compare(listOne, listTwo):
 
