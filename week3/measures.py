@@ -6,7 +6,9 @@ import os, sys
 def compare(listOne, listTwo):
 
     truePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j != 'NOPE'])
+    print("Hallo", truePositive)
     falseNegative = len([i for i, j in zip(listOne, listTwo) if i == 'NOPE' and j != 'NOPE'])
+    print("Hoi", falseNegative)
     falsePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j == 'NOPE'])
 
     precision = truePositive / float(truePositive+falsePositive)

@@ -57,12 +57,18 @@ def main():
                             ourTags.append("NOPE")
                             ourWikilinks.append("NOPE")
 
-    print(len(goldenStandardLinks), len(ourWikilinks))
-
 
     # Define confusion matrix
+
+    for word in goldenStandardTags:
+        if word == "-":
+            word = "NOPE"
+
+
+    for word in ourTags:
+        if word == "-":
+            word = "NOPE"
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)
-    cmLinks = ConfusionMatrix(goldenStandardLinks, ourWikilinks)
 
     # Search for interesting vs non-interesting entities
     # (how often we agree on finding anything, no matter the tag)
@@ -74,10 +80,23 @@ def main():
     for i in labelNope:
         for j in labelNope:
             if ((i != 'NOPE') and (j != 'NOPE')):
-                tpNopes[i] += cm[i,j]
+                tpNopes[i] += cmTags[i,j]
+
             else:
-                fnNopes[i] += cm[i,j]
-                fpNopes[j] += cm[i,j]
+                fnNopes[i] += cmTags[i,j]
+
+                fpNopes[j] += cmTags[i,j]
+
+
+
+    for i in labelNope:
+        for j in labelNope:
+            if ((i != 'NOPE') and (j != 'NOPE')):
+                tpNopes[i] += cmTags[i,j]
+            else:
+                fnNopes[i] += cmTags[i,j]
+
+                fpNopes[j] += cmTags[i,j]
 
 
     print("\n\n##############################################################")
@@ -97,31 +116,14 @@ def main():
     false_negatives = Counter()
     false_positives = Counter()
 
-    for i in labels:
-        for j in labels:
-            if i == j:
-                true_positives[i] += cmTags[i,j]
-            else:
-                false_negatives[i] += cmTags[i,j]
-                false_positives[j] += cmTags[i,j]
-
-    for i in labels:
-        for j in labels:
-            if i == j:
-                true_positives[i] += cmLinks[i,j]
-            else:
-                false_negatives[i] += cmLinks[i,j]
-                false_positives[j] += cmLinks[i,j]
-
-
     print("##############################################################")
 
     fscores = 0
 
     for i in sorted(labels):
-        print(i)
         if true_positives[i] == 0:
-            fscore = 0
+            print("HALLO")
+            #fscore = 0
         else:
             precision = true_positives[i] / float(true_positives[i]+false_positives[i])
             recall = true_positives[i] / float(true_positives[i]+false_negatives[i])
@@ -134,7 +136,6 @@ def main():
     print("\n\nGemiddelde f-score: " + str(fscores / 6))
     print("##############################################################")
 
-    print("Confusion matrix voor de wikipedia-linkjes:", cmLinks)
-    print("Confusion matrix voor de tags", cmTags)
+    print(cmTags)
 
 main()
