@@ -290,7 +290,6 @@ def main():
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
-                    print(taggedWords)
 
                     listIndex = 0
                     for el in taggedWords:
