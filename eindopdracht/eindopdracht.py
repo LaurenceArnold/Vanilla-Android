@@ -356,7 +356,6 @@ def main():
                         # It is a person
                         elif currentTag == "PERSON":
                             wordResult = item[5]
-                            print(wordResult)
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
