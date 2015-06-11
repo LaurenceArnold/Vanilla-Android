@@ -343,6 +343,10 @@ def main():
                                 wordList[thisLine+i][7] = tagCityOrCountry
                                 wordList[thisLine+i][8] = countryWiki
 
+                                if tagCityOrCountry == "-":
+                                    item.pop(8)
+                                    item.pop(7)
+
                         # It is a person
                         elif currentTag == "PERSON":
                             wordResult = item[5]
