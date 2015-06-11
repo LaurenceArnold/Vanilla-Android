@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 g3.1 71 74 1014 New NNP CIT https://en.wikipedia.org/wiki/New_York
 g3.1 75 79 1015 York NNP CIT https://en.wikipedia.org/wiki/New_York
 g7.2 0 9 1001 President NNP PER http://en.wikipedia.org/wiki/George_W._Bush
+=======
+g7.2 0 9 1001 President NNP PER http://en.wikipedia.org/wiki/George_W._Bush
+g7.2 10 14 1002 George NNP PER http://en.wikipedia.org/wiki/George_W._Bush
+>>>>>>> 956ee4b015af4e2429e9f949876dc276c1dd1605
 g7.2 10 14 1002 Bush NNP PER http://en.wikipedia.org/wiki/George_W._Bush
 g7.2 15 19 1003 said VBD
 g7.2 20 27 1004 nations NNS
@@ -15,8 +20,13 @@ g7.2 64 72 1012 moderate JJ
 g7.2 73 82 1013 reformers NNS
 g7.2 83 85 1014 in IN
 g7.2 86 89 1015 the DT
+<<<<<<< HEAD
 g7.2 90 96 1016 MIddle NNP 
 g7.2 97 101 1017 East NNP 
+=======
+g7.2 90 96 1016 MIddle NNP
+g7.2 97 101 1017 East NNP
+>>>>>>> 956ee4b015af4e2429e9f949876dc276c1dd1605
 g7.2 101 102 1018 . .
 g7.2 103 105 2001 He PRP
 g7.2 106 110 2002 said VBD
