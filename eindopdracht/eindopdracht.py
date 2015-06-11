@@ -83,7 +83,6 @@ def findAnimal(noun):
             synset1 = synset1[0]
 
     except:
-
         return False
 
     # Synsets to look for:
@@ -122,40 +121,32 @@ def findCityOrCountry(word):
     Check if it is a country or city
     """
 
-    # If tag is location, loop through these lines
-    CitySyns = wordnet.synsets(str(word), pos = 'n')
-    City2Syns = wordnet.synsets(str("New_York"), pos = 'n')
-    CityResult = getMaxSim(CitySyns, City2Syns)
+    Countrylist = ["country","Republic", "Monarcy", "state", "region", "Kingdom"]
+    Citylist = ["city"]
 
-    CountrySyns = wordnet.synsets(str(word), pos = 'n')
-    Country2Syns = wordnet.synsets(str("America"), pos = 'n')
-    CountryResult= getMaxSim(CountrySyns, Country2Syns)
+    # Check for disambiguation on Wikipedia
+    wiki = disambiguationWikipedia(word)
 
-    if CityResult > CountryResult:
-        return "CIT"
+    if wiki == "Null":
+        return False
 
-    elif CountryResult > CityResult:
-        return "COU"
+    # Get first sentence
+    firstSentence = wiki.content.split(".")[0]
+    print(firstSentence)
 
-    # City or country is not in the Wordnet database
+    for word in firstSentence.split():
+        for item in Countrylist:
+            if (word.lower() == item.lower()):
+                return "COU"
+
+    for word in firstSentence.split():
+        for item in Citylist:
+            if (word.lower() == item.lower()):
+                return "CIT"
+
     else:
+        return "-"
 
-        # Check for disambiguation on Wikipedia
-        wiki = disambiguationWikipedia(word)
-
-        if wiki == "Null":
-            return "Null"
-
-        # Get first sentence
-        firstSentence = wiki.content.split(".")[0]
-
-        # Check for city in the first sentence
-        if "city" in firstSentence:
-            return "CIT"
-
-        # City is not found in the sentence
-        else:
-            return "COU"
 
 def isNatural(noun):
 
@@ -211,7 +202,7 @@ def getWikiURL(noun, tag):
     """
     Get the Wikipedia URL
     """
-    #print(tag)
+
     if tag == "PERSON":
 
         try:
@@ -252,7 +243,6 @@ def getWikiURL(noun, tag):
     else:
         # Check for disambiguation on Wikipedia
         wiki = disambiguationWikipedia(noun)
-
 
         try:
             url = wiki.url
