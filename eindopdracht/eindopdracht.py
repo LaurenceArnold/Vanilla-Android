@@ -128,11 +128,10 @@ def findCityOrCountry(word):
     wiki = disambiguationWikipedia(word)
 
     if wiki == "Null":
-        return False
+        return "-"
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
-    print(firstSentence)
 
     for word in firstSentence.split():
         for item in Countrylist:
@@ -291,6 +290,7 @@ def main():
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
+                    print(taggedWords)
 
                     listIndex = 0
                     for el in taggedWords:
@@ -455,12 +455,12 @@ def main():
                             item.pop(8)
                             item.pop(7)
 
-                        #newLine = ' '.join(columns)
-                        #print(newLine)
-
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
                     print(item)
+
+                    newLine = ' '.join(item)
+                    print(newLine)
 
 if __name__ == "__main__":
     main()

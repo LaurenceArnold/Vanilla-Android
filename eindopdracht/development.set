@@ -1,5 +1,7 @@
-g7.2 0 9 1001 President NNP PER http://en.wikipedia.org/wiki/George_W._Bush
-g7.2 10 14 1002 Bush NNP PER http://en.wikipedia.org/wiki/George_W._Bush
+g10.4 288 291 4001 VOA NNP ORG http://en.wikipedia.org/wiki/Voice_of_America
+g10.4 291 293 4002 's POS
+g10.4 294 297 4003 Mil NNP PER
+g10.4 298 304 4004 Arcega NNP PER
 g5.0 263 269 2018 Middle NNP
 g5.0 270 274 2019 East NNP
 g7.2 15 19 1003 said VBD
@@ -14,15 +16,6 @@ g7.2 59 63 1011 with IN
 g7.2 64 72 1012 moderate JJ
 g7.2 73 82 1013 reformers NNS
 g7.2 83 85 1014 in IN
-<<<<<<< HEAD
-g7.2 97 101 1017 Matarza NNP
-=======
-<<<<<<< HEAD
-g4.9 287 293 2028 Matara NNP CIT https://en.wikipedia.org/wiki/Matara,_Sri_Lanka
-=======
-g7.2 97 101 1017 Matara NNP
->>>>>>> 1561661ea36c0ff64ff765cc384dd1c1e94da77e
->>>>>>> 3af3312c52c4fb3ce6b547f0269c643b77c981e9
 g7.2 101 102 1018 . .
 g7.2 103 105 2001 He PRP
 g7.2 106 110 2002 said VBD
