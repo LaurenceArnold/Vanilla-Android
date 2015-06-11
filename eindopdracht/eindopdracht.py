@@ -352,6 +352,7 @@ def main():
                             wordResult = item[5]
                             wordLen = 1
 
+
                             # Check for locations like New-York (multiple words)
                             # Line number is always 1 ahead of index (line 1 is index 0)
                             if wordList[lineNumber][7] == "PERSON":
@@ -379,7 +380,6 @@ def main():
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
                                 wordList[thisLine+i][8] = personWiki
-
 
                         # It is an organization
                         elif currentTag == "ORGANIZATION":
@@ -457,7 +457,7 @@ def main():
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
-                    print(item)
+                    print(str(item))
 
                     newLine = ' '.join(item)
                     print(newLine)
