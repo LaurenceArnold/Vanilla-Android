@@ -13,7 +13,6 @@ def disambiguationWikipedia(noun):
     """
 
         # Try to get wikipedia content
-
     try:
         wiki = wikipedia.page(noun)
 
@@ -133,6 +132,7 @@ def findCityOrCountry(word):
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
+    print(firstSentence)
 
     for word in firstSentence.split():
         for item in Countrylist:
@@ -166,7 +166,7 @@ def isNatural(noun):
 
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence.split():
+    for word in firstSentence:
         for item in naturalList:
             if (word.lower() == item.lower()):
                 return True
@@ -190,7 +190,7 @@ def isEntertainment(noun):
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence.split():
+    for word in firstSentence:
         for item in entertainmentList:
             if (word.lower() == item.lower()):
                 return True
@@ -339,10 +339,13 @@ def main():
                             tagCityOrCountry = findCityOrCountry(wordResult)
                             thisLine = lineNumber - 1
                             countryWiki = getWikiURL(wordResult, currentTag)
-
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = tagCityOrCountry
                                 wordList[thisLine+i][8] = countryWiki
+
+                            if tagCityOrCountry == "-":
+                                item.pop(8)
+                                item.pop(7)
 
                         # It is a person
                         elif currentTag == "PERSON":
