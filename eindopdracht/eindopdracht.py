@@ -282,58 +282,57 @@ def main():
 
                         # Get tokens and append to list
                         columns = line.split()
-                        if len(columns) > 3:
-                            lineList += " " + str(columns[4])
-                            lineNum += 1
-                            wordList.append([lineNum, str(columns[4]), "", ""])
 
+                        if len(columns) > 5:
+                            lineList += " " + unicode(str(columns[4]),errors='ignore')
+                            lineNum += 1
+                            wordList.append([lineNum, columns[0], columns[1], columns[2], columns[3], str(columns[4]), columns[5],"", "" ])
 
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
 
-                    allTaggedWords = []
-
                     listIndex = 0
                     for el in taggedWords:
 
                         for word in el:
-                            wordList[listIndex][2] = str(word[1])
+                            wordList[listIndex][7] = str(word[1])
                             listIndex += 1
 
                 for item in wordList:
-                    if item[3]:
-                        print(item)
+                    if item[8]:
                         continue
 
                     lineNumber = item[0]
-                    currentTag = item[2]
+                    currentTag = item[7]
+
                     # It's a Location, Person or Organization
                     if currentTag != "O":
+
                         if currentTag == "LOCATION":
-                            wordResult = item[1]
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
                             # Line number is always 1 ahead of index (line 1 is index 0)
-                            if wordList[lineNumber][2] == "LOCATION":
-                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                            if wordList[lineNumber][7] == "LOCATION":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][5])
                                 wordLen = 2
 
-                                if wordList[lineNumber+1][2] == "LOCATION":
-                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                if wordList[lineNumber+1][7] == "LOCATION":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][5])
                                     wordLen = 3
 
-                                    if wordList[lineNumber+2][2] == "LOCATION":
-                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                    if wordList[lineNumber+2][7] == "LOCATION":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][5])
                                         wordLen = 4
 
-                                        if wordList[lineNumber+3][2] == "LOCATION":
-                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                        if wordList[lineNumber+3][7] == "LOCATION":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][5])
                                             wordLen = 5
 
-                                            if wordList[lineNumber+4][2] == "LOCATION":
-                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                            if wordList[lineNumber+4][7] == "LOCATION":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][5])
                                                 wordLen = 6
 
 
@@ -341,114 +340,122 @@ def main():
                             thisLine = lineNumber - 1
                             countryWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
-                                wordList[thisLine+i][2] = tagCityOrCountry
-                                wordList[thisLine+i][3] = countryWiki
-
-
+                                wordList[thisLine+i][7] = tagCityOrCountry
+                                wordList[thisLine+i][8] = countryWiki
 
                         # It is a person
-
                         elif currentTag == "PERSON":
-                            wordResult = item[1]
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
                             # Line number is always 1 ahead of index (line 1 is index 0)
-                            if wordList[lineNumber][2] == "PERSON":
-                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                            if wordList[lineNumber][7] == "PERSON":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][5])
                                 wordLen = 2
 
-                                if wordList[lineNumber+1][2] == "PERSON":
-                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                if wordList[lineNumber+1][7] == "PERSON":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][5])
                                     wordLen = 3
 
-                                    if wordList[lineNumber+2][2] == "PERSON":
-                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                    if wordList[lineNumber+2][7] == "PERSON":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][5])
                                         wordLen = 4
 
-                                        if wordList[lineNumber+3][2] == "PERSON":
-                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                        if wordList[lineNumber+3][7] == "PERSON":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][5])
                                             wordLen = 5
 
-                                            if wordList[lineNumber+4][2] == "PERSON":
-                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                            if wordList[lineNumber+4][7] == "PERSON":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][5])
                                                 wordLen = 6
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
-                                wordList[thisLine+i][2] = "PER"
-                                wordList[thisLine+i][3] = personWiki
+                                wordList[thisLine+i][7] = "PER"
+                                wordList[thisLine+i][8] = personWiki
 
 
                         # It is an organization
                         elif currentTag == "ORGANIZATION":
-                            wordResult = item[1]
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
                             # Line number is always 1 ahead of index (line 1 is index 0)
-                            if wordList[lineNumber][2] == "ORGANIZATION":
-                                wordResult = wordResult + "_" + str(wordList[lineNumber][1])
+                            if wordList[lineNumber][7] == "ORGANIZATION":
+                                wordResult = wordResult + "_" + str(wordList[lineNumber][5])
                                 wordLen = 2
 
-                                if wordList[lineNumber+1][2] == "ORGANIZATION":
-                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][1])
+                                if wordList[lineNumber+1][7] == "ORGANIZATION":
+                                    wordResult = wordResult + "_" + str(wordList[lineNumber+1][5])
                                     wordLen = 3
 
-                                    if wordList[lineNumber+2][2] == "ORGANIZATION":
-                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][1])
+                                    if wordList[lineNumber+2][7] == "ORGANIZATION":
+                                        wordResult = wordResult + "_" + str(wordList[lineNumber+2][5])
                                         wordLen = 4
 
-                                        if wordList[lineNumber+3][2] == "ORGANIZATION":
-                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][1])
+                                        if wordList[lineNumber+3][7] == "ORGANIZATION":
+                                            wordResult = wordResult + "_" + str(wordList[lineNumber+3][5])
                                             wordLen = 5
 
-                                            if wordList[lineNumber+4][2] == "ORGANIZATION":
-                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][1])
+                                            if wordList[lineNumber+4][7] == "ORGANIZATION":
+                                                wordResult = wordResult + "_" + str(wordList[lineNumber+4][5])
                                                 wordLen = 6
 
                             thisLine = lineNumber - 1
                             orgWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
-                                wordList[thisLine+i][2] = "ORG"
-                                wordList[thisLine+i][3] = orgWiki
+                                wordList[thisLine+i][7] = "ORG"
+                                wordList[thisLine+i][8] = orgWiki
+
+                        # It is a DATE for example, we don't need this in our output, so replace it for nothing
+                        else:
+                            item.pop(8)
+                            item.pop(7)
 
                     # Check for Others (Natural Places, Animals, Sports)
-                    else:
+                    elif currentTag == "O":
 
-                        # If it is a noun
-
-                        if columns[5].startswith("N"):
+                        # If it is a noun, we need to check if it is an entity we need
+                        if item[6].startswith("N"):
 
                             # Check if the noun is an animal
-                            if findAnimal(item[1]):
-                                item[2] = "ANI"
-                                item[3] = getWikiURL(item[1], currentTag)
+                            if findAnimal(item[5]):
+                                item[7] = "ANI"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is a sport
-                            elif findSport(item[1]):
-                                item[2] = "SPO"
-                                item[3] = getWikiURL(item[1], currentTag)
+                            elif findSport(item[5]):
+                                item[7] = "SPO"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is a natural place
                             elif isNatural(item[1]):
-                                item[2] = "NAT"
-                                item[3] = getWikiURL(item[1], currentTag)
+                                item[7] = "NAT"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is entertainment
-                            elif isEntertainment(item[1]):
-                                item[2] = "ENT"
-                                item[3] = getWikiURL(item[1], currentTag)
+                            elif isEntertainment(item[5]):
+                                item[7] = "ENT"
+                                item[8] = getWikiURL(item[5], currentTag)
 
+                            # The tag has no meaning, so delete the last 2 fields
                             else:
-                                item[2] = "-"
-                                item[3] = "-"
+                                item.pop(8)
+                                item.pop(7)
 
+                        # Delete the last 2 fields because it is not even a noun
+                        else:
+                            item.pop(8)
+                            item.pop(7)
 
                         #newLine = ' '.join(columns)
                         #print(newLine)
 
+                    # Remove our linenumber used in some pieces of code
+                    item.pop(0)
                     print(item)
 
 if __name__ == "__main__":
