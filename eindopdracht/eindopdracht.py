@@ -122,14 +122,14 @@ def findCityOrCountry(word):
     Check if it is a country or city
     """
 
-    Countrylist = ["country","Republic", "Monarcy", "state", "region", "Kingdom"]
+    Countrylist = ["country","Republic", "Monarcy", "state", "region", "Kingdom", "States"]
     Citylist = ["city"]
 
     # Check for disambiguation on Wikipedia
     wiki = disambiguationWikipedia(word)
 
     if wiki == "Null":
-        return "Null"
+        return False
 
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
