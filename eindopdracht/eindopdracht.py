@@ -211,7 +211,7 @@ def getWikiURL(noun, tag):
     """
     Get the Wikipedia URL
     """
-    #print(tag)
+
     if tag == "PERSON":
 
         try:
@@ -460,7 +460,6 @@ def main():
                         else:
                             item.pop(8)
                             item.pop(7)
-
 
                         #newLine = ' '.join(columns)
                         #print(newLine)
