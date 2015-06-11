@@ -290,7 +290,6 @@ def main():
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
-                    print(taggedWords)
 
                     listIndex = 0
                     for el in taggedWords:
@@ -457,10 +456,11 @@ def main():
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
-                    print(str(item))
-
                     newLine = ' '.join(item)
-                    print(newLine)
+
+                    # Write results to new file
+                    with open(root+'/developed.set', 'a') as finalfile:
+                        finalfile.write(newLine + '\n')
 
 if __name__ == "__main__":
     main()
