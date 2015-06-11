@@ -31,7 +31,7 @@ def main():
                     for line in in_f:
                         columns = line.split()
                         if (len(columns) > 5):
-                            token1 = columns[6]
+                            token1 = columns[7]
                             links1 = columns [7]
                             goldenStandardTags.append(token1)
                             goldenStandardLinks.append(links1)
