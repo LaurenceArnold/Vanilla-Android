@@ -57,12 +57,18 @@ def main():
                             ourTags.append("NOPE")
                             ourWikilinks.append("NOPE")
 
-    print(len(goldenStandardLinks), len(ourWikilinks))
-
 
     # Define confusion matrix
+
+    for word in goldenStandardTags:
+        if word == "-":
+            word = "NOPE"
+
+
+    for word in ourTags:
+        if word == "-":
+            word = "NOPE"
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)
-    cmLinks = ConfusionMatrix(goldenStandardLinks, ourWikilinks)
 
     # Search for interesting vs non-interesting entities
     # (how often we agree on finding anything, no matter the tag)
@@ -105,22 +111,14 @@ def main():
                 false_negatives[i] += cmTags[i,j]
                 false_positives[j] += cmTags[i,j]
 
-    for i in labels:
-        for j in labels:
-            if i == j:
-                true_positives[i] += cmLinks[i,j]
-            else:
-                false_negatives[i] += cmLinks[i,j]
-                false_positives[j] += cmLinks[i,j]
-
-
     print("##############################################################")
 
     fscores = 0
 
     for i in sorted(labels):
-        print(i)
         if true_positives[i] == 0:
+            print(i)
+            print(true_positives)
             fscore = 0
         else:
             precision = true_positives[i] / float(true_positives[i]+false_positives[i])
@@ -134,7 +132,6 @@ def main():
     print("\n\nGemiddelde f-score: " + str(fscores / 6))
     print("##############################################################")
 
-    print("Confusion matrix voor de wikipedia-linkjes:", cmLinks)
-    print("Confusion matrix voor de tags", cmTags)
+    print(cmTags)
 
 main()
