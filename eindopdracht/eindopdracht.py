@@ -293,7 +293,7 @@ def main():
                         # Get tokens and append to list
                         columns = line.split()
                         if len(columns) > 3:
-                            lineList += " " + str(columns[4])
+                            lineList += " " + unicode(str(columns[4]),errors='ignore')
                             lineNum += 1
                             wordList.append([lineNum, str(columns[4]), "", ""])
 
@@ -301,8 +301,6 @@ def main():
                     # Tag words with NER and append
                     tokenizedText = nltk.sent_tokenize(lineList)
                     taggedWords = nerTaggerStanford.tag(tokenizedText)
-
-                    allTaggedWords = []
 
                     listIndex = 0
                     for el in taggedWords:
