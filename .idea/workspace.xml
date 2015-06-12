@@ -29,8 +29,20 @@
       <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5341615" vertical-offset="6672" max-vertical-offset="7155">
-              <caret line="462" column="57" selection-start-line="462" selection-start-column="57" selection-end-line="462" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.7221007" vertical-offset="2535" max-vertical-offset="7185">
+              <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+              <folding>
+                <element signature="e#19#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eindopdracht/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7155">
+              <caret line="471" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="471" selection-end-column="10" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -41,8 +53,8 @@
       <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5" vertical-offset="3630" max-vertical-offset="224625">
-              <caret line="255" column="26" selection-start-line="255" selection-start-column="26" selection-end-line="255" selection-end-column="26" />
+            <state vertical-scroll-proportion="44.346153" vertical-offset="19048" max-vertical-offset="224625">
+              <caret line="1193" column="69" selection-start-line="1193" selection-start-column="69" selection-end-line="1193" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -71,13 +83,14 @@
         <option value="$PROJECT_DIR$/eindopdracht/measures.py" />
         <option value="$PROJECT_DIR$/eindopdracht/development.set" />
         <option value="$PROJECT_DIR$/test2.py" />
+        <option value="$PROJECT_DIR$/eindopdracht/test.py" />
         <option value="$PROJECT_DIR$/eindopdracht/eindopdracht.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="1496" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -426,15 +439,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1496" height="873" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34738186" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34738186" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19384836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1863824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -755,20 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.084586464" vertical-offset="0" max-vertical-offset="532">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/measures.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/week3/measures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.230769" vertical-offset="1613" max-vertical-offset="2070">
@@ -784,26 +783,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1863354" vertical-offset="0" max-vertical-offset="483">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7155">
+          <caret line="471" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="471" selection-end-column="10" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="3630" max-vertical-offset="224625">
-          <caret line="255" column="26" selection-start-line="255" selection-start-column="26" selection-end-line="255" selection-end-column="26" />
+        <state vertical-scroll-proportion="44.346153" vertical-offset="19048" max-vertical-offset="224625">
+          <caret line="1193" column="69" selection-start-line="1193" selection-start-column="69" selection-end-line="1193" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5341615" vertical-offset="6672" max-vertical-offset="7155">
-          <caret line="462" column="57" selection-start-line="462" selection-start-column="57" selection-end-line="462" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.7221007" vertical-offset="2535" max-vertical-offset="7185">
+          <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>

@@ -165,7 +165,7 @@ def isNatural(noun):
 
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
+    for word in firstSentence.split():
         for item in naturalList:
             if (word.lower() == item.lower()):
                 return True
@@ -189,7 +189,7 @@ def isEntertainment(noun):
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
+    for word in firstSentence.split():
         for item in entertainmentList:
             if (word.lower() == item.lower()):
                 return True
@@ -218,10 +218,10 @@ def getWikiURL(noun, tag):
                 firstSentence1 = wiki.content.split(".")[0]
                 firstSentence2 = wiki2.content.split(".")[0]
 
-                if "born" in firstSentence1.split():
+                if "born" in firstSentence1:
                     return wiki.url
 
-                elif "born" in firstSentence2.split():
+                elif "born" in firstSentence2:
                     return wiki2.url
 
                 else:
@@ -467,6 +467,7 @@ def main():
                     # Write results to new file
                     with open(root+'/developed.set', 'a') as finalfile:
                         finalfile.write(newLine + '\n')
+                    print(item)
 
 if __name__ == "__main__":
     main()
