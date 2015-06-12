@@ -59,7 +59,7 @@ def main():
 
     # Define confusion matrix
     cm = ConfusionMatrix(tagsLaurence, tagsJohan)
-    
+
     # Search for interesting vs non-interesting entities
     # (how often we agree on finding anything, no matter the tag)
     labelNope = set('PER COU CIT ENT ORG NAT NOPE'.split())

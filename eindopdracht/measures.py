@@ -14,21 +14,14 @@ def main():
         for file in filenames:
             if file == "development.set":
                 with open(root+'/'+file, 'r') as in_f:
-                    linenr = 0
                     for line in in_f:
-                        if linenr <= 2286:
                             columns = line.split()
-
                             if (len(columns) > 7):
                                 token1 = columns[6]
-                                links1 = columns[7]
                                 goldenStandardTags.append(token1)
 
                             else:
                                 goldenStandardTags.append("NOPE")
-
-                            linenr += 1
-
 
 
             elif (file == "developed.set"):
@@ -37,12 +30,9 @@ def main():
                         columns = line.split()
                         if len(columns) > 7:
                             token2 = columns[6]
-                            links2 = columns[7]
                             ourTags.append(token2)
                         else:
                             ourTags.append("NOPE")
-
-
 
 
     # Define confusion matrix
@@ -56,6 +46,12 @@ def main():
     for word in ourTags:
         if word == "-":
             word.replace(word, "NOPE")
+
+    if len(goldenStandardTags) > len(ourTags):
+        difference = len(goldenStandardTags) - len(ourTags)
+        for i in range(difference):
+            ourTags.append("NOPE")
+    print(len(ourTags))
 
 
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)

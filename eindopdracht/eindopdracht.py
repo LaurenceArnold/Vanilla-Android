@@ -382,6 +382,8 @@ def main():
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
+                            if personWiki == None:
+                                continue
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
                                 wordList[thisLine+i][8] = personWiki
