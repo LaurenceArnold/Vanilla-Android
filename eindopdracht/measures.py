@@ -12,7 +12,7 @@ def main():
     directory = os.getcwd()
     for root, dirs, filenames in os.walk(directory):
         for file in filenames:
-            if file == "development.set":
+            if file == "developmentfix.set":
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                             columns = line.split()

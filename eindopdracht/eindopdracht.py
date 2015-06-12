@@ -346,12 +346,13 @@ def main():
                             thisLine = lineNumber - 1
                             countryWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
-                                wordList[thisLine+i][7] = tagCityOrCountry
-                                wordList[thisLine+i][8] = countryWiki
+                                if tagCityOrCountry == "-":
+                                    item.pop(8)
+                                    item.pop(7)
+                                else:
+                                    wordList[thisLine+i][7] = tagCityOrCountry
+                                    wordList[thisLine+i][8] = countryWiki
 
-                            if tagCityOrCountry == "-":
-                                item.pop(8)
-                                item.pop(7)
 
                         # It is a person
                         elif currentTag == "PERSON":
@@ -382,11 +383,13 @@ def main():
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
-                            if personWiki == None:
-                                continue
+        
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
-                                wordList[thisLine+i][8] = personWiki
+                                if personWiki == None:
+                                    item.pop(8)
+                                else:
+                                    wordList[thisLine+i][8] = personWiki
 
                         # It is an organization
                         elif currentTag == "ORGANIZATION":
