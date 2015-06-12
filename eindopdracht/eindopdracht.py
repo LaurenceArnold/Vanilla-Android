@@ -165,7 +165,7 @@ def isNatural(noun):
 
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence.split():
+    for word in firstSentence:
         for item in naturalList:
             if (word.lower() == item.lower()):
                 return True
@@ -189,7 +189,7 @@ def isEntertainment(noun):
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence.split():
+    for word in firstSentence:
         for item in entertainmentList:
             if (word.lower() == item.lower()):
                 return True
@@ -299,29 +299,24 @@ def main():
                             listIndex += 1
 
                 for item in wordList:
-                    lineNumber = item[0]
-                    currentWord = item[5]
-                    currentPOS = item[6]
-                    currentTag = item[7]
-                    currentWiki = item[8]
-                    
-                    if currentWiki:
+                    if item[8]:
 
                         item.pop(0)
                         newLine = ' '.join(item)
 
-                        #with open(root+'/developed.set', 'a') as finalfile:
-                            #finalfile.write(newLine + '\n')
+                        with open(root+'/developed.set', 'a') as finalfile:
+                            finalfile.write(newLine + '\n')
 
                         continue
 
-                    
+                    lineNumber = item[0]
+                    currentTag = item[7]
 
                     # It's a Location, Person or Organization
                     if currentTag != "O":
 
                         if currentTag == "LOCATION":
-                            wordResult = currentWord
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -360,7 +355,7 @@ def main():
 
                         # It is a person
                         elif currentTag == "PERSON":
-                            wordResult = currentWord
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -387,14 +382,13 @@ def main():
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
-                            print(personWiki)
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
                                 wordList[thisLine+i][8] = personWiki
 
                         # It is an organization
                         elif currentTag == "ORGANIZATION":
-                            wordResult = currentWord
+                            wordResult = item[5]
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -434,27 +428,27 @@ def main():
                     elif currentTag == "O":
 
                         # If it is a noun, we need to check if it is an entity we need
-                        if currentPOS.startswith("N"):
+                        if item[6].startswith("N"):
 
                             # Check if the noun is an animal
                             if findAnimal(item[5]):
-                                currentTag = "ANI"
-                                currentWiki = getWikiURL(currentWord, currentTag)
+                                item[7] = "ANI"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is a sport
                             elif findSport(item[5]):
-                                currentTag = "SPO"
-                                currentWiki = getWikiURL(currentWord, currentTag)
+                                item[7] = "SPO"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is a natural place
                             elif isNatural(item[1]):
-                                currentTag = "NAT"
-                                currentWiki = getWikiURL(currentWord, currentTag)
+                                item[7] = "NAT"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # Check if it is entertainment
                             elif isEntertainment(item[5]):
-                                currentTag = "ENT"
-                                currentWiki = getWikiURL(currentWord, currentTag)
+                                item[7] = "ENT"
+                                item[8] = getWikiURL(item[5], currentTag)
 
                             # The tag has no meaning, so delete the last 2 fields
                             else:
@@ -471,8 +465,8 @@ def main():
                     newLine = ' '.join(item)
 
                     # Write results to new file
-                    #with open(root+'/developed.set', 'a') as finalfile:
-                        #finalfile.write(newLine + '\n')
+                    with open(root+'/developed.set', 'a') as finalfile:
+                        finalfile.write(newLine + '\n')
 
 if __name__ == "__main__":
     main()
