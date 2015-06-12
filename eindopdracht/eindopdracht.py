@@ -218,10 +218,10 @@ def getWikiURL(noun, tag):
                 firstSentence1 = wiki.content.split(".")[0]
                 firstSentence2 = wiki2.content.split(".")[0]
 
-                if "born" in firstSentence1.split():
+                if "born" in firstSentence1:
                     return wiki.url
 
-                elif "born" in firstSentence2.split():
+                elif "born" in firstSentence2:
                     return wiki2.url
 
                 else:

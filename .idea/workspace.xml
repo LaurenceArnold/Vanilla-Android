@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="eindopdracht.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7221007" vertical-offset="2535" max-vertical-offset="7185">
-              <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+            <state vertical-scroll-proportion="84.80769" vertical-offset="5550" max-vertical-offset="7185">
+              <caret line="223" column="53" selection-start-line="223" selection-start-column="53" selection-end-line="223" selection-end-column="53" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -38,23 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eindopdracht/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7155">
-              <caret line="471" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="471" selection-end-column="10" />
-              <folding>
-                <element signature="e#19#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="development.set" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="44.346153" vertical-offset="19048" max-vertical-offset="224625">
-              <caret line="1193" column="69" selection-start-line="1193" selection-start-column="69" selection-end-line="1193" selection-end-column="69" />
+            <state vertical-scroll-proportion="36.236324" vertical-offset="2670" max-vertical-offset="224625">
+              <caret line="1282" column="31" selection-start-line="1282" selection-start-column="31" selection-end-line="1282" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -783,10 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/test.py">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7155">
-          <caret line="471" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="471" selection-end-column="10" />
+        <state vertical-scroll-proportion="84.80769" vertical-offset="5550" max-vertical-offset="7185">
+          <caret line="223" column="53" selection-start-line="223" selection-start-column="53" selection-end-line="223" selection-end-column="53" />
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>
@@ -795,19 +783,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="44.346153" vertical-offset="19048" max-vertical-offset="224625">
-          <caret line="1193" column="69" selection-start-line="1193" selection-start-column="69" selection-end-line="1193" selection-end-column="69" />
+        <state vertical-scroll-proportion="36.236324" vertical-offset="2670" max-vertical-offset="224625">
+          <caret line="1282" column="31" selection-start-line="1282" selection-start-column="31" selection-end-line="1282" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7221007" vertical-offset="2535" max-vertical-offset="7185">
-          <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
-          <folding>
-            <element signature="e#19#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
