@@ -464,11 +464,15 @@ def main():
                         else:
                             item.pop(8)
                             item.pop(7)
+                            
+                    if item[7] == "-":
+                        item.pop(8)
+                        item.pop(7)
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
                     newLine = ' '.join(item)
-
+                    
                     # Write results to new file
                     with open(root+'/developed.set', 'a') as finalfile:
                         finalfile.write(newLine + '\n')
