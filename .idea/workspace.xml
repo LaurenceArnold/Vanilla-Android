@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="eindopdracht.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="eindopdracht.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4680" max-vertical-offset="7155">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.546584" vertical-offset="1635" max-vertical-offset="7215">
+              <caret line="191" column="38" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -38,23 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="measures.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="measures.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/measures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3710692" vertical-offset="858" max-vertical-offset="1905">
-              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-              <folding>
-                <element signature="e#18#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="developed.set" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eindopdracht/developed.set">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8461537" vertical-offset="22453" max-vertical-offset="34395">
-              <caret line="1507" column="22" selection-start-line="1507" selection-start-column="19" selection-end-line="1507" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1695">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -63,7 +51,7 @@
       <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="31.653847" vertical-offset="22483" max-vertical-offset="224625">
+            <state vertical-scroll-proportion="0.0" vertical-offset="22483" max-vertical-offset="224625">
               <caret line="1444" column="5" selection-start-line="1444" selection-start-column="0" selection-end-line="1444" selection-end-column="5" />
               <folding />
             </state>
@@ -88,11 +76,11 @@
         <option value="$PROJECT_DIR$/eindopdracht/group4/p15/d0012/en.tok.off.pos" />
         <option value="$PROJECT_DIR$/eindopdracht/findClasses.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/eindopdracht/eindopdracht.py" />
         <option value="$PROJECT_DIR$/eindopdracht/developed.set" />
         <option value="$PROJECT_DIR$/eindopdracht/development.set" />
         <option value="$PROJECT_DIR$/week3/measures.py" />
         <option value="$PROJECT_DIR$/eindopdracht/measures.py" />
+        <option value="$PROJECT_DIR$/eindopdracht/eindopdracht.py" />
       </list>
     </option>
   </component>
@@ -127,7 +115,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,6 +205,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,9 +327,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -363,6 +348,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -448,14 +436,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3550447" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34738186" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18884121" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19098713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -463,11 +451,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -492,6 +480,32 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2517" max-vertical-offset="7215">
+          <caret line="473" column="9" selection-start-line="473" selection-start-column="9" selection-end-line="473" selection-end-column="9" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eindopdracht/measures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1695">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="224625">
+          <caret line="1444" column="5" selection-start-line="1444" selection-start-column="0" selection-end-line="1444" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6227" max-vertical-offset="6690">
@@ -738,35 +752,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4680" max-vertical-offset="7155">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/measures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2055">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/developed.set">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8461537" vertical-offset="22453" max-vertical-offset="34395">
-          <caret line="1507" column="22" selection-start-line="1507" selection-start-column="19" selection-end-line="1507" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="31.653847" vertical-offset="22483" max-vertical-offset="224625">
+        <state vertical-scroll-proportion="0.0" vertical-offset="22483" max-vertical-offset="224625">
           <caret line="1444" column="5" selection-start-line="1444" selection-start-column="0" selection-end-line="1444" selection-end-column="5" />
           <folding />
         </state>
@@ -776,16 +771,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.230769" vertical-offset="1613" max-vertical-offset="2070">
           <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/measures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3710692" vertical-offset="858" max-vertical-offset="1905">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.546584" vertical-offset="1635" max-vertical-offset="7215">
+          <caret line="191" column="38" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
           <folding>
-            <element signature="e#18#49#0" expanded="true" />
+            <element signature="e#19#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

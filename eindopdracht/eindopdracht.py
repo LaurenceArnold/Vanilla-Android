@@ -165,7 +165,7 @@ def isNatural(noun):
 
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
+    for word in firstSentence.split():
         for item in naturalList:
             if (word.lower() == item.lower()):
                 return True
@@ -189,7 +189,7 @@ def isEntertainment(noun):
     # Get first sentence
     firstSentence = wiki.content.split(".")[0]
 
-    for word in firstSentence:
+    for word in firstSentence.split():
         for item in entertainmentList:
             if (word.lower() == item.lower()):
                 return True
@@ -302,11 +302,11 @@ def main():
                     if item[8]:
 
                         item.pop(0)
-                        newLine = ' '.join(item)
+                        #newLine = ' '.join(item)
 
-                        with open(root+'/developed.set', 'a') as finalfile:
-                            finalfile.write(newLine + '\n')
-
+                        #with open(root+'/developed.set', 'a') as finalfile:
+                        #    finalfile.write(newLine + '\n')
+                        print(item)
                         continue
 
                     lineNumber = item[0]
@@ -462,11 +462,15 @@ def main():
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
-                    newLine = ' '.join(item)
+                    #newLine = ' '.join(item)
 
-                    # Write results to new file
-                    with open(root+'/developed.set', 'a') as finalfile:
-                        finalfile.write(newLine + '\n')
+                    # Write results to anew file
+                    #with open(root+'/developed.set', 'a') as finalfile:
+                    #    finalfile.write(newLine + '\n')
+                    print(item)
 
+    #print("Writing file")
+    #with open(root+'/developed.set', 'a') as finalfile:
+        #[ finalfile.write(' '.join(item) + '\n') for item in wordList ]
 if __name__ == "__main__":
     main()

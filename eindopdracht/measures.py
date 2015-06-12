@@ -3,18 +3,6 @@ from collections import Counter
 from nltk.metrics import ConfusionMatrix
 import os, sys
 
-def compare(listOne, listTwo):
-
-    truePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j != 'NOPE'])
-    falseNegative = len([i for i, j in zip(listOne, listTwo) if i == 'NOPE' and j != 'NOPE'])
-    falsePositive = len([i for i, j in zip(listOne, listTwo) if i != 'NOPE' and j == 'NOPE'])
-
-    precision = truePositive / float(truePositive+falsePositive)
-    recall = truePositive / float(truePositive+falseNegative)
-    fscore = 2 * (precision * recall) / float(precision + recall)
-
-    return precision, recall, fscore
-
 def main():
 
     ourTags = []
@@ -75,13 +63,9 @@ def main():
     print("\n\n##############################################################")
 
     # Get the precision, recall and fscore
-    precision, recall, fscore = compare(goldenStandardTags, ourTags)
+    #precision, recall, fscore = compare(goldenStandardTags, ourTags)
 
 
-    # Show the average
-    print("Average precision: {}".format(precision))
-    print("Average recall: {}".format(recall))
-    print("Average fscore: {}".format(fscore))
 
     labels = set('PER COU CIT ENT ORG NAT'.split())
 
