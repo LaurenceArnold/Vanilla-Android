@@ -302,11 +302,11 @@ def main():
                     if item[8]:
 
                         item.pop(0)
-                        #newLine = ' '.join(item)
+                        newLine = ' '.join(item)
 
                         #with open(root+'/developed.set', 'a') as finalfile:
-                        #    finalfile.write(newLine + '\n')
-                        print(item)
+                            #finalfile.write(newLine + '\n')
+
                         continue
 
                     lineNumber = item[0]
@@ -382,6 +382,7 @@ def main():
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
+                            print(personWiki)
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
                                 wordList[thisLine+i][8] = personWiki
@@ -462,15 +463,11 @@ def main():
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
-                    #newLine = ' '.join(item)
+                    newLine = ' '.join(item)
 
-                    # Write results to anew file
+                    # Write results to new file
                     #with open(root+'/developed.set', 'a') as finalfile:
-                    #    finalfile.write(newLine + '\n')
-                    print(item)
+                        #finalfile.write(newLine + '\n')
 
-    #print("Writing file")
-    #with open(root+'/developed.set', 'a') as finalfile:
-        #[ finalfile.write(' '.join(item) + '\n') for item in wordList ]
 if __name__ == "__main__":
     main()
