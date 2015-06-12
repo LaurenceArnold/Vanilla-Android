@@ -299,7 +299,13 @@ def main():
                             listIndex += 1
 
                 for item in wordList:
-                    if item[8]:
+                    lineNumber = item[0]
+                    currentWord = item[5]
+                    currentPOS = item[6]
+                    currentTag = item[7]
+                    currentWiki = item[8]
+                    
+                    if currentWiki:
 
                         item.pop(0)
                         newLine = ' '.join(item)
@@ -309,14 +315,13 @@ def main():
 
                         continue
 
-                    lineNumber = item[0]
-                    currentTag = item[7]
+                    
 
                     # It's a Location, Person or Organization
                     if currentTag != "O":
 
                         if currentTag == "LOCATION":
-                            wordResult = item[5]
+                            wordResult = currentWord
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -355,7 +360,7 @@ def main():
 
                         # It is a person
                         elif currentTag == "PERSON":
-                            wordResult = item[5]
+                            wordResult = currentWord
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -389,7 +394,7 @@ def main():
 
                         # It is an organization
                         elif currentTag == "ORGANIZATION":
-                            wordResult = item[5]
+                            wordResult = currentWord
                             wordLen = 1
 
                             # Check for locations like New-York (multiple words)
@@ -429,27 +434,27 @@ def main():
                     elif currentTag == "O":
 
                         # If it is a noun, we need to check if it is an entity we need
-                        if item[6].startswith("N"):
+                        if currentPOS.startswith("N"):
 
                             # Check if the noun is an animal
                             if findAnimal(item[5]):
-                                item[7] = "ANI"
-                                item[8] = getWikiURL(item[5], currentTag)
+                                currentTag = "ANI"
+                                currentWiki = getWikiURL(currentWord, currentTag)
 
                             # Check if it is a sport
                             elif findSport(item[5]):
-                                item[7] = "SPO"
-                                item[8] = getWikiURL(item[5], currentTag)
+                                currentTag = "SPO"
+                                currentWiki = getWikiURL(currentWord, currentTag)
 
                             # Check if it is a natural place
                             elif isNatural(item[1]):
-                                item[7] = "NAT"
-                                item[8] = getWikiURL(item[5], currentTag)
+                                currentTag = "NAT"
+                                currentWiki = getWikiURL(currentWord, currentTag)
 
                             # Check if it is entertainment
                             elif isEntertainment(item[5]):
-                                item[7] = "ENT"
-                                item[8] = getWikiURL(item[5], currentTag)
+                                currentTag = "ENT"
+                                currentWiki = getWikiURL(currentWord, currentTag)
 
                             # The tag has no meaning, so delete the last 2 fields
                             else:
