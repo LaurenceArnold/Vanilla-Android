@@ -47,6 +47,12 @@ def main():
         if word == "-":
             word.replace(word, "NOPE")
 
+    if len(goldenStandardTags) > len(ourTags):
+        difference = len(goldenStandardTags) - len(ourTags)
+        for i in range(difference):
+            ourTags.append("NOPE")
+    print(len(ourTags))
+
 
     cmTags = ConfusionMatrix(goldenStandardTags, ourTags)
 
