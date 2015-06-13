@@ -29,7 +29,7 @@
       <file leaf-file-name="eindopdracht.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3687" max-vertical-offset="7395">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6492" max-vertical-offset="7395">
               <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="268" selection-end-column="30" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
@@ -38,21 +38,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="developedfinal.set" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="developedfinal.set" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eindopdracht/developedfinal.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6389497" vertical-offset="56153" max-vertical-offset="56610">
-              <caret line="3763" column="23" selection-start-line="3763" selection-start-column="23" selection-end-line="3763" selection-end-column="23" />
+            <state vertical-scroll-proportion="-11.230769" vertical-offset="66143" max-vertical-offset="66600">
+              <caret line="4429" column="21" selection-start-line="4429" selection-start-column="21" selection-end-line="4429" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.set" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="test.set" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eindopdracht/test.set">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6538461" vertical-offset="17113" max-vertical-offset="236880">
-              <caret line="1138" column="0" selection-start-line="1138" selection-start-column="0" selection-end-line="1138" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.80306345" vertical-offset="236318" max-vertical-offset="236775">
+              <caret line="15779" column="91" selection-start-line="15779" selection-start-column="91" selection-end-line="15779" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.set" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="224127" max-vertical-offset="224610">
+              <caret line="14968" column="21" selection-start-line="14968" selection-start-column="21" selection-end-line="14968" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -79,14 +89,14 @@
         <option value="$PROJECT_DIR$/eindopdracht/developed.set" />
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/eindopdracht/test.py" />
-        <option value="$PROJECT_DIR$/eindopdracht/development.set" />
         <option value="$PROJECT_DIR$/week3/measures.py" />
         <option value="$PROJECT_DIR$/eindopdracht/lengte-fix.py" />
         <option value="$PROJECT_DIR$/eindopdracht/measures-wiki.py" />
         <option value="$PROJECT_DIR$/eindopdracht/measures.py" />
-        <option value="$PROJECT_DIR$/eindopdracht/test.set" />
         <option value="$PROJECT_DIR$/eindopdracht/eindopdracht.py" />
         <option value="$PROJECT_DIR$/eindopdracht/developedfinal.set" />
+        <option value="$PROJECT_DIR$/eindopdracht/development.set" />
+        <option value="$PROJECT_DIR$/eindopdracht/test.set" />
       </list>
     </option>
   </component>
@@ -776,14 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="438.41614" vertical-offset="0" max-vertical-offset="224625">
-          <caret line="14117" column="54" selection-start-line="14117" selection-start-column="54" selection-end-line="14120" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/measures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.167702" vertical-offset="0" max-vertical-offset="1620">
@@ -810,9 +812,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eindopdracht/developedfinal.set">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.230769" vertical-offset="66143" max-vertical-offset="66600">
+          <caret line="4429" column="21" selection-start-line="4429" selection-start-column="21" selection-end-line="4429" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eindopdracht/eindopdracht.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3687" max-vertical-offset="7395">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6492" max-vertical-offset="7395">
           <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="268" selection-end-column="30" />
           <folding>
             <element signature="e#19#28#0" expanded="true" />
@@ -820,18 +830,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/test.set">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/development.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6538461" vertical-offset="17113" max-vertical-offset="236880">
-          <caret line="1138" column="0" selection-start-line="1138" selection-start-column="0" selection-end-line="1138" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="224127" max-vertical-offset="224610">
+          <caret line="14968" column="21" selection-start-line="14968" selection-start-column="21" selection-end-line="14968" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eindopdracht/developedfinal.set">
+    <entry file="file://$PROJECT_DIR$/eindopdracht/test.set">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6389497" vertical-offset="56153" max-vertical-offset="56610">
-          <caret line="3763" column="23" selection-start-line="3763" selection-start-column="23" selection-end-line="3763" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.80306345" vertical-offset="236318" max-vertical-offset="236775">
+          <caret line="15779" column="91" selection-start-line="15779" selection-start-column="91" selection-end-line="15779" selection-end-column="91" />
           <folding />
         </state>
       </provider>
