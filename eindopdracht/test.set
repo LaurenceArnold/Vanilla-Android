@@ -15777,4 +15777,10 @@ g15.1 527 531 5022 were VBD
 g15.1 532 541 5023 dismissed VBN 
 g15.1 542 546 5024 last JJ 
 g15.1 547 551 5025 year NN 
-g15.1 551 552 5026 . . 
+g15.1 551 552 5026 . . g14.8 82 86 1020 York NNP COU https://en.wikipedia.org/wiki/New_York
+g14.8 82 86 1020 York NNP COU https://en.wikipedia.org/wiki/New_York
+g12.12 28 33 1005 Blair CD PER Null
+g12.12 120 125 2002 Blair VBZ PER Null
+g14.8 82 86 1020 York NNP COU https://en.wikipedia.org/wiki/New_York
+g12.12 28 33 1005 Blair CD PER Null
+g12.12 120 125 2002 Blair VBZ PER Null

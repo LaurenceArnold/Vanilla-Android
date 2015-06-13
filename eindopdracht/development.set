@@ -14967,3 +14967,5 @@ g8.8 386 388 3019 on IN
 g8.8 389 398 3020 September NNP
 g8.8 399 401 3021 18 CD
 g8.8 401 402 3022 . .
+g7.2 97 101 1017 East NNP COU https://en.wikipedia.org/wiki/Middle_East
+g7.2 213 217 3002 Bush NNP PER https://en.wikipedia.org/wiki/George_H._W._Bush

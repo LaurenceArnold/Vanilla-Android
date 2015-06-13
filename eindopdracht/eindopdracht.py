@@ -308,7 +308,7 @@ def main():
                         item.pop(0)
                         newLine = ' '.join(item)
 
-                        with open(root+'/developed.set', 'a') as finalfile:
+                        with open(root+'/developedfinal.set', 'a') as finalfile:
                             finalfile.write(newLine + '\n')
 
                         continue
@@ -387,11 +387,12 @@ def main():
 
                             thisLine = lineNumber - 1
                             personWiki = getWikiURL(wordResult, currentTag)
-        
+
                             for i in range(wordLen):
                                 wordList[thisLine+i][7] = "PER"
                                 if personWiki == None:
-                                    item.pop(8)
+                                    if len(item) > 8:
+                                        item.pop(8)
                                 else:
                                     wordList[thisLine+i][8] = personWiki
 
@@ -482,7 +483,6 @@ def main():
                     # Write results to new file
                     with open(root+'/developedfinal.set', 'a') as finalfile:
                         finalfile.write(newLine + '\n')
-                    print(item)
 
 if __name__ == "__main__":
     main()
