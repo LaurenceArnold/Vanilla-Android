@@ -300,7 +300,11 @@ def main():
 
                 for item in wordList:
                     if item[8]:
-
+                        if len(item) > 7:
+                            if item[7] == "-":
+                                if len(item) > 8:
+                                    item.pop(8)
+                                item.pop(7)
                         item.pop(0)
                         newLine = ' '.join(item)
 
@@ -346,20 +350,20 @@ def main():
                             thisLine = lineNumber - 1
                             countryWiki = getWikiURL(wordResult, currentTag)
                             for i in range(wordLen):
-                                if tagCityOrCountry == "-":
+                                wordList[thisLine+i][7] = tagCityOrCountry
+                                wordList[thisLine+i][8] = countryWiki
+                            if tagCityOrCountry == "-":
+                                if len(item) > 8:
                                     item.pop(8)
+                                if len(item) > 7:
                                     item.pop(7)
-                                else:
-                                    wordList[thisLine+i][7] = tagCityOrCountry
-                                    wordList[thisLine+i][8] = countryWiki
-
 
                         # It is a person
                         elif currentTag == "PERSON":
                             wordResult = item[5]
                             wordLen = 1
 
-                            # Check for locations like New-York (multiple words)
+                            # Check for locations like New-York (multiple words)a
                             # Line number is always 1 ahead of index (line 1 is index 0)
                             if wordList[lineNumber][7] == "PERSON":
                                 wordResult = wordResult + "_" + str(wordList[lineNumber][5])
@@ -464,10 +468,12 @@ def main():
                         else:
                             item.pop(8)
                             item.pop(7)
-                            
-                    if item[7] == "-":
-                        item.pop(8)
-                        item.pop(7)
+
+                    if len(item) > 7:
+                        if item[7] == "-":
+                            if len(item) > 8:
+                                item.pop(8)
+                            item.pop(7)
 
                     # Remove our linenumber used in some pieces of code
                     item.pop(0)
