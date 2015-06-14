@@ -1,8 +1,9 @@
+#!/usr/bin/python
 developmentSet = []
 developedSet = []
 
-with open('development.set', 'r') as in_test:
-    with open('developed.set', 'r') as in_dev:
+with open('test.set', 'r') as in_test:
+    with open('developedfinal.set', 'r') as in_dev:
         for line in in_test:
             developmentSet.append(line)
         
@@ -17,7 +18,7 @@ with open('development.set', 'r') as in_test:
             if (split[0] != equal[0]):
                 developmentSet.pop(index)
             
-            with open('developmentfix.set', 'a') as fixedfile:
+            with open('testfix.set', 'a') as fixedfile:
                 fixedfile.write(item)
             index += 1
             

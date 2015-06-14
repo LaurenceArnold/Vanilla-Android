@@ -269,7 +269,7 @@ def main():
         for file in filenames:
 
             # Check if the file is en.tok.off
-            if file == "test.set":
+            if file == "test2.set":
 
                 # Open file
                 with open(root+'/'+file, 'r') as in_f:
@@ -308,7 +308,7 @@ def main():
                         item.pop(0)
                         newLine = ' '.join(item)
 
-                        with open(root+'/developedfinal.set', 'a') as finalfile:
+                        with open(root+'/developedfinal2.set', 'a') as finalfile:
                             finalfile.write(newLine + '\n')
 
                         continue
@@ -481,7 +481,7 @@ def main():
                     newLine = ' '.join(item)
                     
                     # Write results to new file
-                    with open(root+'/developedfinal.set', 'a') as finalfile:
+                    with open(root+'/developedfinal2.set', 'a') as finalfile:
                         finalfile.write(newLine + '\n')
 
 if __name__ == "__main__":

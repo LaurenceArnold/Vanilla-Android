@@ -12,7 +12,7 @@ def main():
     directory = os.getcwd()
     for root, dirs, filenames in os.walk(directory):
         for file in filenames:
-            if file == "developmentfix.set":
+            if file == "testfix.set":
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                             columns = line.split()
@@ -24,7 +24,7 @@ def main():
                                 goldenStandardTags.append("NOPE")
 
 
-            elif (file == "developed.set"):
+            elif (file == "developedfinal.set"):
                 with open(root+'/'+file, 'r') as in_f:
                     for line in in_f:
                         columns = line.split()

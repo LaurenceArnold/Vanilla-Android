@@ -364,7 +364,6 @@ g12.12 557 564 4009 channel CD
 g12.12 565 575 4010 al-Jazeera CD ENT http://nl.wikipedia.org/wiki/Al_Jazeera
 g12.12 575 576 4011 . CD
 g12.12 VBG
-g10.2 0 1 1001 A DT
 g10.2 2 6 1002 bomb NN
 g10.2 7 12 1003 blast NN
 g10.2 13 15 1004 at IN
@@ -718,7 +717,6 @@ g12.1 537 546 5016 hazardous NNS
 g12.1 547 554 5017 driving CD
 g12.1 554 555 5018 . CD
 g12.1 CD
-g4.5 0 10 1001 Scientists NNS
 g4.5 11 13 1002 at IN
 g4.5 14 17 1003 the DT
 g4.5 18 26 1004 National NNP ORG https://en.wikipedia.org/wiki/National_Geographic_Society
@@ -1217,7 +1215,6 @@ g12.7 566 576 4022 provincial CD ORG http://en.wikipedia.org/wiki/Helmand_Provin
 g12.7 577 587 4023 government IN ORG http://en.wikipedia.org/wiki/Helmand_Province#Politics_and_governance
 g12.7 587 588 4024 . CD
 g12.7 CD
-g13.8 0 4 1001 Guam NNP COU http://en.wikipedia.org/wiki/Guam
 g13.8 5 8 1002 was VBD
 g13.8 9 14 1003 ceded VBN
 g13.8 15 17 1004 to TO
@@ -1694,7 +1691,6 @@ g12.9 623 628 4027 Hamid CD PER http://en.wikipedia.org/wiki/Hamid_Karzai
 g12.9 629 635 4028 Karzai CD PER http://en.wikipedia.org/wiki/Hamid_Karzai
 g12.9 635 636 4029 . .
 g12.9 CD
-g13.5 0 7 1001 Chadian JJ
 g13.5 8 13 1002 Prime NNP
 g13.5 14 22 1003 Minister NNP
 g13.5 23 29 1004 Pascal NNP PER http://en.wikipedia.org/wiki/Pascal_Yoadimnadji
@@ -2806,7 +2802,6 @@ g12.8 553 557 4016 same CD
 g12.8 558 564 4017 region NNS
 g12.8 564 565 4018 . CD
 g12.8 CD
-g11.2 0 12 1001 Humanitarian JJ 
 g11.2 13 21 1002 agencies NNS 
 g11.2 22 28 1003 report NN 
 g11.2 29 33 1004 more RBR 
@@ -3297,7 +3292,6 @@ g12.0 308 312 3018 much CD
 g12.0 313 318 3019 worse CD
 g12.0 318 319 3020 . WRB
 g12.0 CD
-g4.0 0 5 1001 Adult NNP
 g4.0 6 10 1002 stem NN
 g4.0 11 15 1003 cell NN
 g4.0 16 23 1004 therapy NN
@@ -3509,7 +3503,6 @@ g5.4 559 565 5015 patrol NN
 g5.4 566 568 5016 in IN 
 g5.4 569 576 5017 Baghdad NNP CIT https://en.wikipedia.org/wiki/Baghdad
 g5.4 576 577 5018 . . 
-g5.8 0 7 1001 Russian JJ ORG https://en.wikipedia.org/wiki/Police_of_Russia
 g5.8 8 14 1002 police NN ORG https://en.wikipedia.org/wiki/Police_of_Russia
 g5.8 15 22 1003 confirm NN 
 g5.8 23 27 1004 that WDT 
@@ -4313,7 +4306,6 @@ g3.6 538 541 5021 the NN
 g3.6 542 549 5022 country IN
 g3.6 550 552 5023 by CD
 g3.6 553 557 5024 2011
-g3.6 557 558 5025 .
 g2.7 0 8 1001 Bulgaria NNP COU http://en.wikipedia.org/wiki/Bulgaria
 g2.7 9 12 1002 has VBZ
 g2.7 13 23 1003 extradited VBN
@@ -4410,7 +4402,6 @@ g2.7 494 505 4009 authorities NNS
 g2.7 506 512 4010 Friday NNP
 g2.7 513 520 4011 morning NN
 g2.7 520 521 4012 . .
-g3.7 0 7 1001 Several JJ
 g3.7 8 14 1002 people NNS
 g3.7 15 19 1003 were VBD
 g3.7 20 26 1004 killed VBN
@@ -6616,7 +6607,6 @@ g12.2 600 602 5018 at CD
 g12.2 603 613 5019 Georgetown CD ORG http://en.wikipedia.org/wiki/Georgetown_University
 g12.2 613 614 5020 . CD
 g12.2 IN
-g11.7 0 3 1001 The DT 
 g11.7 4 10 1002 French JJ COU http://en.wikipedia.org/wiki/France 
 g11.7 11 18 1003 annexed VBN 
 g11.7 19 26 1004 various JJ 
@@ -8231,7 +8221,6 @@ g12.11 462 466 4031 have CD
 g12.11 467 476 4032 continued CD
 g12.11 476 477 4033 . CD
 g12.11 CD
-g2.8 0 3 1001 The DT
 g2.8 4 9 1002 World NNP ORG http://en.wikipedia.org/wiki/World_Health_Organization
 g2.8 10 16 1003 Health NNP ORG http://en.wikipedia.org/wiki/World_Health_Organization
 g2.8 17 29 1004 Organization NNP ORG http://en.wikipedia.org/wiki/World_Health_Organization
@@ -9136,7 +9125,6 @@ g12.10 392 399 3034 nuclear NNP
 g12.10 400 409 3035 ambitions CD
 g12.10 409 410 3036 . CD
 g12.10 CD
-g1.5 0 2 1001 An DT
 g1.5 3 10 1002 African JJ ORG http://en.wikipedia.org/wiki/African_Union
 g1.5 11 16 1003 Union NN ORG http://en.wikipedia.org/wiki/African_Union
 g1.5 17 25 1004 official NN
@@ -10181,7 +10169,6 @@ g12.6 474 480 4016 Matteo CD PER http://en.wikipedia.org/wiki/Matteo
 g12.6 480 481 4017 . NN
 g12.6 481 482 4018 " CD
 g12.6 CD
-g14.3 0 3 1001 The DT
 g14.3 4 8 1002 U.S. NNP COU http://en.wikipedia.org/wiki/United_States
 g14.3 9 19 1003 government NN
 g14.3 20 23 1004 has VBZ
@@ -11866,7 +11853,6 @@ g12.3 437 439 4018 of CD ORG http://en.wikipedia.org/wiki/Popular_Front_for_the_
 g12.3 440 449 4019 Palestine CD ORG http://en.wikipedia.org/wiki/Popular_Front_for_the_Liberation_of_Palestine
 g12.3 449 450 4020 . NNS
 g12.3 CD
-g2.0 0 7 1001 Israeli NNP
 g2.0 8 15 1002 doctors NNS
 g2.0 16 19 1003 say VBP
 g2.0 20 23 1004 the DT
@@ -12548,7 +12534,6 @@ g3.3 442 443 3025 a DT
 g3.3 444 449 3026 later JJ
 g3.3 450 454 3027 date NN
 g3.3 454 455 3028 .
-g6.8 0 5 1001 Iraqi DT  
 g6.8 6 15 1002 officials NNP  
 g6.8 16 19 1003 say NNP  
 g6.8 20 21 1004 a NN  
@@ -13825,7 +13810,6 @@ g12.5 377 382 4016 rival CD
 g12.5 383 391 4017 Pakistan CD COU http://en.wikipedia.org/wiki/Pakistan
 g12.5 391 392 4018 . NNS
 g12.5 CD
-g9.7 0   11  1001  Authorities         NNS  -    -
 g9.7 12  14  1002  in                  IN   -    -
 g9.7 15  20  1003  India               NNP  COU  http://en.wikipedia.org/wiki/India
 g9.7 21  24  1004  say                 VBP  -    -
@@ -14015,7 +13999,6 @@ g12.4 528 535 5024 Mahmoud CD PER http://en.wikipedia.org/wiki/Mahmoud_Ahmadinej
 g12.4 536 547 5025 Ahmadinejad CD PER http://en.wikipedia.org/wiki/Mahmoud_Ahmadinejad
 g12.4 547 548 5026 . CD
 g12.4 JJ
-g10.1 0 3 1001 The DT
 g10.1 4 11 1002 economy NN
 g10.1 12 19 1003 depends VBZ
 g10.1 20 27 1004 largely RB
@@ -15666,9 +15649,7 @@ g6.0 327 330 3007 the NNP
 g6.0 331 335 3008 week NN  
 g6.0 335 337 3009 's NN  
 g6.0 338 348 3010 activities VBZ  
-g6.0 349 351 3011 in VBN  
 g6.0 352 357 3012 space VBN  
-g6.0 357 358 3013 . TO  
 g15.1 0 6 1001 Kenyan NNP COU http://en.wikipedia.org/wiki/Kenya
 g15.1 7 18 1002 authorities NNS 
 g15.1 19 25 1003 report NN 
@@ -15760,6 +15741,4 @@ g15.1 518 522 5020 that IN
 g15.1 523 526 5021 600 CD 
 g15.1 527 531 5022 were VBD 
 g15.1 532 541 5023 dismissed VBN 
-g15.1 542 546 5024 last JJ 
-g15.1 547 551 5025 year NN 
-g15.1 551 552 5026 . .
+g15.1 542 546 5024 last JJ
